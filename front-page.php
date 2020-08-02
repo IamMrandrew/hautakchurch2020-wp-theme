@@ -16,9 +16,6 @@
 
 get_header();
 ?>
-
-		<div id="carouselWithControls" class="carousel slide" data-ride="carousel" data-interval="5000">
-    <ol class="carousel-indicators">
         <?php 
         // custom loop
         $sliderQuery = new WP_Query(array(
@@ -29,20 +26,8 @@ get_header();
             // 'category_name' => '電腦版'
         ));
 
-        $active = 'class="active"';
-        $count = 0;
-        while ($sliderQuery->have_posts()):
-            $sliderQuery->the_post();
-            if (in_category('電腦版')):
         ?>
-            <li data-target="#carouselWithControls" data-slide-to="<?php echo $count++ ?>" <?php echo $active ?>></li>
-            
-        <?php endif ?>
-        <?php $active = "" ?>
-        <?php endwhile; ?>
-    </ol>
 
-		<div class="carousel-inner">
 
         <?php 
         $active = 'active';
@@ -70,29 +55,16 @@ get_header();
             if (in_category('電腦版')):
         ?>
 
-            <div class="carousel-item <?php echo $active; ?>">
 
             <picture>
                 <source media="(min-width: 669px)" srcset="<?php echo $postThumbnailUrl[$index++] ?>">
                 <source media="(min-width: 319px)" srcset="<?php echo $postThumbnailUrlM[$indexM++] ?>">
-                <img src="<?php echo get_the_post_thumbnail_url() ?>" class="d-block w-100" alt="carousel-img">
+                <img src="<?php echo get_the_post_thumbnail_url() ?>" class="d-block w-100" style="width: 100%"alt="carousel-img">
             </picture>
-            </div>
         <?php endif ?>
         <?php $active = "" ?>
         <?php endwhile; ?>
-		</div>
 
-			<a class="carousel-control-prev" href="#carouselWithControls" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-
-			<a class="carousel-control-next" href="#carouselWithControls" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
 
 		<div class="jumbotron jumbotron-fluid py-5" style="background : #D2B48C">
 		<div class="container mx-auto">

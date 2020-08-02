@@ -691,8 +691,6 @@ html {
 header nav {
   background-color: rgba(255, 255, 255, 0);
   position: fixed;
-  left: auto;
-  right: auto;
   width: 100%;
 }
 
