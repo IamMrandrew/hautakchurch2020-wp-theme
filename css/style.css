@@ -698,14 +698,20 @@ header nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+header nav .container .nav-brand img {
+  padding: 15px 10px;
+  margin-right: auto;
 }
 
 header nav .container .nav-list li {
   display: inline-block;
-  padding: 20px;
+  padding: 20px 10px;
   position: relative;
 }
 
@@ -723,13 +729,18 @@ header nav .container .nav-list li ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  top: 40px;
-  left: 0;
+  top: 50px;
+  left: -10px;
+  background-color: #fff;
   min-width: 150px;
 }
 
 header nav .container .nav-list li ul li {
-  padding: 10px 15px;
+  padding: 15px 20px;
+}
+
+header nav .container .nav-list li ul li a {
+  color: #4e4e4e;
 }
 
 header nav .container .nav-list li .display-submenu {

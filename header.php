@@ -31,15 +31,19 @@
 <div id="page" class="site">
     <header class="sticky-top">
 		<nav>
-			<?php 
-			wp_nav_menu( array(
-				'theme_location'  => 'menu-1',
-				'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-				'container'       => 'div',
-				'container_class' => 'container',
-				'menu_class'      => 'nav-list',
-			) ); 
-			?>
+			<div class="container">
+				<a class="nav-brand" href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri()?>/img/nav-brand-lg.svg" alt="nav-brand"></a>
+				
+				<?php 
+				wp_nav_menu( array(
+					'theme_location'  => 'menu-1',
+					'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+					// 'container'       => 'div',
+					// 'container_class' => 'container',
+					'menu_class'      => 'nav-list',
+				) ); 
+				?>
+			</div>
 		</nav>
 	</header>
 	

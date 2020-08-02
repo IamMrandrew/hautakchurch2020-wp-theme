@@ -3,53 +3,65 @@ header {
     nav {
         background-color: rgba(255,255,255,0);
         position: fixed;
-
         width: 100%;
         
         .container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            margin-top: 10px;
+            
+            .nav-brand img {
+                // height: 57px;
+                // justify-self: flex-start;
+                padding: 15px 10px;
+                margin-right: auto;
+            }
     
-        .nav-list {
-            li {
-                display: inline-block;
-                padding: 20px;
-                position: relative;
-    
-                a {
-                    text-decoration: none;
-                    color: #FFFFFF;
-                    font-size: 18px;
-                    font-weight: 500;
-                    
-                }
-    
-                ul {
-                    position: absolute;
-                    display: none;
-                    flex-direction: column;
-                    top: 40px;
-                    left: 0;
-                    min-width: 150px;
+            .nav-list {
+                li {
+                    display: inline-block;
+                    padding: 20px 10px;
+                    position: relative;
+        
+                    a {
+                        text-decoration: none;
+                        color: #FFFFFF;
+                        font-size: 18px;
+                        font-weight: 500;
+                        
+                    }
+        
+                    ul {
+                        position: absolute;
+                        display: none;
+                        flex-direction: column;
+                        top: 50px;
+                        left: -10px;
+                        background-color: #fff;
+                        min-width: 150px;
 
-                    li {
-                        padding: 10px 15px;
-                    }   
+                        li {
+                            padding: 15px 20px;
 
-                }
-    
-                .display-submenu {
+                            a {
+                                color: #4e4e4e;
+                            }
+                        }   
+
+                    }
+        
+                    .display-submenu {
+                        display: flex;
+                    }
+        
+                &:hover > ul, &:focus > ul {
                     display: flex;
                 }
-    
-            &:hover > ul, &:focus > ul {
-                display: flex;
+        
+                }
+        
+        
             }
-    
-            }
-    
-    
-        }
         }
     }
 }

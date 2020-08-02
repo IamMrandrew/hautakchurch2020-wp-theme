@@ -1,7 +1,6 @@
 <?php
 /**
- * Template Nameee: Front Page
- * 
+ *
  * The template for displaying front page
  *
  * This is the template that displays all pages by default.
