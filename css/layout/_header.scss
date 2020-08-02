@@ -1,0 +1,56 @@
+// navbar
+header {
+    nav {
+        background-color: rgba(255,255,255,0);
+        position: fixed;
+        left: auto;
+        right: auto;
+        width: 100%;
+        
+        .container {
+            display: flex;
+            justify-content: flex-end;
+    
+        .nav-list {
+            li {
+                display: inline-block;
+                padding: 20px;
+                position: relative;
+    
+                a {
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    font-size: 18px;
+                    font-weight: 500;
+                    
+                }
+    
+                ul {
+                    position: absolute;
+                    display: none;
+                    flex-direction: column;
+                    top: 40px;
+                    left: 0;
+                    min-width: 150px;
+
+                    li {
+                        padding: 10px 15px;
+                    }   
+
+                }
+    
+                .display-submenu {
+                    display: flex;
+                }
+    
+            &:hover > ul, &:focus > ul {
+                display: flex;
+            }
+    
+            }
+    
+    
+        }
+        }
+    }
+}

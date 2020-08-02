@@ -17,12 +17,6 @@
 get_header();
 ?>
 
-<div class="noti-nav">
-			<div class="container text-center py-3">
-				<a href="https://youtu.be/d5OA8TTfpIo" >👉🏻 觀看網上崇拜直播</a>
-			</div>
-		</div>
-
 		<div id="carouselWithControls" class="carousel slide" data-ride="carousel" data-interval="5000">
     <ol class="carousel-indicators">
         <?php 

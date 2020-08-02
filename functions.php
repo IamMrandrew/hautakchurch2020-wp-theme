@@ -10,10 +10,10 @@
  /**
  * Register Custom Navigation Walker
  */
-function register_navwalker(){
-	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
-}
-add_action( 'after_setup_theme', 'register_navwalker' );
+// function register_navwalker(){
+// 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+// }
+// add_action( 'after_setup_theme', 'register_navwalker' );
 
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -62,6 +62,8 @@ if ( ! function_exists( 'hautakchurch_setup' ) ) :
 				'menu-1' => esc_html__( 'Primary', 'hautakchurch' ),
 			)
 		);
+
+		// register_nav_menus('menu-1', 'Primary');
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -281,10 +283,10 @@ add_action( 'widgets_init', 'hautakchurch_widgets_init' );
  * Enqueue scripts and styles.
  */
 function hautakchurch_scripts() {
-	wp_enqueue_style( 'bootstrap-css', "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-	wp_enqueue_script('jquery', "https://code.jquery.com/jquery-3.3.1.slim.min.js");
-	wp_enqueue_script('popperjs', "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js");
-	wp_enqueue_script('bootstrap-js', "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js");
+	// wp_enqueue_style( 'bootstrap-css', "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+	// wp_enqueue_script('jquery', "https://code.jquery.com/jquery-3.3.1.slim.min.js");
+	// wp_enqueue_script('popperjs', "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js");
+	// wp_enqueue_script('bootstrap-js', "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js");
 	wp_enqueue_script('fontAwesome', "https://kit.fontawesome.com/988906133c.js");
 
 	// wp_enqueue_style( 'hautakchurch-style', get_stylesheet_uri(), array(), _S_VERSION );

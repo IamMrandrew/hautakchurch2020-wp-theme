@@ -30,39 +30,35 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
     <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-light border-bottom py-1" style="background-color : #FFFFFF; padding : 10px">
-        <div class="container header-container" id="container">
-        <!-- <a href="index.php"><img class="navbar-brand d-lg-none" src="img/moNavNEW2.png" style="height : 40px; margin : 4px; padding : 0px"></a> -->
-        <!-- <a href="index.php"><img class="navbar-brand d-none d-lg-block" src="img/superLongNav.png" style="height : 75px; margin-top : 3px; margin :0px "></a> -->
-        <?php  
-		    the_custom_logo();
-        ?>
-        
-        <!-- Maybe not customizable here -->
+		<nav>
+			<?php 
+			wp_nav_menu( array(
+				'theme_location'  => 'menu-1',
+				'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+				'container'       => 'div',
+				'container_class' => 'container',
+				'menu_class'      => 'nav-list',
+			) ); 
+			?>
+		</nav>
+	</header>
+	
+	<script>
+		let clicking = false;
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" ="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border : none">
-            <span class="navbar-toggler-icon">
+		document.addEventListener('click', function() {
+			if (clicking){
+				clicking = false;
+			} else {
+				document.querySelector('.display-submenu').classList.remove('display-submenu');
+			}
+		});
 
-            </span>
-        </button>
-
-        <?php 
-        wp_nav_menu( array(
-            'theme_location'  => 'menu-1',
-            'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-            'container'       => 'div',
-            'container_class' => 'collapse navbar-collapse',
-            'container_id'    => 'navbarNav',
-            'menu_class'      => 'navbar-nav ml-auto',
-            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'          => new WP_Bootstrap_Navwalker(),
-        ) ); 
-        ?>
-
-        </div>
-    </nav>
-    </header>
-
+		document.querySelector('.nav-list li ul').parentNode.addEventListener('click', function() {
+			document.querySelector('.nav-list li ul').classList.add('display-submenu');
+			clicking = true;
+		});
+	</script>
 <!-- 
 <header id="masthead" class="site-header">
 		<div class="site-branding"> -->
