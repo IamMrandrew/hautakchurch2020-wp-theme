@@ -1,0 +1,1 @@
+# hautakchurch2020-wordpress-theme
