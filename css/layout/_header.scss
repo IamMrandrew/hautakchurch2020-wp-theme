@@ -3,11 +3,13 @@ header {
     nav {
         background-color: rgba(255,255,255,0);
         position: fixed;
+        z-index: 100;
         width: 100%;
         
         .container {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             margin-top: 10px;
             
             .nav-brand img {
@@ -15,6 +17,11 @@ header {
                 // justify-self: flex-start;
                 padding: 15px 10px;
                 margin-right: auto;
+
+                @media screen and (max-width: 992px){
+                    box-sizing: content-box;
+                    height: 40px;
+                }
             }
     
             .nav-list {
@@ -59,8 +66,48 @@ header {
                 }
         
                 }
-        
-        
+                
+                @media screen and (max-width: 992px) {
+                    position: absolute;
+                    transform: translateX(800%);
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.5s;
+                }
+            }
+
+            .nav-list-appear {
+                transform: translateX(300%);
+
+            }
+
+            .burger {
+                padding: 20px 10px;
+                display: none;
+
+                .line {
+                    height: 3px;
+                    background-color: #FFFFFF;
+                    margin-bottom: 7px;
+                    margin-left: auto;
+                    border-radius: 15px;
+                }
+
+                .line1 {
+                    width: 26px;
+                }
+
+                .line2 {
+                    width: 23px;
+                }
+
+                .line3 {
+                    width: 19px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    display: block;
+                }
             }
         }
     }

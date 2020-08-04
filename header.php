@@ -38,11 +38,18 @@
 				wp_nav_menu( array(
 					'theme_location'  => 'menu-1',
 					'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-					// 'container'       => 'div',
+					'container'       => '',
 					// 'container_class' => 'container',
 					'menu_class'      => 'nav-list',
 				) ); 
 				?>
+
+				<div class="burger">
+					<div class="line line1"></div>
+					<div class="line line2"></div>
+					<div class="line line3"></div>
+				</div>
+				
 			</div>
 		</nav>
 	</header>
@@ -53,7 +60,8 @@
 		document.addEventListener('click', function() {
 			if (clicking){
 				clicking = false;
-			} else {
+			} else if (document.getElementsByClassName('display-submenu').length > 0) {
+				console.log("have");
 				document.querySelector('.display-submenu').classList.remove('display-submenu');
 			}
 		});
@@ -62,7 +70,12 @@
 			document.querySelector('.nav-list li ul').classList.add('display-submenu');
 			clicking = true;
 		});
+
+		document.querySelector('.burger').addEventListener('click', function() {
+			document.querySelector('.nav-list').classList.toggle('nav-list-appear');
+		})
 	</script>
+	
 <!-- 
 <header id="masthead" class="site-header">
 		<div class="site-branding"> -->

@@ -1,0 +1,326 @@
+.hero {
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #3C2F26;
+        opacity: 46%;
+    
+    }
+    
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        .text-wrapper {
+            color: #FFFFFF;
+
+            h1 {
+                font-size: 60px;
+
+                br {
+                    display: none;
+                }
+
+                @media screen and (max-width: 765px) {
+                    font-size: 50px;
+
+                    br {
+                        display: block;
+                    }
+                }
+            }
+
+            h2 {
+                font-size: 60px;
+
+                @media screen and (max-width: 765px) {
+                    font-size: 32px;
+                }
+            }
+
+            .btn {
+                background-color: $primary;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+.card {
+    padding: 30px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &>i {
+        padding: 10px 15px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        color: $minor;
+    }
+
+    .card-content {
+        color: #2E2E2E;
+    }
+
+    .card-time {
+
+        &::before {
+            content: "- ";
+        }
+    }
+
+    .btn {
+        font-size: 16px;
+        color: #FFFFFF;
+        background-color: $primary;
+    }
+}
+
+.card-intro {
+    margin: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 0px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 16px;
+        color: $minor;
+    }
+    
+}
+
+.jumbotron-news {
+    background-color: #FFFFFF;
+
+    .container {
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    .glider-contain {
+        margin: 60px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .glider {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            
+            &::-webkit-scrollbar {
+                height: 0px !important;
+                width: 0 !important;
+                background: transparent;
+                display: none;
+            }
+            
+        }
+
+            .glider-prev, .glider-next {
+                top: 45%;
+    
+                i {
+                    font-size: 25px;
+                }
+            }
+            
+            .glider-prev {
+                left: -40px;
+            }
+            
+            .glider-next {
+                right: -40px;
+            }
+
+            @media screen and (max-width: 768px) {
+
+                .glider-prev, .glider-next {
+                    bottom: -120px;
+                }
+                .glider-prev {
+                    // left: 80px;
+                    left: 22%;
+                }
+                
+                .glider-next {
+                    left: 30%;
+                }
+            }
+
+            .glider-prev:hover,
+            .glider-next:hover,
+            .glider-prev:focus,
+            .glider-next:focus {
+                color: $primary;
+            }
+    }
+}
+
+.jumbotron-verse {
+    background-color: $secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px;
+
+    .text-wrapper {
+        text-align: center;
+        color: #FFFFFF;
+        
+        h3 {
+            font-size: 52px;
+        }
+
+        h4 {
+            font-size: 30px;
+        }
+
+        .btn {
+            background-color: $secondary-contrast;
+            color: #FFFFFF;
+        }
+
+        @media screen and (max-width: 768px) {
+            h3 {
+                font-size: 38px;
+            }
+    
+            h4 {
+                font-size: 20px;
+            }
+    
+        }
+    }
+}
+
+.jumbotron-notice {
+    background-color: #FFFFFF;
+
+    .container {
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    .glider-contain {
+        margin: 60px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .glider {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            
+            &::-webkit-scrollbar {
+                height: 0px !important;
+                width: 0 !important;
+                background: transparent;
+                display: none;
+            }
+            
+        }
+
+            .glider-prev, .glider-next {
+                top: 45%;
+    
+                i {
+                    font-size: 25px;
+                }
+            }
+            
+            .glider-prev {
+                left: -40px;
+            }
+            
+            .glider-next {
+                right: -40px;
+            }
+
+            @media screen and (max-width: 768px) {
+
+                .glider-prev, .glider-next {
+                    bottom: -120px;
+                }
+                .glider-prev {
+                    // left: 80px;
+                    left: 22%;
+                }
+                
+                .glider-next {
+                    left: 30%;
+                }
+            }
+
+            .glider-prev:hover,
+            .glider-next:hover,
+            .glider-prev:focus,
+            .glider-next:focus {
+                color: $primary;
+            }
+    }
+}
+
+.jumbotron-event {
+    padding: 30px;
+
+   .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+        .img-wrapper {
+            padding: 50px;
+            background-color: #EBEBEB;
+
+            img {
+                width: 100%;
+            }
+        }
+        .col-lg-5 {
+            display: flex;
+            justify-content: center;
+            padding: 60px;
+
+            .text-wrapper {
+                margin-left: auto;
+                margin-right: auto;
+
+                .btn {
+                    background-color: $primary;
+                    color: #FFFFFF;
+                }
+            }
+        }
+   }
+
+}

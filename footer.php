@@ -11,10 +11,10 @@
 
 ?>
 
-	<footer class="bg-dark border-top" style="height : 50px">
-    <div class="container header-container" style="padding-top : 12px; max-width : 1200px;">
-        <p class="text-left" style="font-size : 14px; color : #CBCBCB">©2020 Hau Tak Church 保留一切權利</p>
-    </div>
+	<footer>
+		<div class="container">
+			<p>©2020 Hau Tak Church 保留一切權利</p>
+		</div>
 	</footer>
 
 </div><!-- #page -->
