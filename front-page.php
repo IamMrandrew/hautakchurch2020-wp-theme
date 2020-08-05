@@ -28,7 +28,7 @@ get_header();
         </div>
     </section>
 
-    <section class="jumbotron-news">
+    <section class="jumbotron-news jumbotron">
         <div class="container">
             
             <div class="col-lg-4">
@@ -84,7 +84,7 @@ get_header();
         </div>
     </section>
     
-    <section class="jumbotron-notice">
+    <section class="jumbotron-notice jumbotron">
         <div class="container">
             
             <div class="col-lg-4">

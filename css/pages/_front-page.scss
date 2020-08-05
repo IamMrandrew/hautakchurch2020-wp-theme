@@ -125,6 +125,9 @@
         flex-wrap: wrap;
         height: 100%;
     }
+}
+
+.jumbotron {
 
     .glider-contain {
         margin: 60px;
@@ -167,11 +170,13 @@
                 }
                 .glider-prev {
                     // left: 80px;
-                    left: 22%;
+                    // left: 22%;
+                    left: 90px;
                 }
                 
                 .glider-next {
-                    left: 30%;
+                    // left: 30%;
+                    right: 230px;
                 }
             }
 
@@ -230,63 +235,6 @@
         justify-content: center;
         flex-wrap: wrap;
         height: 100%;
-    }
-
-    .glider-contain {
-        margin: 60px;
-        margin-left: auto;
-        margin-right: auto;
-
-        .glider {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-            
-            &::-webkit-scrollbar {
-                height: 0px !important;
-                width: 0 !important;
-                background: transparent;
-                display: none;
-            }
-            
-        }
-
-            .glider-prev, .glider-next {
-                top: 45%;
-    
-                i {
-                    font-size: 25px;
-                }
-            }
-            
-            .glider-prev {
-                left: -40px;
-            }
-            
-            .glider-next {
-                right: -40px;
-            }
-
-            @media screen and (max-width: 768px) {
-
-                .glider-prev, .glider-next {
-                    bottom: -120px;
-                }
-                .glider-prev {
-                    // left: 80px;
-                    left: 22%;
-                }
-                
-                .glider-next {
-                    left: 30%;
-                }
-            }
-
-            .glider-prev:hover,
-            .glider-next:hover,
-            .glider-prev:focus,
-            .glider-next:focus {
-                color: $primary;
-            }
     }
 }
 
