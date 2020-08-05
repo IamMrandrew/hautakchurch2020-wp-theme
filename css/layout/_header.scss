@@ -5,6 +5,7 @@ header {
         position: fixed;
         z-index: 100;
         width: 100%;
+        transition: all 0.3s;
         
         .container {
             display: flex;
@@ -22,6 +23,10 @@ header {
                     box-sizing: content-box;
                     height: 40px;
                 }
+            }
+
+            .nav-brand-dark {
+                display: none;
             }
     
             .nav-list {
@@ -69,15 +74,18 @@ header {
                 
                 @media screen and (max-width: 992px) {
                     position: absolute;
-                    transform: translateX(800%);
+                    right: 0px;
+                    top: 82px;
+                    transform: translateX(100%);
+                    // background-color: #fff;
                     display: flex;
                     flex-direction: column;
-                    transition: all 0.5s;
+                    transition: all 0.3s;
                 }
             }
 
-            .nav-list-appear {
-                transform: translateX(300%);
+            .nav-list-active {
+                transform: translateX(0%);
 
             }
 
@@ -110,5 +118,35 @@ header {
                 }
             }
         }
+    }
+
+    .nav-scrolled {
+        background-color: #FFFFFF;
+
+        .container {
+            .nav-brand {
+                display: none;
+            }
+
+            .nav-brand-dark {
+                display: block;
+            }
+
+            .nav-list {
+                li {
+                    a {
+                        color: $primary;
+                    }
+                }
+            }
+
+            .burger {
+                .line {
+                    background-color: $primary;
+                }
+            }
+        }
+        
+
     }
 }

@@ -693,6 +693,8 @@ header nav {
   position: fixed;
   z-index: 100;
   width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 header nav .container {
@@ -718,6 +720,10 @@ header nav .container .nav-brand img {
             box-sizing: content-box;
     height: 40px;
   }
+}
+
+header nav .container .nav-brand-dark {
+  display: none;
 }
 
 header nav .container .nav-list li {
@@ -769,8 +775,10 @@ header nav .container .nav-list li:hover > ul, header nav .container .nav-list l
 @media screen and (max-width: 992px) {
   header nav .container .nav-list {
     position: absolute;
-    -webkit-transform: translateX(800%);
-            transform: translateX(800%);
+    right: 0px;
+    top: 82px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -778,14 +786,14 @@ header nav .container .nav-list li:hover > ul, header nav .container .nav-list l
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
 }
 
-header nav .container .nav-list-appear {
-  -webkit-transform: translateX(300%);
-          transform: translateX(300%);
+header nav .container .nav-list-active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
 header nav .container .burger {
@@ -817,6 +825,26 @@ header nav .container .burger .line3 {
   header nav .container .burger {
     display: block;
   }
+}
+
+header .nav-scrolled {
+  background-color: #FFFFFF;
+}
+
+header .nav-scrolled .container .nav-brand {
+  display: none;
+}
+
+header .nav-scrolled .container .nav-brand-dark {
+  display: block;
+}
+
+header .nav-scrolled .container .nav-list li a {
+  color: #343A40;
+}
+
+header .nav-scrolled .container .burger .line {
+  background-color: #343A40;
 }
 
 footer {

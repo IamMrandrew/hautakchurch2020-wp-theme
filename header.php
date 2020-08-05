@@ -33,7 +33,7 @@
 		<nav>
 			<div class="container">
 				<a class="nav-brand" href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri()?>/img/nav-brand-lg.svg" alt="nav-brand"></a>
-				
+				<a class="nav-brand nav-brand-dark" href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri()?>/img/nav-brand-lg-dark.svg" alt="nav-brand-dark"></a>
 				<?php 
 				wp_nav_menu( array(
 					'theme_location'  => 'menu-1',
@@ -53,28 +53,7 @@
 			</div>
 		</nav>
 	</header>
-	
-	<script>
-		let clicking = false;
 
-		document.addEventListener('click', function() {
-			if (clicking){
-				clicking = false;
-			} else if (document.getElementsByClassName('display-submenu').length > 0) {
-				console.log("have");
-				document.querySelector('.display-submenu').classList.remove('display-submenu');
-			}
-		});
-
-		document.querySelector('.nav-list li ul').parentNode.addEventListener('click', function() {
-			document.querySelector('.nav-list li ul').classList.add('display-submenu');
-			clicking = true;
-		});
-
-		document.querySelector('.burger').addEventListener('click', function() {
-			document.querySelector('.nav-list').classList.toggle('nav-list-appear');
-		})
-	</script>
 	
 <!-- 
 <header id="masthead" class="site-header">
