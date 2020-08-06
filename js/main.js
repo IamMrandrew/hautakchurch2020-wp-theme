@@ -17,6 +17,7 @@ document.querySelector('.nav-list li ul').parentNode.addEventListener('click', f
 
 document.querySelector('.burger').addEventListener('click', function() {
     document.querySelector('.nav-list').classList.toggle('nav-list-active');
+    document.querySelector('.burger').classList.toggle('burger-active');
 });
 
 

@@ -1,6 +1,8 @@
 // navbar
 header {
     nav {
+        padding-top: 10px;
+        padding-bottom: 10px;
         background-color: rgba(255,255,255,0);
         position: fixed;
         z-index: 100;
@@ -16,7 +18,7 @@ header {
             .nav-brand img {
                 // height: 57px;
                 // justify-self: flex-start;
-                padding: 15px 10px;
+                padding: 15px 10px 15px 10px;
                 margin-right: auto;
 
                 @media screen and (max-width: 992px){
@@ -33,7 +35,7 @@ header {
 
                 li {
                     display: inline-block;
-                    padding: 20px 10px;
+                    padding: 20px 10px 20px 10px;
                     position: relative;
         
                     a {
@@ -41,6 +43,10 @@ header {
                         color: #FFFFFF;
                         font-size: 18px;
                         font-weight: 500;
+
+                        @media screen and (max-width: 992px) {
+                            color: $primary;
+                        }
                         
                     }
         
@@ -73,21 +79,45 @@ header {
         
                 }
                 
-                @media screen and (max-width: 992px) {
-                    position: absolute;
-                    right: 0px;
-                    top: 82px;
-                    transform: translateX(100%);
-                    // background-color: #fff;
-                    display: flex;
-                    flex-direction: column;
-                    transition: all 0.3s;
+            @media screen and (max-width: 992px) {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                // top: 82px;
+                transform: translateX(100%);
+                background-color: #FFFFFF;
+                color: $primary;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+                height: 100vh;
+                transition: all 0.3s;
+                padding-top: 80px;
+
+                li {
+                    text-align: center;
+                    ul {
+                        position: relative;
+                        top: 15px;
+                        left: 0;
+                        right: 0;
+                        margin-left: auto;
+                        margin-right: auto;
+
+                        li {
+                            text-align: left;
+                            padding-left: 60px;
+                        }
+                    }
+                    
                 }
+            }
+
             }
 
             .nav-list-active {
                 transform: translateX(0%);
-
             }
 
             .burger {
@@ -99,28 +129,46 @@ header {
                     background-color: #FFFFFF;
                     margin-bottom: 7px;
                     margin-left: auto;
-                    border-radius: 15px;
-                }
+                    border-radius: 20px;
+                    transition: transform ease-in-out 0.5s;
+                } 
 
                 .line1 {
-                    width: 26px;
+                    width: 28px;
                 }
 
                 .line2 {
-                    width: 23px;
+                    width: 25px;
                 }
 
                 .line3 {
-                    width: 19px;
+                    width: 21px;
                 }
 
                 @media screen and (max-width: 992px) {
                     display: block;
+                    position: relative;
+                    z-index: 10000;
+                }
+            }
+
+            .burger-active {
+                .line {
+                    background-color: $primary;
+                }
+
+                .line1 {
+                    transform: rotate(135deg) translateY(-15px);
+                }
+                .line2 {
+                    transform: scale(0);
+                }
+                .line3 {
+                    transform: rotate(-135deg);
                 }
             }
         }
     }
-
     .nav-scrolled {
         background-color: #FFFFFF;
 
@@ -137,6 +185,7 @@ header {
                 li {
                     a {
                         color: $primary;
+
                     }
                 }
             }
@@ -147,7 +196,5 @@ header {
                 }
             }
         }
-        
-
     }
 }

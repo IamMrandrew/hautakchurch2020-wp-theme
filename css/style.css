@@ -689,6 +689,8 @@ html {
 }
 
 header nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: rgba(255, 255, 255, 0);
   position: fixed;
   z-index: 100;
@@ -710,7 +712,7 @@ header nav .container {
 }
 
 header nav .container .nav-brand img {
-  padding: 15px 10px;
+  padding: 15px 10px 15px 10px;
   margin-right: auto;
 }
 
@@ -728,7 +730,7 @@ header nav .container .nav-brand-dark {
 
 header nav .container .nav-list li {
   display: inline-block;
-  padding: 20px 10px;
+  padding: 20px 10px 20px 10px;
   position: relative;
 }
 
@@ -737,6 +739,12 @@ header nav .container .nav-list li a {
   color: #FFFFFF;
   font-size: 18px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 992px) {
+  header nav .container .nav-list li a {
+    color: #343A40;
+  }
 }
 
 header nav .container .nav-list li ul {
@@ -776,9 +784,11 @@ header nav .container .nav-list li:hover > ul, header nav .container .nav-list l
   header nav .container .nav-list {
     position: absolute;
     right: 0px;
-    top: 82px;
+    top: 0px;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    background-color: #FFFFFF;
+    color: #343A40;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -786,8 +796,29 @@ header nav .container .nav-list li:hover > ul, header nav .container .nav-list l
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+    height: 100vh;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+    padding-top: 80px;
+  }
+  header nav .container .nav-list li {
+    text-align: center;
+  }
+  header nav .container .nav-list li ul {
+    position: relative;
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header nav .container .nav-list li ul li {
+    text-align: left;
+    padding-left: 60px;
   }
 }
 
@@ -806,25 +837,50 @@ header nav .container .burger .line {
   background-color: #FFFFFF;
   margin-bottom: 7px;
   margin-left: auto;
-  border-radius: 15px;
+  border-radius: 20px;
+  -webkit-transition: -webkit-transform ease-in-out 0.5s;
+  transition: -webkit-transform ease-in-out 0.5s;
+  transition: transform ease-in-out 0.5s;
+  transition: transform ease-in-out 0.5s, -webkit-transform ease-in-out 0.5s;
 }
 
 header nav .container .burger .line1 {
-  width: 26px;
+  width: 28px;
 }
 
 header nav .container .burger .line2 {
-  width: 23px;
+  width: 25px;
 }
 
 header nav .container .burger .line3 {
-  width: 19px;
+  width: 21px;
 }
 
 @media screen and (max-width: 992px) {
   header nav .container .burger {
     display: block;
+    position: relative;
+    z-index: 10000;
   }
+}
+
+header nav .container .burger-active .line {
+  background-color: #343A40;
+}
+
+header nav .container .burger-active .line1 {
+  -webkit-transform: rotate(135deg) translateY(-15px);
+          transform: rotate(135deg) translateY(-15px);
+}
+
+header nav .container .burger-active .line2 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+header nav .container .burger-active .line3 {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 
 header .nav-scrolled {
