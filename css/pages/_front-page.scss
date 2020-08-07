@@ -197,6 +197,20 @@
                 }
             }
 
+            @media screen and (max-width: 425px) {
+
+                .glider-prev, .glider-next {
+                    bottom: -120px;
+                }
+                .glider-prev {
+                    left: 90px;
+                }
+                
+                .glider-next {
+                    right: 245px;
+                }
+            }
+
             @media screen and (max-width: 375px) {
 
                 .glider-prev, .glider-next {
@@ -285,6 +299,10 @@
 
 .jumbotron-event {
     padding: 30px;
+
+    @media screen and (max-width: 769px) {
+        padding: 0px;
+    }
 
    .container {
     display: flex;

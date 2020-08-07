@@ -883,28 +883,24 @@ header nav .container .burger-active .line1 {
   width: 0%;
   height: 0;
   margin-bottom: 0;
-  -webkit-transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
-  transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  -webkit-transition: width 0.3s ease-in-out , height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width 0.3s ease-in-out , height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
 header nav .container .burger-active .line2 {
   width: 0%;
   height: 0;
   margin-bottom: 0;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-  -webkit-transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
-  transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  -webkit-transition: width 0.3s ease-in-out 0.1s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width 0.3s ease-in-out 0.1s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
 header nav .container .burger-active .line3 {
   width: 0%;
   height: 0;
   margin-bottom: 0;
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-  -webkit-transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
-  transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  -webkit-transition: width 0.3s ease-in-out 0.2s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width 0.3s ease-in-out 0.2s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
 header nav .container .burger-active .line4, header nav .container .burger-active .line5 {
@@ -1343,6 +1339,18 @@ footer p {
   }
 }
 
+@media screen and (max-width: 425px) {
+  .jumbotron .glider-contain .glider-prev, .jumbotron .glider-contain .glider-next {
+    bottom: -120px;
+  }
+  .jumbotron .glider-contain .glider-prev {
+    left: 90px;
+  }
+  .jumbotron .glider-contain .glider-next {
+    right: 245px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .jumbotron .glider-contain .glider-prev, .jumbotron .glider-contain .glider-next {
     bottom: -120px;
@@ -1433,6 +1441,12 @@ footer p {
 
 .jumbotron-event {
   padding: 30px;
+}
+
+@media screen and (max-width: 769px) {
+  .jumbotron-event {
+    padding: 0px;
+  }
 }
 
 .jumbotron-event .container {

@@ -174,11 +174,10 @@ header {
                 }
 
                 .line1 {
-                    // transform: rotate(135deg) translateY(-15px);
                     width: 0%;
                     height: 0;
                     margin-bottom: 0;
-                    transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+                    transition: width 0.3s ease-in-out , height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 
                 }
                 .line2 {
@@ -186,8 +185,7 @@ header {
                     width: 0%;
                     height: 0;
                     margin-bottom: 0;
-                    transition-delay: 0.1s;
-                    transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+                    transition: width 0.3s ease-in-out 0.1s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 
                 }
                 .line3 {
@@ -195,8 +193,7 @@ header {
                     width: 0%;
                     height: 0;
                     margin-bottom: 0;
-                    transition-delay: 0.2s;
-                    transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+                    transition: width 0.3s ease-in-out 0.2s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 
                 }
                 
