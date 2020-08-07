@@ -171,12 +171,57 @@
                 .glider-prev {
                     // left: 80px;
                     // left: 22%;
+                    left: 50px;
+                }
+                
+                .glider-next {
+                    // left: 30%;
+                    right: 580px;
+                }
+            }
+
+            @media screen and (max-width: 767px) {
+
+                .glider-prev, .glider-next {
+                    bottom: -120px;
+                }
+                .glider-prev {
+                    // left: 80px;
+                    // left: 22%;
                     left: 90px;
                 }
                 
                 .glider-next {
                     // left: 30%;
                     right: 230px;
+                }
+            }
+
+            @media screen and (max-width: 375px) {
+
+                .glider-prev, .glider-next {
+                    bottom: -120px;
+                }
+                .glider-prev {
+                    left: 65px;
+                }
+                
+                .glider-next {
+                    right: 220px;
+                }
+            }
+
+            @media screen and (max-width: 320px) {
+
+                .glider-prev, .glider-next {
+                    bottom: -120px;
+                }
+                .glider-prev {
+                    left: 45px;
+                }
+                
+                .glider-next {
+                    right: 190px;
                 }
             }
 

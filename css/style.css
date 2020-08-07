@@ -1324,10 +1324,46 @@ footer p {
     bottom: -120px;
   }
   .jumbotron .glider-contain .glider-prev {
+    left: 50px;
+  }
+  .jumbotron .glider-contain .glider-next {
+    right: 580px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .jumbotron .glider-contain .glider-prev, .jumbotron .glider-contain .glider-next {
+    bottom: -120px;
+  }
+  .jumbotron .glider-contain .glider-prev {
     left: 90px;
   }
   .jumbotron .glider-contain .glider-next {
     right: 230px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .jumbotron .glider-contain .glider-prev, .jumbotron .glider-contain .glider-next {
+    bottom: -120px;
+  }
+  .jumbotron .glider-contain .glider-prev {
+    left: 65px;
+  }
+  .jumbotron .glider-contain .glider-next {
+    right: 220px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .jumbotron .glider-contain .glider-prev, .jumbotron .glider-contain .glider-next {
+    bottom: -120px;
+  }
+  .jumbotron .glider-contain .glider-prev {
+    left: 45px;
+  }
+  .jumbotron .glider-contain .glider-next {
+    right: 190px;
   }
 }
 
