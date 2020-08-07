@@ -830,6 +830,7 @@ header nav .container .nav-list-active {
 header nav .container .burger {
   padding: 20px 10px;
   display: none;
+  width: 48px;
 }
 
 header nav .container .burger .line {
@@ -837,11 +838,11 @@ header nav .container .burger .line {
   background-color: #FFFFFF;
   margin-bottom: 7px;
   margin-left: auto;
+  position: relative;
+  right: 0;
   border-radius: 20px;
-  -webkit-transition: -webkit-transform ease-in-out 0.5s;
-  transition: -webkit-transform ease-in-out 0.5s;
-  transition: transform ease-in-out 0.5s;
-  transition: transform ease-in-out 0.5s, -webkit-transform ease-in-out 0.5s;
+  -webkit-transition: width ease-in-out 0.3s;
+  transition: width ease-in-out 0.3s;
 }
 
 header nav .container .burger .line1 {
@@ -854,6 +855,16 @@ header nav .container .burger .line2 {
 
 header nav .container .burger .line3 {
   width: 21px;
+}
+
+header nav .container .burger .line4 {
+  width: 0%;
+  height: 0;
+}
+
+header nav .container .burger .line5 {
+  width: 0%;
+  height: 0;
 }
 
 @media screen and (max-width: 992px) {
@@ -869,18 +880,54 @@ header nav .container .burger-active .line {
 }
 
 header nav .container .burger-active .line1 {
-  -webkit-transform: rotate(135deg) translateY(-15px);
-          transform: rotate(135deg) translateY(-15px);
+  width: 0%;
+  height: 0;
+  margin-bottom: 0;
+  -webkit-transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
 header nav .container .burger-active .line2 {
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  width: 0%;
+  height: 0;
+  margin-bottom: 0;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  -webkit-transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
 header nav .container .burger-active .line3 {
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
+  width: 0%;
+  height: 0;
+  margin-bottom: 0;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  -webkit-transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+}
+
+header nav .container .burger-active .line4, header nav .container .burger-active .line5 {
+  width: 28px;
+  height: 3px;
+}
+
+header nav .container .burger-active .line4 {
+  -webkit-transform: translateX(3px) rotate(45deg);
+          transform: translateX(3px) rotate(45deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transition: width 0.3s ease-in-out 0.5s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width 0.3s ease-in-out 0.5s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+}
+
+header nav .container .burger-active .line5 {
+  -webkit-transform: translateY(10px) rotate(-45deg);
+          transform: translateY(10px) rotate(-45deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transition: width 0.3s ease-in-out 0.5s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width 0.3s ease-in-out 0.5s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
 header .nav-scrolled {
@@ -1366,6 +1413,12 @@ footer p {
 .jumbotron-event .container .img-wrapper {
   padding: 50px;
   background-color: #EBEBEB;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron-event .container .img-wrapper {
+    padding: 30px;
+  }
 }
 
 .jumbotron-event .container .img-wrapper img {

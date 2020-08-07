@@ -123,14 +123,18 @@ header {
             .burger {
                 padding: 20px 10px;
                 display: none;
+                width: 48px;
 
                 .line {
                     height: 3px;
                     background-color: #FFFFFF;
                     margin-bottom: 7px;
                     margin-left: auto;
+                    position: relative;
+                    right: 0;
                     border-radius: 20px;
-                    transition: transform ease-in-out 0.5s;
+                    transition: width ease-in-out 0.3s;
+                    
                 } 
 
                 .line1 {
@@ -143,6 +147,18 @@ header {
 
                 .line3 {
                     width: 21px;
+                }
+
+                .line4 {
+                    width: 0%;
+                    height: 0;
+                    // transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+                }
+
+                .line5 {
+                    width: 0%;
+                    height: 0;
+                    // transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
                 }
 
                 @media screen and (max-width: 992px) {
@@ -158,13 +174,46 @@ header {
                 }
 
                 .line1 {
-                    transform: rotate(135deg) translateY(-15px);
+                    // transform: rotate(135deg) translateY(-15px);
+                    width: 0%;
+                    height: 0;
+                    margin-bottom: 0;
+                    transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+
                 }
                 .line2 {
-                    transform: scale(0);
+                    // transform: scale(0);
+                    width: 0%;
+                    height: 0;
+                    margin-bottom: 0;
+                    transition-delay: 0.1s;
+                    transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+
                 }
                 .line3 {
-                    transform: rotate(-135deg);
+                    // transform: rotate(-135deg);
+                    width: 0%;
+                    height: 0;
+                    margin-bottom: 0;
+                    transition-delay: 0.2s;
+                    transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+
+                }
+                
+                .line4, .line5 {
+                    width: 28px;
+                    height: 3px;
+                }
+                .line4 {
+                    transform: translateX(3px) rotate(45deg) ;
+                    transform-origin: top left;
+                    transition: width 0.3s ease-in-out 0.5s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+                }
+
+                .line5 {
+                    transform: translateY(10px) rotate(-45deg);
+                    transform-origin: top left;
+                    transition: width 0.3s ease-in-out 0.5s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
                 }
             }
         }
