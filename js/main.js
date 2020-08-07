@@ -5,15 +5,9 @@ document.addEventListener('click', function() {
     if (clicking){
         clicking = false;
     } else if (document.getElementsByClassName('display-submenu').length > 0) {
-        // console.log("have");
         document.querySelector('.display-submenu').classList.remove('display-submenu');
     }
 });
-
-// document.querySelector('.nav-list li ul').parentNode.addEventListener('click', function() {
-//     document.querySelector('.nav-list li ul').classList.add('display-submenu');
-//     clicking = true;
-// });
 
 let dropdownMenus = document.querySelectorAll('.nav-list li ul');
 

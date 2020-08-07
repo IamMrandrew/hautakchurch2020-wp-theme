@@ -214,10 +214,75 @@ get_header();
         </div>
     </section>
 
-    <div class="map">
+    <!-- <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0114692578404!2d114.2657493931575!3d22.31540599226394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404038a0cc6661d%3A0x876b97c79896f14f!2z5LuB5r-f6Yar6Zmi6Zmz6ICA5pif5bCP5a24!5e0!3m2!1szh-TW!2shk!4v1538198333696" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
+    </div> -->
 
+    <div class="map" id="map"></div>
+
+    <script>
+        function initMap() { 
+            let map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 22.3177851, lng: 114.2663983 },
+                zoom: 17,
+                streetViewControl: false,
+                fullscreenControl: false,
+                // zoomControl: false
+            });
+
+            let marker1 = addMarker({ lat: 22.3154014, lng: 114.2672707 });
+            let marker2 = addMarker({ lat: 22.3183149, lng: 114.2660506 });
+            let marker3 = addMarker({ lat: 22.3211118, lng: 114.2665366 });
+
+            let infoWindow1 = addInfoWindow(
+                '<style> h3 { font-size: 16px; font-weight: 600 } .title { font-size: 17px; margin-bottom: 0px } p { font-size: 13px; color: #676767; font-weight: 400} i { margin-right: 10px }</style>' +
+                '<h3 class="title">主日崇拜及親子崇拜</h3>' + 
+                '<h3>陳耀星小學</h3>' + 
+                '<p>九龍將軍澳第二期第三十四區仁濟醫院陳耀星小學(坑口和明苑內) </p>' + 
+                '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
+            )
+            
+            let infoWindow2 = addInfoWindow(
+                '<style> h3 { font-size: 16px; font-weight: 600 } .title { font-size: 17px; margin-bottom: 0px } p { font-size: 13px; color: #676767; font-weight: 400} i { margin-right: 10px }</style>' +
+                '<h3 class="title">週六崇拜及其他聚會</h3>' + 
+                '<h3>教會幼稚園</h3>' + 
+                '<p>九龍將軍澳厚德村裕明苑裕榮閣地下</p>' + 
+                '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
+            )
+
+            let infoWindow3 = addInfoWindow(
+                '<style> h3 { font-size: 16px; font-weight: 600 } .title { font-size: 17px; margin-bottom: 0px } p { font-size: 13px; color: #676767; font-weight: 400} i { margin-right: 10px }</style>' +
+                '<h3 class="title">辦公室</h3>' + 
+                '<p>九龍將軍澳坑口村11號B地下</p>' + 
+                '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
+            )
+
+            infoWindow1.open(map, marker1);
+            infoWindow2.open(map, marker2);
+            infoWindow3.open(map, marker3);
+
+            function addInfoWindow(content) {
+                let infoWindow = new google.maps.InfoWindow({
+                content: content
+                });
+
+                return infoWindow;
+            }
+            
+            function addMarker(coord) {
+                let marker = new google.maps.Marker({
+                    position: coord,
+                    map: map,
+                    icon: '<?php echo get_template_directory_uri() ?>/img/marker.svg'
+                });
+
+                return marker;
+            }
+        }
+    </script>
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsYWD7eDXa_K08l89Aypg01zbvhCjjszk&callback=initMap">
+    </script>
 
 
         <?php 
