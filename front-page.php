@@ -281,8 +281,7 @@ get_header();
         }
     </script>
     <script defer
-        <?php require_once 'key.php' ?>
-        src="https://maps.googleapis.com/maps/api/js?key=<?php echo $apikey ?>&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsYWD7eDXa_K08l89Aypg01zbvhCjjszk&callback=initMap">
     </script>
 
 
