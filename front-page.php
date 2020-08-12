@@ -24,8 +24,8 @@ get_header();
                 <h1>非我唯主齊誇勝</h1>
                 <h1>內聖外王顯基督</h1>
                 <h2>疫情下的聚會</h2>
-                <button class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></button>
-                <button class="btn">觀看直播 <i class="fas fa-arrow-circle-right"></i></button>
+                <a class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
         </div>
@@ -38,7 +38,7 @@ get_header();
             <div class="card card-intro">
                 <h3>最新消息</h3>
                 <p>在此關注教會的最新消息，教會將在此發放最新消息，請時常留意網頁更新</p>
-                <button class="btn">閱讀更多最新消息 <i class="fas fa-arrow-circle-right"></i></button>
+                <a class="btn">閱讀更多最新消息 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
 
@@ -84,8 +84,8 @@ get_header();
         <div class="text-wrapper">
             <h3>了解我們</h3>
             <h4>「你們要嘗嘗主恩的滋味，便知道祂是美善；投靠祂的人有福了！」<br>( 詩 三十四 8 )</h4>
-            <button class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></button>
-            <button class="btn">觀看直播 <i class="fas fa-arrow-circle-right"></i></button>
+            <a class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </section>
     
@@ -96,7 +96,7 @@ get_header();
             <div class="card card-intro">
             <h3>其他資訊</h3>
                 <p>在此關注教會的其他資訊，教會將在此發放其他資訊 ，請時常留意網頁更新</p>
-                <button class="btn">閱讀更多其他資訊 <i class="fas fa-arrow-circle-right"></i></button>
+                <a class="btn">閱讀更多其他資訊 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
 
@@ -214,7 +214,7 @@ get_header();
                     <p>褔音主日</p>
                     <p>時間：10月27日 11:00</p>
                     <p>地點：仁濟醫院陳耀星小學禮堂</p>
-                    <button class="btn">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></button>
+                    <a class="btn">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>

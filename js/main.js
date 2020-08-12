@@ -1,12 +1,12 @@
 const nav = document.querySelector('nav');
-const h1 = document.querySelector('.hero .container .text-wrapper');
+const textWrapper = document.querySelector('.hero .container .text-wrapper');
 const jumboVerse = document.querySelector('.jumbotron-verse');
 
-const h1ObserverOptions = {
+const textWrapperObserverOptions = {
     rootMargin: "-382px 0px 0px 0px"
 };
 
-const h1Observer = new IntersectionObserver(function(entries) {
+const textWrapperObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             nav.classList.add('nav-scrolled');
@@ -14,6 +14,6 @@ const h1Observer = new IntersectionObserver(function(entries) {
             nav.classList.remove('nav-scrolled');
         }
     })
-}, h1ObserverOptions);
+}, textWrapperObserverOptions);
 
-h1Observer.observe(h1);
+textWrapperObserver.observe(textWrapper);
