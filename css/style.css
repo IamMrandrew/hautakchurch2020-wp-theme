@@ -1357,6 +1357,7 @@ header .nav-scrolled .container .burger-active .line {
   }
   .jumbotron .glider-contain .glider-next {
     left: 50px;
+    max-width: 25px;
   }
 }
 
