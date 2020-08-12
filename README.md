@@ -5,7 +5,7 @@ Hi. I;m a wordpress theme using `underscores` as starter theme.
 
 This is a theme for hautakchurch.org as you may curious about.
 
-* Scss structred
+* Scss structured.
 * Custom post type for more customization
 * Custom header (nav) with animation hamburger
 * Include bootstrap grid system only
