@@ -942,6 +942,10 @@ header .nav-scrolled .container .nav-list li a {
   }
 }
 
+header .nav-scrolled .container .nav-list li ul a {
+  color: #625C55;
+}
+
 header .nav-scrolled .container .burger .line {
   background-color: #FFFFFF;
 }
@@ -950,11 +954,11 @@ header .nav-scrolled .container .burger-active .line {
   background-color: #625C55;
 }
 
-footer {
+.footer {
   background-color: #343A40;
 }
 
-footer p {
+.footer p {
   padding: 35px;
   color: #FFFFFF;
 }
@@ -1571,6 +1575,24 @@ footer p {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 20px;
+}
+
+.text-container .post-thumbnail img {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.text-container .entry-content img {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.text-container .entry-content h2 {
+  font-size: 25px;
 }
 
 .text-container .entry-content p {

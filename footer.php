@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer>
+	<footer class="footer">
 		<div class="container">
 			<p>©2020 Hau Tak Church 保留一切權利</p>
 		</div>
