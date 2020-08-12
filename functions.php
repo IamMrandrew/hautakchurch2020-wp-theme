@@ -292,6 +292,9 @@ function hautakchurch_scripts() {
 	
 	if (is_front_page()) {
 		wp_enqueue_script('mainjs', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
+	} else {
+		wp_enqueue_script('navScrolledjs', get_template_directory_uri() . '/js/nav-scrolled.js', array(), _S_VERSION, true);
+	
 	}
 	wp_enqueue_script('navjs', get_template_directory_uri() . '/js/nav.js', array(), _S_VERSION, true);
 

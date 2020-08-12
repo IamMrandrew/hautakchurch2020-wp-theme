@@ -215,30 +215,61 @@ header {
             }
         }
     }
+    // .nav-scrolled {
+    //     background-color: #FFFFFF;
+
+    //     .container {
+    //         .nav-brand {
+    //             display: none;
+    //         }
+
+    //         .nav-brand-dark {
+    //             display: block;
+    //         }
+
+    //         .nav-list {
+    //             li {
+    //                 a {
+    //                     color: $primary;
+
+    //                 }
+    //             }
+    //         }
+
+    //         .burger {
+    //             .line {
+    //                 background-color: $primary;
+    //             }
+    //         }
+    //     }
+    // }
+
     .nav-scrolled {
-        background-color: #FFFFFF;
+        background-color: $third;
 
         .container {
-            .nav-brand {
-                display: none;
-            }
-
-            .nav-brand-dark {
-                display: block;
-            }
 
             .nav-list {
                 li {
                     a {
-                        color: $primary;
+                        color: $white;
 
+                        @media screen and (max-width: 992px){
+                            color: $third;
+                        }
                     }
                 }
             }
 
             .burger {
                 .line {
-                    background-color: $primary;
+                    background-color: $white;
+                }
+            }
+
+            .burger-active {
+                .line {
+                    background-color: $third;
                 }
             }
         }

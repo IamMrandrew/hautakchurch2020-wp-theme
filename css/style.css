@@ -929,23 +929,25 @@ header nav .container .burger-active .line5 {
 }
 
 header .nav-scrolled {
-  background-color: #FFFFFF;
-}
-
-header .nav-scrolled .container .nav-brand {
-  display: none;
-}
-
-header .nav-scrolled .container .nav-brand-dark {
-  display: block;
+  background-color: #625C55;
 }
 
 header .nav-scrolled .container .nav-list li a {
-  color: #343A40;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 992px) {
+  header .nav-scrolled .container .nav-list li a {
+    color: #625C55;
+  }
 }
 
 header .nav-scrolled .container .burger .line {
-  background-color: #343A40;
+  background-color: #FFFFFF;
+}
+
+header .nav-scrolled .container .burger-active .line {
+  background-color: #625C55;
 }
 
 footer {
@@ -1557,5 +1559,11 @@ footer p {
 
 .map .gm-ui-hover-effect {
   display: none !important;
+}
+
+.text-container {
+  padding-top: 102px;
+  max-width: 760px;
+  min-height: calc(100vh);
 }
 /*# sourceMappingURL=style.css.map */
