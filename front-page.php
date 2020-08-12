@@ -24,7 +24,7 @@ get_header();
                 <h1>非我唯主齊誇勝</h1>
                 <h1>內聖外王顯基督</h1>
                 <h2>疫情下的聚會</h2>
-                <a class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="<?php echo get_page_link( get_page_by_title( "本會歷史" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
                 <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
@@ -99,8 +99,8 @@ get_header();
         <div class="text-wrapper">
             <h3>了解我們</h3>
             <h4>「你們要嘗嘗主恩的滋味，便知道祂是美善；投靠祂的人有福了！」<br>( 詩 三十四 8 )</h4>
-            <a class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
-            <a class="btn">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn" href="<?php echo get_page_link( get_page_by_title( "本會歷史" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </section>
     
