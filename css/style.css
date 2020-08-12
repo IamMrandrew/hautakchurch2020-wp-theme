@@ -1492,6 +1492,30 @@ header .nav-scrolled .container .burger-active .line {
   display: none !important;
 }
 
+.map .gm-style {
+  font-family: Helvetica, Arial, "PingFangHK",  "Microsoft JhengHei", sans-serif;
+}
+
+.map .gm-style .title {
+  font-size: 17px;
+  margin-bottom: 0px;
+}
+
+.map .gm-style h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.map .gm-style p {
+  font-size: 13px;
+  color: #676767;
+  font-weight: 400;
+}
+
+.map .gm-style i {
+  margin-right: 10px;
+}
+
 .text-container {
   padding-top: calc(102px + 15px);
   max-width: 760px;

@@ -170,7 +170,7 @@
             .glider-next {
                 right: -50px;
             }
-            
+
             @media screen and (max-width: 768px) {
                 .glider-arrow-container {
                     position: relative;
@@ -311,5 +311,27 @@
     }
     .gm-ui-hover-effect {
         display: none !important;
+    }
+    .gm-style {
+        font-family: Helvetica, Arial, "PingFangHK",  "Microsoft JhengHei", sans-serif;
+
+        .title {
+            font-size: 17px; 
+            margin-bottom: 0px
+        }
+
+        h3 { 
+            font-size: 16px; 
+            font-weight: 600 
+        }
+
+        p {
+            font-size: 13px; color: #676767; 
+            font-weight: 400
+        }
+
+        i {
+            margin-right: 10px;
+        }
     }
 }

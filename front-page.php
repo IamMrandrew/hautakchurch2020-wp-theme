@@ -241,15 +241,13 @@ get_header();
             let marker3 = addMarker({ lat: 22.3211118, lng: 114.2665366 });
 
             let infoWindow1 = addInfoWindow(
-                '<style> *{ font-family: Helvetica, Arial, "PingFangHK",  "Microsoft JhengHei", sans-serif } h3 { font-size: 16px; font-weight: 600 } .title { font-size: 17px; margin-bottom: 0px } p { font-size: 13px; color: #676767; font-weight: 400} .map-icon { margin-right: 10px }</style>' +
                 '<h3 class="title">主日崇拜及親子崇拜</h3>' + 
                 '<h3>陳耀星小學</h3>' + 
                 '<p>九龍將軍澳第二期第三十四區仁濟醫院陳耀星小學(坑口和明苑內) </p>' + 
-                '<p> <i class="fas fa-phone fa-flip-horizontal map-icon"></i>2623 6316 </p>'
+                '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
             )
             
             let infoWindow2 = addInfoWindow(
-                '<style> h3 { font-size: 16px; font-weight: 600 } .title { font-size: 17px; margin-bottom: 0px } p { font-size: 13px; color: #676767; font-weight: 400} .map-icon { margin-right: 10px }</style>' +
                 '<h3 class="title">週六崇拜及其他聚會</h3>' + 
                 '<h3>教會幼稚園</h3>' + 
                 '<p>九龍將軍澳厚德村裕明苑裕榮閣地下</p>' + 
@@ -257,7 +255,6 @@ get_header();
             )
 
             let infoWindow3 = addInfoWindow(
-                '<style> h3 { font-size: 16px; font-weight: 600 } .title { font-size: 17px; margin-bottom: 0px } p { font-size: 13px; color: #676767; font-weight: 400} .map-icon { margin-right: 10px }</style>' +
                 '<h3 class="title">辦公室</h3>' + 
                 '<p>九龍將軍澳坑口村11號B地下</p>' + 
                 '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
