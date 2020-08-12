@@ -708,12 +708,16 @@ header nav .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 10px;
 }
 
 header nav .container .nav-brand img {
+  height: 75px;
   padding: 15px 10px 15px 10px;
   margin-right: auto;
 }

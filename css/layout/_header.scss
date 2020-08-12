@@ -12,12 +12,12 @@ header {
         .container {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
             margin-top: 10px;
             
             .nav-brand img {
-                // height: 57px;
-                // justify-self: flex-start;
+                height: 75px;
                 padding: 15px 10px 15px 10px;
                 margin-right: auto;
 
