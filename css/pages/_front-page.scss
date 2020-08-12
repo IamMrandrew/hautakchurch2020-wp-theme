@@ -162,6 +162,15 @@
                     font-size: 25px;
                 }
             }
+
+            .glider-prev {
+                left: -40px;
+            }
+            
+            .glider-next {
+                right: -50px;
+            }
+            
             @media screen and (max-width: 768px) {
                 .glider-arrow-container {
                     position: relative;
@@ -182,135 +191,6 @@
                 }
 
             }
-
-
-
-
-            .glider-prev {
-                left: -40px;
-            }
-            
-            .glider-next {
-                right: -50px;
-            }
-
-            // @media screen and (max-width: 768px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         // left: 80px;
-            //         // left: 22%;
-            //         left: 50px;
-            //     }
-                
-            //     .glider-next {
-            //         // left: 30%;
-            //         right: 580px;
-            //     }
-            // }
-
-            // @media screen and (max-width: 767px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         // left: 80px;
-            //         // left: 22%;
-            //         left: 90px;
-            //     }
-                
-            //     .glider-next {
-            //         // left: 30%;
-            //         right: 230px;
-            //     }
-            // }
-
-            // @media screen and (max-width: 425px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         left: 90px;
-            //     }
-                
-            //     .glider-next {
-            //         right: 230px;
-            //     }
-            // }
-
-            // @media screen and (max-width: 414px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         left: 80px;
-            //     }
-                
-            //     .glider-next {
-            //         right: 220px;
-            //     }
-            // }
-
-            // @media screen and (max-width: 414px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         left: 80px;
-            //     }
-                
-            //     .glider-next {
-            //         right: 210px;
-            //     }
-            // }
-
-            // @media screen and (max-width: 374px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         left: 60px;
-            //     }
-                
-            //     .glider-next {
-            //         right: 200px;
-            //     }
-            // }
-
-            // @media screen and (max-width: 344px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         left: 45px;
-            //     }
-                
-            //     .glider-next {
-            //         right: 190px;
-            //     }
-            // }
-
-            // @media screen and (max-width: 320px) {
-
-            //     .glider-prev, .glider-next {
-            //         bottom: -120px;
-            //     }
-            //     .glider-prev {
-            //         left: 45px;
-            //     }
-                
-            //     .glider-next {
-            //         right: 190px;
-            //     }
-            // }
 
             .glider-prev:hover,
             .glider-next:hover,

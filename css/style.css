@@ -1327,6 +1327,14 @@ header .nav-scrolled .container .burger-active .line {
   font-size: 25px;
 }
 
+.jumbotron .glider-contain .glider-prev {
+  left: -40px;
+}
+
+.jumbotron .glider-contain .glider-next {
+  right: -50px;
+}
+
 @media screen and (max-width: 768px) {
   .jumbotron .glider-contain .glider-arrow-container {
     position: relative;
@@ -1340,14 +1348,6 @@ header .nav-scrolled .container .burger-active .line {
   .jumbotron .glider-contain .glider-next {
     left: 50px;
   }
-}
-
-.jumbotron .glider-contain .glider-prev {
-  left: -40px;
-}
-
-.jumbotron .glider-contain .glider-next {
-  right: -50px;
 }
 
 .jumbotron .glider-contain .glider-prev:hover,
