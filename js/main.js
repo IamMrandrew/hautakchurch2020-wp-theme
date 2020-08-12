@@ -3,7 +3,8 @@ const textWrapper = document.querySelector('.hero .container .text-wrapper');
 const jumboVerse = document.querySelector('.jumbotron-verse');
 
 const textWrapperObserverOptions = {
-    rootMargin: "-382px 0px 0px 0px"
+    // rootMargin: "-382px 0px 0px 0px"
+    rootMargin: "-420px 0px 0px 0px"
 };
 
 const textWrapperObserver = new IntersectionObserver(function(entries) {

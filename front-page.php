@@ -25,7 +25,7 @@ get_header();
                 <h1>內聖外王顯基督</h1>
                 <h2>疫情下的聚會</h2>
                 <a class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
-                <a class="btn">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
         </div>
@@ -38,7 +38,7 @@ get_header();
             <div class="card card-intro">
                 <h3>最新消息</h3>
                 <p>在此關注教會的最新消息，教會將在此發放最新消息，請時常留意網頁更新</p>
-                <a class="btn">閱讀更多最新消息 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新消息')); ?>">閱讀更多最新消息 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
 
@@ -46,7 +46,22 @@ get_header();
             <div class="glider-contain">
 
                 <div class="glider glider1">
-                <div class="glider-item">
+
+                <?php 
+                    query_posts( array(
+                        'category_name'  => '最新消息',
+                        'posts_per_page' => 4
+                    ) );
+
+                    if (have_posts()) :
+                        while (have_posts()):
+                            the_post();
+                            get_template_part('template-parts/content', 'news');
+                        endwhile;
+                    endif;
+                ?>
+
+                <!-- <div class="glider-item">
                     <div class="card">
                         <i class="fas fa-bullhorn"></i>
                         <h3>更新崇拜直播安排通告</h3>
@@ -69,7 +84,7 @@ get_header();
                         <p class="card-time">五月 29, 2020</p>
                         <p class="card-content">門外是誰？（創 4:7）「你若行得好，豈不蒙悅納？你若行得不好，罪就伏在門前。它必戀慕你，你郤要制伏它...</p>
                     </div>
-                </div>
+                </div> -->
                 </div>
             <div class="glider-arrow-container">
                 <button aria-label="Previous" class="glider-prev glider-prev-1"><i class="fas fa-chevron-circle-left"></i></button>
@@ -96,13 +111,28 @@ get_header();
             <div class="card card-intro">
             <h3>其他資訊</h3>
                 <p>在此關注教會的其他資訊，教會將在此發放其他資訊 ，請時常留意網頁更新</p>
-                <a class="btn">閱讀更多其他資訊 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="<?php echo get_category_link( get_cat_ID('其他資訊')); ?>">閱讀更多其他資訊 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
             </div>
 
             <div class="col-lg-8">
             <div class="glider-contain">
                 <div class="glider glider2">
+
+                <?php 
+                    query_posts( array(
+                        'category_name'  => '其他資訊',
+                        'posts_per_page' => 4
+                    ) );
+
+                    if (have_posts()) :
+                        while (have_posts()):
+                            the_post();
+                            get_template_part('template-parts/content', 'notice');
+                        endwhile;
+                    endif;
+                ?>
+<!-- 
                 <div class="glider-item">
                     <div class="card">
                         <i class="fas fa-sticky-note"></i>
@@ -126,7 +156,7 @@ get_header();
                         <p class="card-time">五月 29, 2020</p>
                         <p class="card-content">門外是誰？（創 4:7）「你若行得好，豈不蒙悅納？你若行得不好，罪就伏在門前。它必戀慕你，你郤要制伏它...</p>
                     </div>
-                </div>
+                </div> -->
                 </div>
             <div class="glider-arrow-container">
                 <button aria-label="Previous" class="glider-prev glider-prev-2"><i class="fas fa-chevron-circle-left"></i></button>
@@ -140,8 +170,6 @@ get_header();
     <script>
 
     new Glider(document.querySelector('.glider1'), {
-        // slidesToShow: 'auto',
-        // itemWidth: 320,
         slidesToShow: 1,
         draggable: true,
         dragVelocity: 1,
@@ -170,8 +198,6 @@ get_header();
     });
 
     new Glider(document.querySelector('.glider2'), {
-        // slidesToShow: 'auto',
-        // itemWidth: 320,
         slidesToShow: 1,
         draggable: true,
         dragVelocity: 1,
@@ -219,10 +245,6 @@ get_header();
             </div>
         </div>
     </section>
-
-    <!-- <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0114692578404!2d114.2657493931575!3d22.31540599226394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404038a0cc6661d%3A0x876b97c79896f14f!2z5LuB5r-f6Yar6Zmi6Zmz6ICA5pif5bCP5a24!5e0!3m2!1szh-TW!2shk!4v1538198333696" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div> -->
 
     <div class="map" id="map"></div>
 

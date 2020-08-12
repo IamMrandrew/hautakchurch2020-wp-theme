@@ -1174,7 +1174,7 @@ header .nav-scrolled .container .burger-active .line {
   width: 100%;
   height: 100%;
   background-color: #3C2F26;
-  opacity: 46%;
+  opacity: 56%;
 }
 
 .hero .container {
@@ -1236,10 +1236,12 @@ header .nav-scrolled .container .burger-active .line {
 
 .card > i {
   padding: 10px 15px;
+  color: #343A40;
 }
 
 .card h3 {
   font-size: 18px;
+  color: #343A40;
 }
 
 .card p {
@@ -1303,6 +1305,10 @@ header .nav-scrolled .container .burger-active .line {
   margin: 60px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.jumbotron .glider-contain a {
+  text-decoration: none;
 }
 
 .jumbotron .glider-contain .glider-arrow-container {

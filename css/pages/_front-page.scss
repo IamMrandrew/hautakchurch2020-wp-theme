@@ -11,7 +11,7 @@
         width: 100%;
         height: 100%;
         background-color: #3C2F26;
-        opacity: 46%;
+        opacity: 56%;
     
     }
     
@@ -67,10 +67,12 @@
 
     &>i {
         padding: 10px 15px;
+        color: $primary;
     }
 
     h3 {
         font-size: 18px;
+        color : $primary;
     }
 
     p {
@@ -136,6 +138,9 @@
         margin-left: auto;
         margin-right: auto;
 
+        a {
+            text-decoration: none;
+        }
         .glider-arrow-container {
             max-width: 240px;
             margin-left: auto;
