@@ -19,8 +19,11 @@ get_header();
     <section class="hero" style="background-image: url('<?php echo get_template_directory_uri()?>/img/hero-image.png');">
 		<div class="container">
             <div class="text-wrapper">
-                <h1>25周年堂慶 <br> 同頌神恩</h1>
-                <h2>建人建殿 愛神愛人</h2>
+                <!-- <h1>25周年堂慶 <br> 同頌神恩</h1>
+                <h2>建人建殿 愛神愛人</h2> -->
+                <h1>非我唯主齊誇勝</h1>
+                <h1>內聖外王顯基督</h1>
+                <h2>疫情下的聚會</h2>
                 <button class="btn">加入我們 <i class="fas fa-arrow-circle-right"></i></button>
                 <button class="btn">觀看直播 <i class="fas fa-arrow-circle-right"></i></button>
             </div>
@@ -41,6 +44,7 @@ get_header();
 
             <div class="col-lg-8">
             <div class="glider-contain">
+
                 <div class="glider glider1">
                 <div class="glider-item">
                     <div class="card">
@@ -67,9 +71,10 @@ get_header();
                     </div>
                 </div>
                 </div>
-                
+            <div class="glider-arrow-container">
                 <button aria-label="Previous" class="glider-prev glider-prev-1"><i class="fas fa-chevron-circle-left"></i></button>
                 <button aria-label="Next" class="glider-next glider-next-1"><i class="fas fa-chevron-circle-right"></i></button>
+            </div>
             </div>
             </div>
         </div>
@@ -123,9 +128,10 @@ get_header();
                     </div>
                 </div>
                 </div>
-                
+            <div class="glider-arrow-container">
                 <button aria-label="Previous" class="glider-prev glider-prev-2"><i class="fas fa-chevron-circle-left"></i></button>
                 <button aria-label="Next" class="glider-next glider-next-2"><i class="fas fa-chevron-circle-right"></i></button>
+            </div>
             </div>
             </div>
         </div>
