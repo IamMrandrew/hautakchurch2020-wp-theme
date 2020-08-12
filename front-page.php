@@ -240,7 +240,7 @@ get_header();
                     <p>褔音主日</p>
                     <p>時間：10月27日 11:00</p>
                     <p>地點：仁濟醫院陳耀星小學禮堂</p>
-                    <a class="btn">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
+                    <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新活動')); ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>

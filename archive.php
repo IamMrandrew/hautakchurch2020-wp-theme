@@ -18,8 +18,10 @@ get_header();
 			<?php
 				while (have_posts()) :
 					the_post();
-
-					get_template_part('template-parts/content', 'archive');
+					if (is_category(get_cat_ID('最新活動')))
+						get_template_part('template-parts/content', 'event-archive');
+					else
+						get_template_part('template-parts/content', 'archive');
 				
 			?>
 			<?php
