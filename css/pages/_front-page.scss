@@ -27,6 +27,7 @@
 
             h1 {
                 font-size: 60px;
+                font-weight: 600;
 
                 br {
                     display: none;
@@ -43,6 +44,7 @@
 
             h2 {
                 font-size: 60px;
+                font-weight: 600;
 
                 @media screen and (max-width: 765px) {
                     font-size: 32px;

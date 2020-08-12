@@ -88,7 +88,7 @@ a[href^=tel] {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
   padding: 10px 15px 10px;
 }
@@ -964,6 +964,7 @@ footer p {
   text-decoration: none;
   border: none;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .glider-contain {
@@ -1180,6 +1181,7 @@ footer p {
 
 .hero .container .text-wrapper h1 {
   font-size: 60px;
+  font-weight: 600;
 }
 
 .hero .container .text-wrapper h1 br {
@@ -1197,6 +1199,7 @@ footer p {
 
 .hero .container .text-wrapper h2 {
   font-size: 60px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 765px) {
