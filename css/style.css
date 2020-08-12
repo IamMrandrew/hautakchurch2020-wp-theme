@@ -1562,8 +1562,20 @@ footer p {
 }
 
 .text-container {
-  padding-top: 102px;
+  padding-top: calc(102px + 15px);
   max-width: 760px;
   min-height: calc(100vh);
+}
+
+.text-container .entry-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.text-container .entry-content p {
+  font-size: 17px;
+  line-height: 28px;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */
