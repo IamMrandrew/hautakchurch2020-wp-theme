@@ -21,7 +21,7 @@ header {
                 padding: 15px 10px 15px 10px;
                 margin-right: auto;
 
-                @media screen and (max-width: 992px){
+                @media screen and (max-width: $nav-breakpoint){
                     box-sizing: content-box;
                     height: 40px;
                 }
@@ -44,7 +44,7 @@ header {
                         font-size: 18px;
                         font-weight: 600;
 
-                        @media screen and (max-width: 992px) {
+                        @media screen and (max-width: $nav-breakpoint) {
                             color: $primary;
                         }
                         
@@ -79,7 +79,7 @@ header {
         
                 }
                 
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: $nav-breakpoint) {
                 position: absolute;
                 right: 0px;
                 top: 0px;
@@ -161,7 +161,7 @@ header {
                     // transition: width ease-in-out 0.3s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
                 }
 
-                @media screen and (max-width: 992px) {
+                @media screen and (max-width: $nav-breakpoint) {
                     display: block;
                     position: relative;
                     z-index: 10000;
@@ -254,7 +254,7 @@ header {
                     a {
                         color: $white;
 
-                        @media screen and (max-width: 992px){
+                        @media screen and (max-width: $nav-breakpoint){
                             color: $third;
                         }
                     }
