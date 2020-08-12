@@ -372,6 +372,15 @@
                 margin-left: auto;
                 margin-right: auto;
 
+                h3 {
+                    font-size: 25px;
+                }
+            
+                p {
+                    font-size: 16px;
+                    color: $minor;
+                }
+
                 .btn {
                     background-color: $primary;
                     color: #FFFFFF;
