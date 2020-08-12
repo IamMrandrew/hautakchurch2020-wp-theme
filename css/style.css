@@ -122,7 +122,7 @@ p {
 }
 
 body {
-  font-family: Helvetica, Arial, "PingFangHK",  "Microsoft JhengHei", sans-serif;
+  font-family: Helvetica, Arial, "PingFangHK", "Microsoft JhengHei", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -964,7 +964,6 @@ footer p {
   text-decoration: none;
   border: none;
   font-size: 18px;
-  font-weight: 500;
 }
 
 .glider-contain {
