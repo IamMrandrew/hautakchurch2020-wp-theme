@@ -6,6 +6,14 @@
     .entry-title {
         font-size: 28px;
         font-weight: 600;
+        margin-bottom: 10px;
+        padding-top: 30px;
+    }
+
+    .entry-meta {
+        padding: 0px 15px 15px 15px;
+        color: $minor;
+        font-size: 13px;
         margin-bottom: 20px;
     }
 
@@ -42,10 +50,76 @@
 
         //Add style for quote
 
-        //Add style for list
+        blockquote {
+            border-color: $secondary;
+            border-style: solid;
+            background-color: #f6f6f6;
         
-        //Add style for pre
+            /*rtl:ignore*/
+            border-width: 0 0 0 0.2rem;
+            color: inherit;
+            font-size: 1em;
+            margin: 4rem 0;
+        
+            /*rtl:ignore*/
+            padding: 0.5rem 0 0.5rem 2rem;
 
-        //ADd style for date
+            p {
+                margin-bottom: 0px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        //Add style for list
+
+        ul,
+        ol {
+            margin: 0 0 1.5em 1.5em;
+        }
+        
+        ul {
+            list-style: disc;
+        }
+
+        ul ul {
+            list-style: circle;
+        }
+
+        ul ul ul {
+            list-style: square;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+
+        ol ol {
+            list-style: lower-alpha;
+        }
+
+        ol ol ol {
+            list-style: lower-roman;
+        }
+
+        li {
+            line-height: 1.5;
+            margin: 0.5rem 0 0 2rem;
+        }
+
+        li > ul,
+        li > ol {
+            margin: 1rem 0 0 2rem;
+        }
+    }
+
+    .entry-footer {
+        padding: 0px 15px;
+        margin-bottom: 30px;
+
+        a {
+            color: $secondary;
+            text-decoration: none;
+        }
     }
 }
