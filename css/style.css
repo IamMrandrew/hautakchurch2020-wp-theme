@@ -1532,6 +1532,32 @@ header .nav-scrolled .container .burger-active .line {
   margin-right: 10px;
 }
 
+.pre_post_link, .next_post_link {
+  padding: 0px 15px;
+  margin-bottom: 50px;
+  color: #625C55;
+  font-weight: 500;
+}
+
+.pre_post_link i, .next_post_link i {
+  margin-right: 7px;
+}
+
+.pre_post_link a, .next_post_link a {
+  text-decoration: none;
+  color: #4d4842;
+}
+
+.pre_post_link a:hover, .next_post_link a:hover {
+  color: #625C55;
+}
+
+.pre_post_link a .pre_post_title, .pre_post_link a .next_post_title, .next_post_link a .pre_post_title, .next_post_link a .next_post_title {
+  margin: 15px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .text-container {
   padding-top: calc(102px + 15px);
   max-width: 760px;

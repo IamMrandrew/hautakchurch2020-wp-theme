@@ -49,7 +49,7 @@
 			// 	'</span>'
 			// );
 
-			edit_post_link( __( '<i class="fas fa-edit"></i> 編輯文章', 'hautakchurch' ), '<span>', '</span>' );
+			edit_post_link( __( '<i class="fas fa-edit"></i> 編輯頁面', 'hautakchurch' ), '<span>', '</span>' );
 
 			?>
 		</footer><!-- .entry-footer -->

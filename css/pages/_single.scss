@@ -1,0 +1,25 @@
+.pre_post_link, .next_post_link {
+    padding: 0px 15px;
+    margin-bottom: 50px;
+    color: $secondary;
+    font-weight: 500;
+
+    i {
+        margin-right: 7px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #4d4842;
+
+        &:hover {
+            color: $secondary;
+        }
+        .pre_post_title, .next_post_title {
+            margin: 15px 0px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+    }
+}

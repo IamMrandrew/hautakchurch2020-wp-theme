@@ -19,8 +19,8 @@ get_header();
 			get_template_part( 'template-parts/content', get_post_type() );
 			
 		?>
-			<?php previous_post_link( '<span class="pre_post_link">%link</span>',  '上一篇 %title', true ); ?>
-			<?php next_post_link( '<span class="next_post_link">%link</span>',  '下一篇 %title', true ); ?>
+			<?php previous_post_link( '<div class="pre_post_link"><i class="fas fa-angle-left"></i>上一篇%link</div>',  '<div class="pre_post_title">%title</div>', true ); ?>
+			<?php next_post_link( '<div class="next_post_link"><i class="fas fa-angle-right"></i>下一篇 %link</div>',  'div class="next_post_title">%title</div>', true ); ?>
 		<?php
 			// the_post_navigation(
 			// 	array(

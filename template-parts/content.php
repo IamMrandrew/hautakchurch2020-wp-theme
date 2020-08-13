@@ -59,7 +59,10 @@
 		?>
 	</div><!-- .entry-content -->
 	
-	<?php edit_post_link( __( '編輯帖子', 'hautakchurch' ), '<p>', '</p>', null, 'btn btn-dark btn-edit-post-link' ); ?>
+	<?php 
+		// edit_post_link( __( '編輯帖子', 'hautakchurch' ), '<p>', '</p>', null, 'btn btn-dark btn-edit-post-link' ); 
+		edit_post_link( __( '<i class="fas fa-edit"></i> 編輯文章', 'hautakchurch' ), '<span class="entry-footer">', '</span>' );
+	?>
 
 	<footer class="entry-footer">
 		<?php 
