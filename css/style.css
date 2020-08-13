@@ -1558,6 +1558,22 @@ header .nav-scrolled .container .burger-active .line {
   font-weight: 600;
 }
 
+.post_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+}
+
+.post_links .right {
+  text-align: right;
+}
+
+.post_links .right i {
+  margin-right: 0px;
+  margin-left: 7px;
+}
+
 .text-container {
   padding-top: calc(102px + 15px);
   max-width: 760px;

@@ -23,3 +23,18 @@
 
     }
 }
+
+.post_links {
+    display: flex;
+    margin-top: 50px;
+    // flex-wrap: wrap;
+
+    .right {
+        text-align: right;
+        
+        i {
+            margin-right: 0px;
+            margin-left: 7px;
+        }
+    }
+}
