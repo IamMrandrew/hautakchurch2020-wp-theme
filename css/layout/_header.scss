@@ -245,7 +245,7 @@ header {
     // }
 
     .nav-scrolled {
-        background-color: $third;
+        background-color: $secondary;
 
         .container {
 
@@ -255,13 +255,13 @@ header {
                         color: $white;
 
                         @media screen and (max-width: $nav-breakpoint){
-                            color: $third;
+                            color: $secondary;
                         }
                     }
 
                     ul {
                         a {
-                            color: $third;
+                            color: $secondary;
                         }
                     }
                 }
@@ -275,7 +275,7 @@ header {
 
             .burger-active {
                 .line {
-                    background-color: $third;
+                    background-color: $secondary;
                 }
             }
         }

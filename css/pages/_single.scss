@@ -1,27 +1,31 @@
 .pre_post_link, .next_post_link {
     padding: 0px 15px;
     margin-bottom: 50px;
-    color: $secondary;
+
     font-weight: 500;
+    font-size: 12px;
 
     i {
         margin-right: 7px;
     }
 
+
+    .pre_post_title, .next_post_title {
+        margin: 15px 0px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
     a {
         text-decoration: none;
-        color: #4d4842;
+        color: $third;
+        transition: color 0.5s;
 
         &:hover {
-            color: $secondary;
+            color: $secondary-contrast;
         }
-        .pre_post_title, .next_post_title {
-            margin: 15px 0px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
     }
+    
 }
 
 .post_links {

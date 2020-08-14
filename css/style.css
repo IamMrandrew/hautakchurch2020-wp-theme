@@ -1225,6 +1225,12 @@ header .nav-scrolled .container .burger-active .line {
 .hero .container .text-wrapper .btn {
   background-color: #343A40;
   color: #FFFFFF;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.hero .container .text-wrapper .btn:hover {
+  background-color: #474f57;
 }
 
 .card {
@@ -1262,6 +1268,12 @@ header .nav-scrolled .container .burger-active .line {
   font-size: 16px;
   color: #FFFFFF;
   background-color: #343A40;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.card .btn:hover {
+  background-color: #474f57;
 }
 
 .card-intro {
@@ -1398,6 +1410,12 @@ header .nav-scrolled .container .burger-active .line {
 .jumbotron-verse .text-wrapper .btn {
   background-color: #978F87;
   color: #FFFFFF;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.jumbotron-verse .text-wrapper .btn:hover {
+  background-color: #b8b1ab;
 }
 
 @media screen and (max-width: 768px) {
@@ -1493,6 +1511,12 @@ header .nav-scrolled .container .burger-active .line {
 .jumbotron-event .container .col-lg-5 .text-wrapper .btn {
   background-color: #343A40;
   color: #FFFFFF;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.jumbotron-event .container .col-lg-5 .text-wrapper .btn:hover {
+  background-color: #474f57;
 }
 
 .map {
@@ -1535,27 +1559,29 @@ header .nav-scrolled .container .burger-active .line {
 .pre_post_link, .next_post_link {
   padding: 0px 15px;
   margin-bottom: 50px;
-  color: #625C55;
   font-weight: 500;
+  font-size: 12px;
 }
 
 .pre_post_link i, .next_post_link i {
   margin-right: 7px;
 }
 
-.pre_post_link a, .next_post_link a {
-  text-decoration: none;
-  color: #4d4842;
-}
-
-.pre_post_link a:hover, .next_post_link a:hover {
-  color: #625C55;
-}
-
-.pre_post_link a .pre_post_title, .pre_post_link a .next_post_title, .next_post_link a .pre_post_title, .next_post_link a .next_post_title {
+.pre_post_link .pre_post_title, .pre_post_link .next_post_title, .next_post_link .pre_post_title, .next_post_link .next_post_title {
   margin: 15px 0px;
   font-size: 20px;
   font-weight: 600;
+}
+
+.pre_post_link a, .next_post_link a {
+  text-decoration: none;
+  color: #4d4842;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.pre_post_link a:hover, .next_post_link a:hover {
+  color: #978F87;
 }
 
 .post_links {
