@@ -286,6 +286,20 @@ get_header();
             infoWindow2.open(map, marker2);
             infoWindow3.open(map, marker3);
 
+            marker1.addListener('click', function() {
+                infoWindow1.open(map, marker1);
+            });
+
+
+            marker2.addListener('click', function() {
+                infoWindow2.open(map, marker2);
+            });
+
+
+            marker3.addListener('click', function() {
+                infoWindow3.open(map, marker3);
+            });
+
             function addInfoWindow(content) {
                 let infoWindow = new google.maps.InfoWindow({
                 content: content

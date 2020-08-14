@@ -1529,7 +1529,7 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .map .gm-ui-hover-effect {
-  display: none !important;
+  margin: 10px !important;
 }
 
 .map .gm-style {
