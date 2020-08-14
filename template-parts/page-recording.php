@@ -137,7 +137,7 @@ get_header();
             'post_status'       => 'publish',
             'orderby'           => 'date',
             'order'             => 'DESC',
-            'posts_per_page'    => 2,
+            'posts_per_page'    => 10,
             'paged'             => get_query_var('paged'),
             'date_query'        => array (
                                         'year'  => $dateYear,
