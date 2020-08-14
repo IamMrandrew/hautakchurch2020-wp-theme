@@ -1725,6 +1725,10 @@ header .nav-scrolled .container .burger-active .line {
   padding-top: calc(108px + 15px);
 }
 
+.recording.text-container {
+  max-width: 890px;
+}
+
 .recording h1 {
   font-size: 28px;
 }
