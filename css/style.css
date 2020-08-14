@@ -786,6 +786,10 @@ header nav .container .nav-list li:hover > ul, header nav .container .nav-list l
   display: flex;
 }
 
+header nav .container .nav-list .menu-item-has-children {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1199px) {
   header nav .container .nav-list {
     position: absolute;
@@ -1601,9 +1605,9 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .text-container {
-  padding-top: calc(102px + 15px);
+  padding-top: calc(108px + 15px);
   max-width: 760px;
-  min-height: calc(100vh);
+  min-height: calc(95vh);
 }
 
 .text-container .entry-title {
@@ -1714,5 +1718,14 @@ header .nav-scrolled .container .burger-active .line {
 .text-container .entry-footer a {
   color: #625C55;
   text-decoration: none;
+}
+
+.content-wrapper {
+  min-height: calc(95vh);
+  padding-top: calc(108px + 15px);
+}
+
+.recording h1 {
+  font-size: 28px;
 }
 /*# sourceMappingURL=style.css.map */

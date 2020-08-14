@@ -35,8 +35,8 @@ get_header();
 
 <!--<img class="my-2" src="#" width="100%">
     <img class="my-2" src="img/cover1.jpg" width="100%"> -->
-<div class="container content-wrapper">
-    <h1 style="padding: 15px"><?php the_title() ?></h1>
+<div class="container content-wrapper recording">
+    <h1><?php the_title() ?></h1>
     <form method="GET">
         <select name="orderby" id="orderby">
             <option value="date">new to old</option>

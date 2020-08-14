@@ -49,7 +49,7 @@ header {
                         }
                         
                     }
-        
+
                     ul {
                         position: absolute;
                         display: none;
@@ -77,6 +77,10 @@ header {
                     display: flex;
                 }
         
+                }
+
+                .menu-item-has-children {
+                    cursor: pointer;
                 }
                 
             @media screen and (max-width: $nav-breakpoint) {
