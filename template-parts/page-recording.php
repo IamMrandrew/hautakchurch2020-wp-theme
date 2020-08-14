@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 講道錄音
+ * Template Name: 講道信息
  * 
  * The template for displaying all pages
  *
