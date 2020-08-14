@@ -1728,4 +1728,51 @@ header .nav-scrolled .container .burger-active .line {
 .recording h1 {
   font-size: 28px;
 }
+
+.timetable .rows {
+  margin-top: 35px;
+  margin-bottom: 70px;
+}
+
+.timetable .rows h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #625C55;
+  text-align: center;
+}
+
+.timetable .rows .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.timetable .rows .flex-container .col-lg-6 {
+  padding: 15px;
+}
+
+.timetable .rows .flex-container .col-lg-6 h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.timetable .rows .flex-container .col-lg-6 p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.timetable .rows .flex-container .col-lg-6 p .location {
+  margin-right: 30px;
+}
+
+.timetable .rows .flex-container .single-item {
+  margin-right: auto;
+}
 /*# sourceMappingURL=style.css.map */
