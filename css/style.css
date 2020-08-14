@@ -1729,6 +1729,136 @@ header .nav-scrolled .container .burger-active .line {
   font-size: 28px;
 }
 
+.recording .card-latest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 30px 0px;
+  background-color: #F8F8F8;
+  padding: 30px;
+  border-radius: 49px;
+}
+
+.recording .card-latest .col-md-5 {
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .recording .card-latest .col-md-5 {
+    margin: 0px 0px 30px 0px;
+    padding: 0px;
+  }
+}
+
+.recording .card-latest .col-md-7 {
+  padding-left: 15px;
+}
+
+.recording .card-latest .img-wrapper {
+  border-radius: 49px;
+  overflow: hidden;
+}
+
+.recording .card-latest .img-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.recording .archive-recording div:nth-child(odd) {
+  padding-right: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .recording .archive-recording div:nth-child(odd) {
+    padding-right: 0px;
+  }
+}
+
+.recording .card-wrapper {
+  margin: 17.5px 0px;
+}
+
+.recording .card {
+  background-color: #F8F8F8;
+  padding: 30px;
+  border-radius: 49px;
+  width: 100%;
+}
+
+.recording .card .preacher {
+  font-size: 15px;
+  font-weight: 500;
+  color: #343A40;
+}
+
+.recording .card .preacher i {
+  margin-right: 10px;
+}
+
+.recording .card .time {
+  font-size: 13px;
+  font-weight: 500;
+  color: #676767;
+  float: right;
+}
+
+.recording .card .card-title {
+  font-size: 25px;
+}
+
+.recording .card .quote {
+  font-size: 16px;
+  color: #676767;
+}
+
+.recording .card .quote::before {
+  content: "- ";
+}
+
+.recording .card .wp-block-audio audio {
+  min-width: 200px;
+}
+
+.recording .filter-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recording .filter-bar .filter-title {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+.recording .filter-bar .filter-form {
+  padding: 10px 15px;
+}
+
+.recording .archive-recording {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.recording .pagination {
+  text-align: center;
+}
+
 .timetable .rows {
   margin-top: 35px;
   margin-bottom: 70px;

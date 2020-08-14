@@ -8,16 +8,17 @@
  */
 
 ?>
-    <div class="card shadow-sm">
-        <div class="row px-3">
-            <div class="col">
-                <span><h4 style="font-size: 17px"><?php echo get_the_date() ?></h4></span>
-            </div>
-            <div class="col text-right">
-                <span><h4 style="font-size: 17px"><?php echo get_post_meta(get_the_ID(), '_preacher_name_value_key', true) ?></h4></span>
-            </div>
-        </div>
-        <h3 class="px-3" style="font-size: 19px"><?php the_title() ?></h3>
-        <p class="blockquote-footer pl-3"><?php echo get_post_meta(get_the_ID(), '_bible_verse_value_key', true) ?></p>
-        <?php the_content() ?>
+    <div class="card-wrapper col-md-6">
+        <article class="card">
+            <p class="meta">
+                <span class="preacher">
+                    <i class="fas fa-user"></i>
+                    <?php echo get_post_meta(get_the_ID(), '_preacher_name_value_key', true) ?>
+                </span>
+                <span class="time"><?php echo get_the_date('M d, Y')?></span>
+            </p>    
+            <h3 class="card-title"><?php the_title() ?></h3>
+            <p class="quote"><?php echo get_post_meta(get_the_ID(), '_bible_verse_value_key', true) ?></p>
+            <?php the_content() ?>
+        </article>
     </div>

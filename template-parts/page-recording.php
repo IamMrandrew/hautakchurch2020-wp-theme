@@ -31,108 +31,156 @@ get_header();
         $selectedPreacher = $_GET['preachers'];
     }
 ?>
-<!-- <h2 class="my-4"></h2>         -->
 
-<!--<img class="my-2" src="#" width="100%">
-    <img class="my-2" src="img/cover1.jpg" width="100%"> -->
-<div class="container content-wrapper recording">
-    <h1><?php the_title() ?></h1>
-    <form method="GET">
-        <select name="orderby" id="orderby">
-            <option value="date">new to old</option>
-        </select>
 
-        <select name="date-year" id="date-year">
-            <option value="">year</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-        </select>
-
-        <select name="date-month" id="date-month">
-            <option value="">month</option>
-            <option value="12">12</option>
-            <option value="11">11</option>
-            <option value="10">10</option>
-            <option value="9">9</option>
-            <option value="8">8</option>
-            <option value="7">7</option>
-            <option value="6">6</option>
-            <option value="5">5</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1</option>
-        </select>
-        <select name="preachers" id="preachers">
-            <option value="">preacher</option>
-        <?php 
-            $recordings = get_posts(array(
-                            'post_type' => 'recording',
-                            'post_status'       => 'publish',
-                            'numberposts'   => -1,
-
+<div class="container text-container recording">
+    <?php the_title('<h1 class="entry-title">', '</h1>') ?>
+    <section class="card-latest card">
+        <?php
+            $recordingQuery = new WP_Query(array(
+                    'post_type'         => 'recording',
+                    'post_status'       => 'publish',
+                    'orderby'           => 'date',
+                    'order'             => 'DESC',
+                    'posts_per_page'    => 1,
             ));
 
-            $allPreacher = array();
-            foreach ($recordings as $recordingPost) {
-                $allPreacher[] = get_post_meta($recordingPost->ID, '_preacher_name_value_key', true);
-            }
-
-            $preachers = array_unique($allPreacher);
-            foreach ($preachers as $preacher):
+            while ( $recordingQuery->have_posts() ) :
+                $recordingQuery->the_post();
         ?>
-                <option value="<?php echo $preacher ?>"><?php echo $preacher;?></option>
-        <?php endforeach ?>
+        <div class="col-md-5">
+            <div class="img-wrapper">
+                <img src="<?php echo get_template_directory_uri()?>/img/recording-img.png" alt="recording-img">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <p class="meta">
+                <span class="preacher">
+                    <i class="fas fa-user"></i>
+                    <?php echo get_post_meta(get_the_ID(), '_preacher_name_value_key', true) ?>
+                </span>
+                <span class="time"><?php echo get_the_date('M d, Y')?></span>
+            </p>    
+            <h3 class="card-title"><?php the_title() ?></h3>
+            <p class="quote"><?php echo get_post_meta(get_the_ID(), '_bible_verse_value_key', true) ?></p>
+            <?php the_content() ?>
+        </div>
+    </section>
+    <?php endwhile; ?>
 
-        </select>
-    <button type="submit">filter</button>
-    </form>
 
-    <div class="row">
-    <?php
-    $recordingQuery = new WP_Query(array(
-        'post_type'         => 'recording',
-        'post_status'       => 'publish',
-        'orderby'           => 'date',
-        'order'             => 'DESC',
-        'posts_per_page'    => 10,
-        'paged'             => get_query_var('paged'),
-        'date_query'        => array (
-                                    'year'  => $dateYear,
-                                    'month' => $dateMonth,
-                                ),
-        'meta_query'        => array (
-                                array(
-                                           
-                                    'key'       => '_preacher_name_value_key',
-                                    'value'     => $selectedPreacher,
-                                    'compare'   => 'LIKE'
-                                )
-                                )
+    <section class="filter-bar">
+        <div class="col-lg-5">
+            <h2 class="filter-title">過往講道錄音</h2>
+        </div>
 
-        // 'category_name' => '講道錄音'`
-    ));
+        <div class="col-lg-7">
+        <form class="filter-form" method="GET">
+            <select name="orderby" id="orderby">
+                <option value="">排序</option>
+                <option value="date">從最新至最舊</option>
+            </select>
 
-    while ( $recordingQuery->have_posts() ) :
-        $recordingQuery->the_post();
-    ?>
-        <div class="col-lg-4 my-2">
+            <select name="date-year" id="date-year">
+                <option value="">年份</option>
+                <option value="2020">2020年</option>
+                <option value="2019">2019年</option>
+                <option value="2018">2018年</option>
+            </select>
+
+            <select name="date-month" id="date-month">
+                <option value="">月份</option>
+                <option value="12">12月</option>
+                <option value="11">11月</option>
+                <option value="10">10月</option>
+                <option value="9">9月</option>
+                <option value="8">8月</option>
+                <option value="7">7月</option>
+                <option value="6">6月</option>
+                <option value="5">5月</option>
+                <option value="4">4月</option>
+                <option value="3">3月</option>
+                <option value="2">2月</option>
+                <option value="1">1月</option>
+            </select>
+            <select name="preachers" id="preachers">
+                <option value="">講員</option>
+            <?php 
+                $recordings = get_posts(array(
+                                'post_type' => 'recording',
+                                'post_status'       => 'publish',
+                                'numberposts'   => -1,
+
+                ));
+
+                $allPreacher = array();
+                foreach ($recordings as $recordingPost) {
+                    $allPreacher[] = get_post_meta($recordingPost->ID, '_preacher_name_value_key', true);
+                }
+
+                $preachers = array_unique($allPreacher);
+                foreach ($preachers as $preacher):
+            ?>
+                    <option value="<?php echo $preacher ?>"><?php echo $preacher;?></option>
+            <?php endforeach ?>
+
+            </select>
+        <button type="submit">篩選</button>
+        </form>
+        </div>
+    </section>
+    
+    <section class="archive-recording">
         <?php
-        get_template_part( 'template-parts/content', 'recording' );
+        $recordingQuery = new WP_Query(array(
+            'post_type'         => 'recording',
+            'post_status'       => 'publish',
+            'orderby'           => 'date',
+            'order'             => 'DESC',
+            'posts_per_page'    => 2,
+            'paged'             => get_query_var('paged'),
+            'date_query'        => array (
+                                        'year'  => $dateYear,
+                                        'month' => $dateMonth,
+                                    ),
+            'meta_query'        => array (
+                                    array(
+                                            
+                                        'key'       => '_preacher_name_value_key',
+                                        'value'     => $selectedPreacher,
+                                        'compare'   => 'LIKE'
+                                    )
+                                    )
+
+            // 'category_name' => '講道錄音'`
+        ));
+
+        while ( $recordingQuery->have_posts() ) :
+            $recordingQuery->the_post();
+
+            get_template_part( 'template-parts/content', 'recording' );
+
+        endwhile; // End of the loop.
         ?>
-    </div>
+    </section>
+    
+    <div class="pagination">
     <?php
-    endwhile; // End of the loop.
+        the_posts_navigation();
 
-    the_posts_navigation();
-
-    echo paginate_links(array(
-        'total' => $recordingQuery->max_num_pages
-    ));
+        echo paginate_links(array(
+            'total' => $recordingQuery->max_num_pages
+        ));
     ?>
-
     </div>
+
+
+</div>
+
+
+
+
+
 
     
 </div>
