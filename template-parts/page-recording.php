@@ -172,14 +172,26 @@ get_header();
         endwhile; // End of the loop.
         ?>
     </section>
-    
     <div class="pagination">
     <?php
-        the_posts_navigation();
+        // the_posts_navigation();
+        if (!get_previous_posts_link()) {
+            echo '<i class="fas fa-chevron-circle-left disable"></i>';
+        } else {
+            previous_posts_link('<i class="fas fa-chevron-circle-left"></i>', $recordingQuery->max_num_pages);
+        }
 
         echo paginate_links(array(
-            'total' => $recordingQuery->max_num_pages
+            'total' => $recordingQuery->max_num_pages,
+            'prev_text' => '',
+            'next_text' => '',
         ));
+
+        if (!get_next_posts_link(null, $recordingQuery->max_num_pages)) {
+            echo '<i class="fas fa-chevron-circle-right disable"></i>';
+        } else {
+            next_posts_link('<i class="fas fa-chevron-circle-right"></i>', $recordingQuery->max_num_pages);
+        }
     ?>
     </div>
 

@@ -3511,7 +3511,41 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .recording .pagination {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 40px 0px;
+}
+
+.recording .pagination a {
+  text-decoration: none;
+}
+
+.recording .pagination .page-numbers {
+  font-size: 20px;
+  margin: auto 10px;
+  color: #676767;
+}
+
+.recording .pagination .current {
+  color: #202020;
+}
+
+.recording .pagination .next, .recording .pagination .prev {
+  margin: 0;
+}
+
+.recording .pagination i {
+  font-size: 36px;
+  color: #343A40;
+  margin: auto 15px;
+}
+
+.recording .pagination i.disable {
+  color: #a5a5a5;
 }
 
 .timetable .rows {
