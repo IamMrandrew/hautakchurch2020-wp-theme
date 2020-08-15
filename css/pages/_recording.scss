@@ -120,6 +120,10 @@
             --plyr-audio-control-color-hover: #7f7f7f;
             --plyr-audio-controls-background: rgba(0,0,0,0);
 
+            .plyr__controls {
+                padding-bottom: 0px;
+            }
+            
             .plyr__volume {
                 @media screen and (max-width: 768px) {    
                     min-width: inherit;
