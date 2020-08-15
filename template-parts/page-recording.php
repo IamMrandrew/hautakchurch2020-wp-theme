@@ -85,7 +85,7 @@ get_header();
         </div>
 
         <div class="col-lg-7">
-        <form class="filter-form" method="GET" action="<?php echo get_home_path() ?>/講道錄音/">
+        <form class="filter-form" method="GET" action="<?php  echo get_bloginfo('url') ?>/講道錄音/">
             <!-- <select name="orderby" id="orderby">
                 <option value="">排序</option>
                 <option value="date">從最新至最舊</option>
