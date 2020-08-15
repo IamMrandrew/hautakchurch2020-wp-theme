@@ -56,7 +56,7 @@
                 color: #FFFFFF;
                 transition: background-color 0.5s;
 
-                &:hover {
+                &:hover, &:focus, &:active {
                     background-color: $primary-contrast;
                 }
             }
@@ -103,7 +103,7 @@
         background-color: $primary;
         transition: background-color 0.5s;
 
-        &:hover {
+        &:hover, &:focus, &:active {
             background-color: $primary-contrast;
         }
     }
@@ -241,7 +241,7 @@
             color: #FFFFFF;
             transition: background-color 0.5s;
 
-            &:hover {
+            &:hover, &:focus, &:active {
                 background-color: #b8b1ab;
             }
             
@@ -324,7 +324,7 @@
                     color: #FFFFFF;
                     transition: background-color 0.5s;
 
-                    &:hover {
+                    &:hover, &:focus, &:active {
                         background-color: $primary-contrast;
                     }
                 }

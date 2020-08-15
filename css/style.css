@@ -2856,7 +2856,7 @@ a.plyr__control::after, a.plyr__control::before {
   transition: background-color 0.5s;
 }
 
-.hero .container .text-wrapper .btn:hover {
+.hero .container .text-wrapper .btn:hover, .hero .container .text-wrapper .btn:focus, .hero .container .text-wrapper .btn:active {
   background-color: #474f57;
 }
 
@@ -2899,7 +2899,7 @@ a.plyr__control::after, a.plyr__control::before {
   transition: background-color 0.5s;
 }
 
-.card .btn:hover {
+.card .btn:hover, .card .btn:focus, .card .btn:active {
   background-color: #474f57;
 }
 
@@ -3041,7 +3041,7 @@ a.plyr__control::after, a.plyr__control::before {
   transition: background-color 0.5s;
 }
 
-.jumbotron-verse .text-wrapper .btn:hover {
+.jumbotron-verse .text-wrapper .btn:hover, .jumbotron-verse .text-wrapper .btn:focus, .jumbotron-verse .text-wrapper .btn:active {
   background-color: #b8b1ab;
 }
 
@@ -3142,7 +3142,7 @@ a.plyr__control::after, a.plyr__control::before {
   transition: background-color 0.5s;
 }
 
-.jumbotron-event .container .col-lg-5 .text-wrapper .btn:hover {
+.jumbotron-event .container .col-lg-5 .text-wrapper .btn:hover, .jumbotron-event .container .col-lg-5 .text-wrapper .btn:focus, .jumbotron-event .container .col-lg-5 .text-wrapper .btn:active {
   background-color: #474f57;
 }
 
@@ -3505,6 +3505,62 @@ a.plyr__control::after, a.plyr__control::before {
 
 .recording .filter-bar .filter-form {
   padding: 10px 15px;
+  text-align: right;
+}
+
+.recording .filter-bar .filter-form .selectBox {
+  padding: 10px 5px;
+  color: #343A40;
+  border: 0px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 16px;
+}
+
+.recording .filter-bar .filter-form .selectBox:focus, .recording .filter-bar .filter-form .selectBox:hover {
+  outline: none;
+}
+
+.recording .filter-bar .filter-form .selectBox-wrapper {
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.recording .filter-bar .filter-form .selectBox-wrapper::after {
+  content: "\f0d7";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #676767;
+  pointer-events: none;
+}
+
+.recording .filter-bar .filter-form button {
+  font-size: 16px;
+  color: #FFFFFF;
+  background-color: #625C55;
+}
+
+@media screen and (max-width: 768px) {
+  .recording .filter-bar .filter-form {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .recording .filter-bar .filter-form .selectBox {
+    font-size: 12px;
+    padding-right: 0px;
+  }
+  .recording .filter-bar .filter-form .selectBox-wrapper {
+    margin-right: 12px;
+  }
+  .recording .filter-bar .filter-form button {
+    font-size: 12px;
+    margin: 0px;
+    padding: 9px 12px;
+  }
 }
 
 .recording .archive-recording {

@@ -90,7 +90,7 @@ get_header();
                 <button aria-label="Previous" class="glider-prev glider-prev-1"><i class="fas fa-chevron-circle-left"></i></button>
                 <button aria-label="Next" class="glider-next glider-next-1"><i class="fas fa-chevron-circle-right"></i></button>
             </div>
-            </div>`
+            </div>
             </div>
         </div>
     </section>

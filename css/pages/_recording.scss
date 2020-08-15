@@ -146,8 +146,62 @@
 
         .filter-form {
             padding: 10px 15px;
-            //CSS filter form
-            //Filter form save previous choice
+            text-align: right;
+
+            .selectBox {
+                padding: 10px 5px;
+                color: $primary;
+                border: 0px;
+                cursor: pointer;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                font-size: 16px;
+
+                &:focus, &:hover {
+                    outline: none;
+                }
+
+            }
+
+            .selectBox-wrapper {
+                cursor: pointer;
+                margin-right: 15px;
+
+                &::after {
+                    content: "\f0d7";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: $minor;
+                    pointer-events: none;
+                }
+            }
+            button {
+                font-size: 16px;
+                color: $white;
+                background-color: $secondary;
+            }
+
+            @media screen and (max-width: 768px) {
+                text-align: left;      
+            }
+            @media screen and (max-width: 500px) {
+                .selectBox {
+                    font-size: 12px;
+                    padding-right: 0px;
+                }
+
+                .selectBox-wrapper {
+                    margin-right: 12px;
+                }
+
+                button {
+                    font-size: 12px;
+                    margin: 0px;
+                    padding: 9px 12px;
+                }
+            }
+
         }
     }
 

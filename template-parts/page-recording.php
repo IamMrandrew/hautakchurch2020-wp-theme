@@ -80,62 +80,67 @@ get_header();
     <?php endwhile; ?>
 
     <section class="filter-bar">
-        <div class="col-lg-5">
+        <div class="col-md-4">
             <h2 class="filter-title">過往講道錄音</h2>
         </div>
 
-        <div class="col-lg-7">
+        <div class="col-md-8">
         <form class="filter-form" method="GET" action="<?php  echo get_bloginfo('url') ?>/講道信息/">
             <!-- <select name="orderby" id="orderby">
                 <option value="">排序</option>
                 <option value="date">從最新至最舊</option>
             </select> -->
+            <span class="selectBox-wrapper">
+                <select class="selectBox selectBox-1" name="date-year" id="date-year" onchange="this.form.submit()">
+                    <option value="">全部年份</option>
+                    <option value="2020" <?php echo selected($_GET['date-year'], '2020') ?>>2020年</option>
+                    <option value="2019" <?php echo selected($_GET['date-year'], '2019') ?>>2019年</option>
+                    <option value="2018" <?php echo selected($_GET['date-year'], '2018') ?>>2018年</option>
+                </select>
+            </span>
 
-            <select class="selectBox1" name="date-year" id="date-year" onchange="this.form.submit()">
-                <option value="">全部年份</option>
-                <option value="2020" <?php echo selected($_GET['date-year'], '2020') ?>>2020年</option>
-                <option value="2019" <?php echo selected($_GET['date-year'], '2019') ?>>2019年</option>
-                <option value="2018" <?php echo selected($_GET['date-year'], '2018') ?>>2018年</option>
-            </select>
+            <span class="selectBox-wrapper">
+                <select class="selectBox selectBox-2" name="date-month" id="date-month" onchange="this.form.submit()">
+                    <option value="">全部月份</option>
+                    <?php for ($i = 12; $i > 0; $i--) : ?>
+                        <option value="<?php echo $i ?>" <?php echo selected($_GET['date-month'], $i) ?>> <?php echo $i ?>月</option>
+                    <?php endfor ?>
+                </select>
+            </span>
+            <span class="selectBox-wrapper">
+                <select class="selectBox selectBox-3" name="preachers" id="preachers" onchange="this.form.submit()">
+                    <option value="" >所有講員</option>
+                <?php 
+                    $recordings = get_posts(array(
+                                    'post_type' => 'recording',
+                                    'post_status'       => 'publish',
+                                    'numberposts'   => -1,
 
-            <select class="selectBox2" name="date-month" id="date-month" onchange="this.form.submit()">
-                <option value="">全部月份</option>
-                <?php for ($i = 12; $i > 0; $i--) : ?>
-                    <option value="<?php echo $i ?>" <?php echo selected($_GET['date-month'], $i) ?>> <?php echo $i ?>月</option>
-                <?php endfor ?>
-            </select>
-            <select class="selectBox3" name="preachers" id="preachers" onchange="this.form.submit()">
-                <option value="" >所有講員</option>
-            <?php 
-                $recordings = get_posts(array(
-                                'post_type' => 'recording',
-                                'post_status'       => 'publish',
-                                'numberposts'   => -1,
+                    ));
 
-                ));
+                    $allPreacher = array();
+                    foreach ($recordings as $recordingPost) {
+                        $allPreacher[] = get_post_meta($recordingPost->ID, '_preacher_name_value_key', true);
+                    }
 
-                $allPreacher = array();
-                foreach ($recordings as $recordingPost) {
-                    $allPreacher[] = get_post_meta($recordingPost->ID, '_preacher_name_value_key', true);
-                }
+                    $preachers = array_unique($allPreacher);
+                    foreach ($preachers as $preacher):
+                ?>
+                        <option value="<?php echo $preacher ?>" <?php echo selected($_GET['preachers'], $preacher) ?>><?php echo $preacher;?></option>
+                <?php endforeach ?>
 
-                $preachers = array_unique($allPreacher);
-                foreach ($preachers as $preacher):
-            ?>
-                    <option value="<?php echo $preacher ?>" <?php echo selected($_GET['preachers'], $preacher) ?>><?php echo $preacher;?></option>
-            <?php endforeach ?>
-
-            </select>
-        <button class="btn reset-btn" >重置</button>
+                </select>
+            </span>
+            <button class="btn reset-btn">重置</button>
         </form>
         </div>
     </section>
 
     <script type="text/javascript">
         const resetBtn = document.querySelector('.reset-btn');
-        const selectBox1 = document.querySelector('.selectBox1');
-        const selectBox2 = document.querySelector('.selectBox2');
-        const selectBox3 = document.querySelector('.selectBox3');
+        const selectBox1 = document.querySelector('.selectBox-1');
+        const selectBox2 = document.querySelector('.selectBox-2');
+        const selectBox3 = document.querySelector('.selectBox-3');
 
         resetBtn.addEventListener('click', function() {
             selectBox1.selectedIndex = 0;
