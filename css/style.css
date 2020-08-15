@@ -3549,17 +3549,25 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 @media screen and (max-width: 500px) {
+  .recording .filter-bar .filter-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .recording .filter-bar .filter-form .selectBox {
-    font-size: 12px;
+    font-size: 14px;
     padding-right: 0px;
   }
   .recording .filter-bar .filter-form .selectBox-wrapper {
-    margin-right: 12px;
+    margin-right: 0px;
   }
   .recording .filter-bar .filter-form button {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0px;
-    padding: 9px 12px;
+    padding: 9px 11px;
   }
 }
 
