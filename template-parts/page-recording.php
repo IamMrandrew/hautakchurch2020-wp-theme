@@ -91,20 +91,20 @@ get_header();
                 <option value="date">從最新至最舊</option>
             </select> -->
 
-            <select name="date-year" id="date-year" onchange="this.form.submit()">
+            <select class="selectBox1" name="date-year" id="date-year" onchange="this.form.submit()">
                 <option value="">全部年份</option>
                 <option value="2020" <?php echo selected($_GET['date-year'], '2020') ?>>2020年</option>
                 <option value="2019" <?php echo selected($_GET['date-year'], '2019') ?>>2019年</option>
                 <option value="2018" <?php echo selected($_GET['date-year'], '2018') ?>>2018年</option>
             </select>
 
-            <select name="date-month" id="date-month" onchange="this.form.submit()">
+            <select class="selectBox2" name="date-month" id="date-month" onchange="this.form.submit()">
                 <option value="">全部月份</option>
                 <?php for ($i = 12; $i > 0; $i--) : ?>
                     <option value="<?php echo $i ?>" <?php echo selected($_GET['date-month'], $i) ?>> <?php echo $i ?>月</option>
                 <?php endfor ?>
             </select>
-            <select class="selectBox" name="preachers" id="preachers" onchange="this.form.submit()">
+            <select class="selectBox3" name="preachers" id="preachers" onchange="this.form.submit()">
                 <option value="" >所有講員</option>
             <?php 
                 $recordings = get_posts(array(
@@ -126,18 +126,21 @@ get_header();
             <?php endforeach ?>
 
             </select>
-        <button class="btn reset-btn" type="reset" value="reset">重置</button>
+        <button class="btn reset-btn" >重置</button>
         </form>
         </div>
     </section>
 
     <script type="text/javascript">
         const resetBtn = document.querySelector('.reset-btn');
-        const selectBox = document.querySelector('.selectBox');
+        const selectBox1 = document.querySelector('.selectBox1');
+        const selectBox2 = document.querySelector('.selectBox2');
+        const selectBox3 = document.querySelector('.selectBox3');
 
         resetBtn.addEventListener('click', function() {
-            console.log(selectBox.selectedIndex);
-            selectBox.selectedIndex = 1;
+            selectBox1.selectedIndex = 0;
+            selectBox2.selectedIndex = 0;
+            selectBox3.selectedIndex = 0;
         })
     </script>
     
