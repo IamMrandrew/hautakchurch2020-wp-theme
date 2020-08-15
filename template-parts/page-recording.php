@@ -47,6 +47,7 @@ get_header();
 
             while ( $recordingQuery->have_posts() ) :
                 $recordingQuery->the_post();
+                $latestPostID = get_the_ID();
         ?>
         <div class="col-md-5">
             <div class="img-wrapper">
@@ -84,27 +85,27 @@ get_header();
         </div>
 
         <div class="col-lg-7">
-        <form class="filter-form" method="GET">
+        <form class="filter-form" method="GET" action="<?php echo get_template_directory_uri() ?>/講道錄音/">
             <!-- <select name="orderby" id="orderby">
                 <option value="">排序</option>
                 <option value="date">從最新至最舊</option>
             </select> -->
 
-            <select name="date-year" id="date-year">
-                <option value="">年份</option>
+            <select name="date-year" id="date-year" onchange="this.form.submit()">
+                <option value="">全部年份</option>
                 <option value="2020" <?php echo selected($_GET['date-year'], '2020') ?>>2020年</option>
                 <option value="2019" <?php echo selected($_GET['date-year'], '2019') ?>>2019年</option>
                 <option value="2018" <?php echo selected($_GET['date-year'], '2018') ?>>2018年</option>
             </select>
 
-            <select name="date-month" id="date-month">
-                <option value="">月份</option>
+            <select name="date-month" id="date-month" onchange="this.form.submit()">
+                <option value="">全部月份</option>
                 <?php for ($i = 12; $i > 0; $i--) : ?>
                     <option value="<?php echo $i ?>" <?php echo selected($_GET['date-month'], $i) ?>> <?php echo $i ?>月</option>
                 <?php endfor ?>
             </select>
-            <select name="preachers" id="preachers">
-                <option value="" >講員</option>
+            <select class="selectBox" name="preachers" id="preachers" onchange="this.form.submit()">
+                <option value="" >所有講員</option>
             <?php 
                 $recordings = get_posts(array(
                                 'post_type' => 'recording',
@@ -125,10 +126,20 @@ get_header();
             <?php endforeach ?>
 
             </select>
-        <button type="submit">篩選</button>
+        <button class="btn reset-btn" type="reset" value="reset">重置</button>
         </form>
         </div>
     </section>
+
+    <script type="text/javascript">
+        const resetBtn = document.querySelector('.reset-btn');
+        const selectBox = document.querySelector('.selectBox');
+
+        resetBtn.addEventListener('click', function() {
+            console.log(selectBox.selectedIndex);
+            selectBox.selectedIndex = 1;
+        })
+    </script>
     
     <section class="archive-recording">
         <?php
@@ -149,7 +160,8 @@ get_header();
             'order'             => 'DESC',
             'posts_per_page'    => $per_page,
             'paged'             => $paged,
-            'offset'            => $offset,
+            // 'offset'            => $offset,
+            'post__not_in'       => array ($latestPostID),
             'date_query'        => array (
                                         'year'  => $dateYear,
                                         'month' => $dateMonth,
@@ -165,7 +177,6 @@ get_header();
 
             // 'category_name' => '講道錄音'`
         ));
-        $skipLatest = true;
 
         while ( $recordingQuery->have_posts() ) :
             $recordingQuery->the_post();
@@ -177,23 +188,23 @@ get_header();
     <div class="pagination">
     <?php
         // the_posts_navigation();
-        if (!get_previous_posts_link() && ceil(($recordingQuery->found_posts - $desireOffset) / $per_page) > 1){
+        if (!get_previous_posts_link() && $recordingQuery->max_num_pages > 1){
             echo '<i class="fas fa-chevron-circle-left disable"></i>';
         } else {
-            previous_posts_link('<i class="fas fa-chevron-circle-left"></i>', ($recordingQuery->found_posts - $desireOffset) / $per_page);
+            previous_posts_link('<i class="fas fa-chevron-circle-left"></i>', $recordingQuery->max_num_pages);
         }
 
         echo paginate_links(array(
-            'total' => ceil(($recordingQuery->found_posts - $desireOffset) / $per_page),
+            'total' => $recordingQuery->max_num_pages,
             'prev_text' => '',
             'next_text' => '',
         ));
 
-        if (!get_next_posts_link(null, ceil(($recordingQuery->found_posts - $desireOffset) / $per_page)) && ceil(($recordingQuery->found_posts - $desireOffset) / $per_page) > 1) {
+        if (!get_next_posts_link(null, $recordingQuery->max_num_pages) && $recordingQuery->max_num_pages > 1) {
             echo '<i class="fas fa-chevron-circle-right disable"></i>';
         } else {
-            // $recordingQuery->max_num_pages 
-            next_posts_link('<i class="fas fa-chevron-circle-right"></i>', ceil(($recordingQuery->found_posts - $desireOffset) / $per_page));
+            next_posts_link('<i class="fas fa-chevron-circle-right"></i>', $recordingQuery->max_num_pages);
+            // next_posts_link('<i class="fas fa-chevron-circle-right"></i>', ceil(($recordingQuery->found_posts - $desireOffset) / $per_page));
         }
     ?>
     </div>
