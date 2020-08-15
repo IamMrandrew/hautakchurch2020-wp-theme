@@ -98,9 +98,32 @@
             }
         }
 
-        .wp-block-audio audio {
-            min-width: 200px ;
-            //CSS audio
+        .wp-block-audio {
+            // min-width: 200px ;
+            margin-top: 15px;
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+
+            .plyr {
+                --plyr-color-main: $primary;
+                --plyr-audio-control-color-hover: #7f7f7f;
+                --plyr-audio-controls-background: rgba(0,0,0,0);
+            }
+        }
+            
+        .plyr-sm {
+            display: none;
+
+            @media screen and (max-width: 768px) {
+                display: block;
+            }
+            .plyr {
+                --plyr-color-main: $primary;
+                --plyr-audio-control-color-hover: #7f7f7f;
+                --plyr-audio-controls-background: rgba(0,0,0,0);
+            }
+
         }
     }
 

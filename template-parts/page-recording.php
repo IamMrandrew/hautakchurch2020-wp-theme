@@ -56,6 +56,13 @@ get_header();
         <div class="col-md-7">
             <p class="meta">
                 <span class="preacher">
+                    <?php 
+                        $medias = get_attached_media('audio', $post->ID); 
+                        foreach ($medias as $media){
+                            $id = $media->ID; 
+                            $audioURL = wp_get_attachment_url($id);
+                        }
+                    ?>
                     <i class="fas fa-user"></i>
                     <?php echo get_post_meta(get_the_ID(), '_preacher_name_value_key', true) ?>
                 </span>
@@ -64,9 +71,43 @@ get_header();
             <h3 class="card-title"><?php the_title() ?></h3>
             <p class="quote"><?php echo get_post_meta(get_the_ID(), '_bible_verse_value_key', true) ?></p>
             <?php the_content() ?>
+            <figure class="plyr-sm">
+                <audio src="<?php echo $audioURL ?>"></audio>
+            </figure>
         </div>
     </section>
     <?php endwhile; ?>
+
+    <script type="text/javascript">
+        const player = new Plyr('.wp-block-audio audio', {
+            controls: [    
+                'play-large', // The large play button in the center
+                'play', // Play/pause playback
+                'progress', // The progress bar and scrubber for playback and buffering
+                'current-time', // The current time of playback
+                'duration', // The full duration of the media
+                'mute', // Toggle mute
+                'volume', // Volume control
+                'settings', // Settings menu
+                'pip', // Picture-in-picture (currently Safari only)
+                'airplay', // Airplay (currently Safari only)
+                'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+            ],
+        });
+
+        const playerSM = new Plyr('.plyr-sm audio', {
+            controls: [    
+                'play-large', // The large play button in the center
+                'play', // Play/pause playback
+                'progress', // The progress bar and scrubber for playback and buffering
+                'current-time', // The current time of playback
+                'duration', // The full duration of the media
+                'settings', // Settings menu
+                'pip', // Picture-in-picture (currently Safari only)
+                'airplay', // Airplay (currently Safari only)
+            ],
+        });
+    </script>
 
 
     <section class="filter-bar">
