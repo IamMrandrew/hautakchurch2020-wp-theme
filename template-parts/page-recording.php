@@ -203,23 +203,21 @@ get_header();
             ],
         });
 
-        const playerSM = new Plyr('.card-latest .plyr-sm audio', {
-            controls: [    
-                'play-large', // The large play button in the center
-                'play', // Play/pause playback
-                'progress', // The progress bar and scrubber for playback and buffering
-                'current-time', // The current time of playback
-                'mute', // Toggle mute
-                'settings', // Settings menu
-                'pip', // Picture-in-picture (currently Safari only)
-                'airplay', // Airplay (currently Safari only)
-            ],
-        });
+    const playerSM = new Plyr('.card-latest .plyr-sm audio', {
+        controls: [    
+            'play-large', // The large play button in the center
+            'play', // Play/pause playback
+            'progress', // The progress bar and scrubber for playback and buffering
+            'current-time', // The current time of playback
+            'mute', // Toggle mute
+            'settings', // Settings menu
+            'pip', // Picture-in-picture (currently Safari only)
+            'airplay', // Airplay (currently Safari only)
+        ],
+    });
 
-    const players = document.querySelectorAll('.archive-recording .wp-block-audio audio');
-    players.forEach(function(player) {
-        player = new Plyr('.archive-recording .wp-block-audio audio', {
-            controls: [    
+    const players = Array.from(document.querySelectorAll('.archive-recording .wp-block-audio audio')).map(p => new Plyr(p, {
+        controls: [    
                 'play-large', // The large play button in the center
                 'play', // Play/pause playback
                 'progress', // The progress bar and scrubber for playback and buffering
@@ -230,12 +228,9 @@ get_header();
                 'pip', // Picture-in-picture (currently Safari only)
                 'airplay', // Airplay (currently Safari only)
             ],
-        });
-    });
+    }));
 
-    const playerSMs = document.querySelectorAll('.archive-recording .wp-block-audio audio');
-    playerSMs.forEach(function(playerSM) {
-        playerSM = new Plyr('.archive-recording .plyr-sm audio', {
+    const playerSMs = Array.from(document.querySelectorAll('.archive-recording .plyr-sm audio')).map(p => new Plyr(p, {
             controls: [    
                 'play-large', // The large play button in the center
                 'play', // Play/pause playback
@@ -246,8 +241,7 @@ get_header();
                 'pip', // Picture-in-picture (currently Safari only)
                 'airplay', // Airplay (currently Safari only)
             ],
-        });
-    });
+    }));
 </script>
 
  <?php
