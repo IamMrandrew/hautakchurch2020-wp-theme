@@ -49,7 +49,7 @@
     }
 
     .archive-recording {
-        & div:nth-child(odd) {
+        &>div:nth-child(odd) {
             padding-right: 35px;
 
             @media screen and (max-width: 768px) {
@@ -104,12 +104,6 @@
             @media screen and (max-width: 768px) {
                 display: none;
             }
-
-            .plyr {
-                --plyr-color-main: $primary;
-                --plyr-audio-control-color-hover: #7f7f7f;
-                --plyr-audio-controls-background: rgba(0,0,0,0);
-            }
         }
             
         .plyr-sm {
@@ -118,10 +112,19 @@
             @media screen and (max-width: 768px) {
                 display: block;
             }
-            .plyr {
-                --plyr-color-main: $primary;
-                --plyr-audio-control-color-hover: #7f7f7f;
-                --plyr-audio-controls-background: rgba(0,0,0,0);
+        }
+
+
+        .plyr {
+            --plyr-color-main: $primary;
+            --plyr-audio-control-color-hover: #7f7f7f;
+            --plyr-audio-controls-background: rgba(0,0,0,0);
+
+            .plyr__volume {
+                @media screen and (max-width: 768px) {    
+                    min-width: inherit;
+                    width: inherit;
+                }
             }
 
         }

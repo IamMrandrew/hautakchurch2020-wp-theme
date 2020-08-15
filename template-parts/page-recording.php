@@ -78,38 +78,6 @@ get_header();
     </section>
     <?php endwhile; ?>
 
-    <script type="text/javascript">
-        const player = new Plyr('.wp-block-audio audio', {
-            controls: [    
-                'play-large', // The large play button in the center
-                'play', // Play/pause playback
-                'progress', // The progress bar and scrubber for playback and buffering
-                'current-time', // The current time of playback
-                'duration', // The full duration of the media
-                'mute', // Toggle mute
-                'volume', // Volume control
-                'settings', // Settings menu
-                'pip', // Picture-in-picture (currently Safari only)
-                'airplay', // Airplay (currently Safari only)
-                'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
-            ],
-        });
-
-        const playerSM = new Plyr('.plyr-sm audio', {
-            controls: [    
-                'play-large', // The large play button in the center
-                'play', // Play/pause playback
-                'progress', // The progress bar and scrubber for playback and buffering
-                'current-time', // The current time of playback
-                'duration', // The full duration of the media
-                'settings', // Settings menu
-                'pip', // Picture-in-picture (currently Safari only)
-                'airplay', // Airplay (currently Safari only)
-            ],
-        });
-    </script>
-
-
     <section class="filter-bar">
         <div class="col-lg-5">
             <h2 class="filter-title">過往講道錄音</h2>
@@ -218,14 +186,69 @@ get_header();
 
 </div>
 
+<script type="text/javascript">
+    const player = new Plyr('.card-latest .wp-block-audio audio', {
+            controls: [    
+                'play-large', // The large play button in the center
+                'play', // Play/pause playback
+                'progress', // The progress bar and scrubber for playback and buffering
+                'current-time', // The current time of playback
+                'duration', // The full duration of the media
+                'mute', // Toggle mute
+                'volume', // Volume control
+                'settings', // Settings menu
+                'pip', // Picture-in-picture (currently Safari only)
+                'airplay', // Airplay (currently Safari only)
+                'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+            ],
+        });
 
+        const playerSM = new Plyr('.card-latest .plyr-sm audio', {
+            controls: [    
+                'play-large', // The large play button in the center
+                'play', // Play/pause playback
+                'progress', // The progress bar and scrubber for playback and buffering
+                'current-time', // The current time of playback
+                'mute', // Toggle mute
+                'settings', // Settings menu
+                'pip', // Picture-in-picture (currently Safari only)
+                'airplay', // Airplay (currently Safari only)
+            ],
+        });
 
+    const players = document.querySelectorAll('.archive-recording .wp-block-audio audio');
+    players.forEach(function(player) {
+        player = new Plyr('.archive-recording .wp-block-audio audio', {
+            controls: [    
+                'play-large', // The large play button in the center
+                'play', // Play/pause playback
+                'progress', // The progress bar and scrubber for playback and buffering
+                'current-time', // The current time of playback
+                'mute', // Toggle mute
+                'volume', // Volume control
+                'settings', // Settings menu
+                'pip', // Picture-in-picture (currently Safari only)
+                'airplay', // Airplay (currently Safari only)
+            ],
+        });
+    });
 
-
-
-    
-</div>
-
+    const playerSMs = document.querySelectorAll('.archive-recording .wp-block-audio audio');
+    playerSMs.forEach(function(playerSM) {
+        playerSM = new Plyr('.archive-recording .plyr-sm audio', {
+            controls: [    
+                'play-large', // The large play button in the center
+                'play', // Play/pause playback
+                'progress', // The progress bar and scrubber for playback and buffering
+                'current-time', // The current time of playback
+                'mute', // Toggle mute
+                'settings', // Settings menu
+                'pip', // Picture-in-picture (currently Safari only)
+                'airplay', // Airplay (currently Safari only)
+            ],
+        });
+    });
+</script>
 
  <?php
 

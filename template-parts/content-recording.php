@@ -20,5 +20,15 @@
             <h3 class="card-title"><?php the_title() ?></h3>
             <p class="quote"><?php echo get_post_meta(get_the_ID(), '_bible_verse_value_key', true) ?></p>
             <?php the_content() ?>
+            <?php 
+                $medias = get_attached_media('audio', $post->ID); 
+                foreach ($medias as $media){
+                    $id = $media->ID; 
+                    $audioURL = wp_get_attachment_url($id);
+                }
+            ?>
+            <figure class="plyr-sm">
+                <audio src="<?php echo $audioURL ?>"></audio>
+            </figure>
         </article>
     </div>

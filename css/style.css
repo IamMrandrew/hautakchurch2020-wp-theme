@@ -3398,12 +3398,12 @@ a.plyr__control::after, a.plyr__control::before {
   height: 100%;
 }
 
-.recording .archive-recording div:nth-child(odd) {
+.recording .archive-recording > div:nth-child(odd) {
   padding-right: 35px;
 }
 
 @media screen and (max-width: 768px) {
-  .recording .archive-recording div:nth-child(odd) {
+  .recording .archive-recording > div:nth-child(odd) {
     padding-right: 0px;
   }
 }
@@ -3459,12 +3459,6 @@ a.plyr__control::after, a.plyr__control::before {
   }
 }
 
-.recording .card .wp-block-audio .plyr {
-  --plyr-color-main: $primary;
-  --plyr-audio-control-color-hover: #7f7f7f;
-  --plyr-audio-controls-background: rgba(0,0,0,0);
-}
-
 .recording .card .plyr-sm {
   display: none;
 }
@@ -3475,10 +3469,17 @@ a.plyr__control::after, a.plyr__control::before {
   }
 }
 
-.recording .card .plyr-sm .plyr {
+.recording .card .plyr {
   --plyr-color-main: $primary;
   --plyr-audio-control-color-hover: #7f7f7f;
   --plyr-audio-controls-background: rgba(0,0,0,0);
+}
+
+@media screen and (max-width: 768px) {
+  .recording .card .plyr .plyr__volume {
+    min-width: inherit;
+    width: inherit;
+  }
 }
 
 .recording .filter-bar {
