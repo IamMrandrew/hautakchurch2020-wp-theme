@@ -3283,7 +3283,7 @@ a.plyr__control::after, a.plyr__control::before {
   border-width: 0 0 0 0.2rem;
   color: inherit;
   font-size: 1em;
-  margin: 4rem 0;
+  margin: 2.5em 0;
   /*rtl:ignore*/
   padding: 0.5rem 0 0.5rem 2rem;
 }
