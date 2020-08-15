@@ -141,13 +141,23 @@ get_header();
     
     <section class="archive-recording">
         <?php
+        $per_page = 10;
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+        if ($paged == 1) {
+            $offset = 1;
+        } else {
+            $offset = (($paged - 1) * $per_page) + 1;
+        }
+
         $recordingQuery = new WP_Query(array(
             'post_type'         => 'recording',
             'post_status'       => 'publish',
             'orderby'           => 'date',
             'order'             => 'DESC',
-            'posts_per_page'    => 10,
-            'paged'             => get_query_var('paged'),
+            'posts_per_page'    => $per_page,
+            'paged'             => $paged,
+            'offset'            => $offset,
             'date_query'        => array (
                                         'year'  => $dateYear,
                                         'month' => $dateMonth,
@@ -163,11 +173,11 @@ get_header();
 
             // 'category_name' => '講道錄音'`
         ));
+        $skipLatest = true;
 
         while ( $recordingQuery->have_posts() ) :
             $recordingQuery->the_post();
-
-            get_template_part( 'template-parts/content', 'recording' );
+                get_template_part( 'template-parts/content', 'recording' );
 
         endwhile; // End of the loop.
         ?>
