@@ -85,35 +85,26 @@ get_header();
 
         <div class="col-lg-7">
         <form class="filter-form" method="GET">
-            <select name="orderby" id="orderby">
+            <!-- <select name="orderby" id="orderby">
                 <option value="">排序</option>
                 <option value="date">從最新至最舊</option>
-            </select>
+            </select> -->
 
             <select name="date-year" id="date-year">
                 <option value="">年份</option>
-                <option value="2020">2020年</option>
-                <option value="2019">2019年</option>
-                <option value="2018">2018年</option>
+                <option value="2020" <?php echo selected($_GET['date-year'], '2020') ?>>2020年</option>
+                <option value="2019" <?php echo selected($_GET['date-year'], '2019') ?>>2019年</option>
+                <option value="2018" <?php echo selected($_GET['date-year'], '2018') ?>>2018年</option>
             </select>
 
             <select name="date-month" id="date-month">
                 <option value="">月份</option>
-                <option value="12">12月</option>
-                <option value="11">11月</option>
-                <option value="10">10月</option>
-                <option value="9">9月</option>
-                <option value="8">8月</option>
-                <option value="7">7月</option>
-                <option value="6">6月</option>
-                <option value="5">5月</option>
-                <option value="4">4月</option>
-                <option value="3">3月</option>
-                <option value="2">2月</option>
-                <option value="1">1月</option>
+                <?php for ($i = 12; $i > 0; $i--) : ?>
+                    <option value="<?php echo $i ?>" <?php echo selected($_GET['date-month'], $i) ?>> <?php echo $i ?>月</option>
+                <?php endfor ?>
             </select>
             <select name="preachers" id="preachers">
-                <option value="">講員</option>
+                <option value="" >講員</option>
             <?php 
                 $recordings = get_posts(array(
                                 'post_type' => 'recording',
@@ -130,7 +121,7 @@ get_header();
                 $preachers = array_unique($allPreacher);
                 foreach ($preachers as $preacher):
             ?>
-                    <option value="<?php echo $preacher ?>"><?php echo $preacher;?></option>
+                    <option value="<?php echo $preacher ?>" <?php echo selected($_GET['preachers'], $preacher) ?>><?php echo $preacher;?></option>
             <?php endforeach ?>
 
             </select>
@@ -142,12 +133,13 @@ get_header();
     <section class="archive-recording">
         <?php
         $per_page = 10;
+        $desireOffset = 1;
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         if ($paged == 1) {
-            $offset = 1;
+            $offset = $desireOffset;
         } else {
-            $offset = (($paged - 1) * $per_page) + 1;
+            $offset = (($paged - 1) * $per_page) + $desireOffset;
         }
 
         $recordingQuery = new WP_Query(array(
@@ -185,22 +177,23 @@ get_header();
     <div class="pagination">
     <?php
         // the_posts_navigation();
-        if (!get_previous_posts_link()) {
+        if (!get_previous_posts_link() && ceil(($recordingQuery->found_posts - $desireOffset) / $per_page) > 1){
             echo '<i class="fas fa-chevron-circle-left disable"></i>';
         } else {
-            previous_posts_link('<i class="fas fa-chevron-circle-left"></i>', $recordingQuery->max_num_pages);
+            previous_posts_link('<i class="fas fa-chevron-circle-left"></i>', ($recordingQuery->found_posts - $desireOffset) / $per_page);
         }
 
         echo paginate_links(array(
-            'total' => $recordingQuery->max_num_pages,
+            'total' => ceil(($recordingQuery->found_posts - $desireOffset) / $per_page),
             'prev_text' => '',
             'next_text' => '',
         ));
 
-        if (!get_next_posts_link(null, $recordingQuery->max_num_pages)) {
+        if (!get_next_posts_link(null, ceil(($recordingQuery->found_posts - $desireOffset) / $per_page)) && ceil(($recordingQuery->found_posts - $desireOffset) / $per_page) > 1) {
             echo '<i class="fas fa-chevron-circle-right disable"></i>';
         } else {
-            next_posts_link('<i class="fas fa-chevron-circle-right"></i>', $recordingQuery->max_num_pages);
+            // $recordingQuery->max_num_pages 
+            next_posts_link('<i class="fas fa-chevron-circle-right"></i>', ceil(($recordingQuery->found_posts - $desireOffset) / $per_page));
         }
     ?>
     </div>
