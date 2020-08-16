@@ -3617,6 +3617,154 @@ a.plyr__control::after, a.plyr__control::before {
   color: #a5a5a5;
 }
 
+.contact {
+  margin-top: 35px;
+  margin-bottom: 70px;
+}
+
+.contact .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.contact .contact-section .col-lg-6 {
+  padding: 15px 0px;
+}
+
+.contact .contact-section .col-lg-6 h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #625C55;
+}
+
+.contact .contact-section .col-lg-6 h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contact .contact-section .col-lg-6 p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #343A40;
+}
+
+.contact .contact-section .col-lg-6 p i {
+  margin-right: 15px;
+  color: #625C55;
+}
+
+.contact .contact-section .col-lg-6 .text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.contact .contact-section .col-lg-6 .text-wrapper h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  margin-bottom: 0px;
+}
+
+.contact .contact-section .col-lg-6 .text-wrapper > p, .contact .contact-section .col-lg-6 .text-wrapper .text-group {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.contact .contact-section .col-lg-6 .right {
+  padding: 10px 0px;
+}
+
+.contact .contact-section .single-item {
+  margin-right: auto;
+}
+
+.contact .dedicate-section h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #625C55;
+}
+
+.contact .dedicate-section .col-lg-6 {
+  padding: 15px 0px;
+}
+
+.contact .dedicate-section .col-lg-6 h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #625C55;
+}
+
+.contact .dedicate-section .col-lg-6 h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contact .dedicate-section .col-lg-6 p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #343A40;
+}
+
+.contact .dedicate-section .col-lg-6 p i {
+  margin-right: 15px;
+  color: #625C55;
+}
+
+.contact .dedicate-section .col-lg-6 .bold {
+  color: #202020;
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.contact .dedicate-section .col-lg-6 .highlight {
+  color: #625C55;
+  font-weight: 600;
+}
+
+.contact .dedicate-section .col-lg-6 .text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.contact .dedicate-section .col-lg-6 .text-wrapper h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  margin-bottom: 0px;
+}
+
+.contact .dedicate-section .col-lg-6 .text-wrapper > p, .contact .dedicate-section .col-lg-6 .text-wrapper .text-group {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.contact .dedicate-section .col-lg-6 .right {
+  padding: 10px 0px;
+}
+
+.contact .dedicate-section .single-item {
+  margin-right: auto;
+}
+
 .timetable .rows {
   margin-top: 35px;
   margin-bottom: 70px;
@@ -3661,6 +3809,154 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .timetable .rows .flex-container .single-item {
+  margin-right: auto;
+}
+
+.contact {
+  margin-top: 35px;
+  margin-bottom: 70px;
+}
+
+.contact .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.contact .contact-section .col-lg-6 {
+  padding: 15px 0px;
+}
+
+.contact .contact-section .col-lg-6 h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #625C55;
+}
+
+.contact .contact-section .col-lg-6 h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contact .contact-section .col-lg-6 p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #343A40;
+}
+
+.contact .contact-section .col-lg-6 p i {
+  margin-right: 15px;
+  color: #625C55;
+}
+
+.contact .contact-section .col-lg-6 .text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.contact .contact-section .col-lg-6 .text-wrapper h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  margin-bottom: 0px;
+}
+
+.contact .contact-section .col-lg-6 .text-wrapper > p, .contact .contact-section .col-lg-6 .text-wrapper .text-group {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.contact .contact-section .col-lg-6 .right {
+  padding: 10px 0px;
+}
+
+.contact .contact-section .single-item {
+  margin-right: auto;
+}
+
+.contact .dedicate-section h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #625C55;
+}
+
+.contact .dedicate-section .col-lg-6 {
+  padding: 15px 0px;
+}
+
+.contact .dedicate-section .col-lg-6 h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #625C55;
+}
+
+.contact .dedicate-section .col-lg-6 h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contact .dedicate-section .col-lg-6 p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #343A40;
+}
+
+.contact .dedicate-section .col-lg-6 p i {
+  margin-right: 15px;
+  color: #625C55;
+}
+
+.contact .dedicate-section .col-lg-6 .bold {
+  color: #202020;
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.contact .dedicate-section .col-lg-6 .highlight {
+  color: #625C55;
+  font-weight: 600;
+}
+
+.contact .dedicate-section .col-lg-6 .text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.contact .dedicate-section .col-lg-6 .text-wrapper h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  margin-bottom: 0px;
+}
+
+.contact .dedicate-section .col-lg-6 .text-wrapper > p, .contact .dedicate-section .col-lg-6 .text-wrapper .text-group {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.contact .dedicate-section .col-lg-6 .right {
+  padding: 10px 0px;
+}
+
+.contact .dedicate-section .single-item {
   margin-right: auto;
 }
 /*# sourceMappingURL=style.css.map */

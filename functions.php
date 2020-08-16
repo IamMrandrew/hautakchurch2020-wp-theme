@@ -358,3 +358,7 @@ function wpdocs_excerpt_more( $more ) {
     return '...';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+/** Require key.php */
+
+require get_template_directory() . '/key.php';

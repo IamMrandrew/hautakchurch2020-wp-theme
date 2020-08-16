@@ -320,7 +320,6 @@ get_header();
         }
     </script>
     <script defer
-        <?php require_once 'key.php' ?>
         src="https://maps.googleapis.com/maps/api/js?key=<?php echo $apikey ?>&callback=initMap">
     </script>
 
