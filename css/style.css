@@ -3603,6 +3603,7 @@ a.plyr__control::after, a.plyr__control::before {
   -webkit-appearance: none;
   -moz-appearance: none;
   font-size: 16px;
+  font-family: inherit;
 }
 
 .recording .filter-bar .filter-form .selectBox:focus, .recording .filter-bar .filter-form .selectBox:hover {
@@ -4038,6 +4039,7 @@ a.plyr__control::after, a.plyr__control::before {
   -webkit-appearance: none;
   -moz-appearance: none;
   font-size: 16px;
+  font-family: inherit;
 }
 
 .member .filter-bar .filter-form .selectBox:focus, .member .filter-bar .filter-form .selectBox:hover {
