@@ -58,6 +58,11 @@ header {
                         left: -10px;
                         background-color: #fff;
                         min-width: 150px;
+                        box-shadow: 5px 5px 20px rgba(0, 0, 0, .2);
+
+                        @media screen and (max-width: $nav-breakpoint) {
+                            box-shadow: none;
+                        }
 
                         li {
                             padding: 15px 20px;
