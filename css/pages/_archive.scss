@@ -1,0 +1,54 @@
+.news-item-link {
+    text-decoration: none;
+
+    .news-title {
+        font-size: 23px;
+        color: $primary;
+        font-weight: 600;
+    }
+
+    .news-date {
+        font-size: 15px;
+        color: $minor;
+        font-weight: 500;
+        padding: 0px 15px;
+    }
+
+    p {
+        font-size: 13px;
+        color: $primary;
+        font-weight: 500;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+
+    a {
+        text-decoration: none;
+    }
+    .page-numbers {
+        font-size: 20px;
+        margin: auto 10px;
+        color: $minor;
+    }
+    .current {
+        color: #202020;
+    }
+
+    .next, .prev {
+        margin: 0;
+    }
+
+    i {
+        font-size: 36px;
+        color: $primary;
+        margin: auto 15px;
+
+        &.disable {
+            color: #a5a5a5; 
+        }
+    }
+}

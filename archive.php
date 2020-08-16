@@ -14,7 +14,7 @@ get_header();
 		<h1 class="my-4"></h1>
 		<article>
 
-			<h1><?php single_term_title(); ?></h1>
+			<h1 class="entry-title"><?php single_term_title(); ?></h1>
 			<?php
 				while (have_posts()) :
 					the_post();
@@ -22,14 +22,35 @@ get_header();
 						get_template_part('template-parts/content', 'event-archive');
 					else
 						get_template_part('template-parts/content', 'archive');
-				
 			?>
 			<?php
 				endwhile;
-
-				the_posts_navigation();
 			?>
+			
+			<div class="pagination">
+			<?php
+				// the_posts_navigation();
+				if (!get_previous_posts_link() && $wp_query->max_num_pages > 1){
+					echo '<i class="fas fa-chevron-circle-left disable"></i>';
+				} else {
+					previous_posts_link('<i class="fas fa-chevron-circle-left"></i>', $wp_query->max_num_pages);
+				}
 
+				echo paginate_links(array(
+					'total' => $wp_query->max_num_pages,
+					'prev_text' => '',
+					'next_text' => '',
+				));
+
+				if (!get_next_posts_link(null, $wp_query->max_num_pages) && $wp_query->max_num_pages > 1) {
+					echo '<i class="fas fa-chevron-circle-right disable"></i>';
+				} else {
+					next_posts_link('<i class="fas fa-chevron-circle-right"></i>', $wp_query->max_num_pages);
+					// next_posts_link('<i class="fas fa-chevron-circle-right"></i>', ceil(($recordingQuery->found_posts - $desireOffset) / $per_page));
+				}
+			?>
+			</div>
+	
 		</article>
 	</div>
 

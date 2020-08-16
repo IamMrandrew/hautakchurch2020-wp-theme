@@ -11,10 +11,10 @@
 
 
 <a class="news-item-link" href="<?php the_permalink()?>">
-    <div class="news-item my-2">
-        <h3 style="color: #202020;  text-decoration: none; font-weight: 400;font-size: 16px"><?php the_title(); ?></h3>  
-        <span class="blockquote-footer" style="font-size: 13px"><?php echo get_the_date(); ?></span>
-        <p style="text-decoration: none; color: #202020; font-size: 16px"><?php the_excerpt(); ?></p>
+    <div class="news-item">
+        <h3 class="news-title"><?php the_title(); ?></h3>  
+        <span class="news-date"><?php echo get_the_date('M d, Y'); ?></span>
+        <p><?php the_excerpt(); ?></p>
     </div>
     </a>
     <hr>
