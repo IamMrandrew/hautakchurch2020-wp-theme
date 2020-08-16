@@ -4073,6 +4073,7 @@ a.plyr__control::after, a.plyr__control::before {
   padding: 20px 45px;
   background-color: #F8F8F8;
   border-radius: 27px;
+  margin-bottom: 30px;
 }
 
 .member .file-rows img {
@@ -4112,6 +4113,7 @@ a.plyr__control::after, a.plyr__control::before {
 @media screen and (max-width: 760px) {
   .member .file-rows {
     padding: 15px 30px;
+    margin-bottom: 20px;
   }
   .member .file-rows .text-wrapper h3 {
     font-size: 15px;
