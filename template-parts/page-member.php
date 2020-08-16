@@ -68,6 +68,28 @@ get_header();
     endwhile;
     ?>
 
+    <div class="pagination">
+        <?php
+            // the_posts_navigation();
+            if (!get_previous_posts_link() && $filesQuery->max_num_pages > 1){
+                echo '<i class="fas fa-chevron-circle-left disable"></i>';
+            } else {
+                previous_posts_link('<i class="fas fa-chevron-circle-left"></i>', $filesQuery->max_num_pages);
+            }
+
+            echo paginate_links(array(
+                'total' => $filesQuery->max_num_pages,
+                'prev_text' => '',
+                'next_text' => '',
+            ));
+
+            if (!get_next_posts_link(null, $filesQuery->max_num_pages) && $filesQuery->max_num_pages > 1) {
+                echo '<i class="fas fa-chevron-circle-right disable"></i>';
+            } else {
+                next_posts_link('<i class="fas fa-chevron-circle-right"></i>', $filesQuery->max_num_pages);
+            }
+        ?>
+    </div>
 </div>
 
 
