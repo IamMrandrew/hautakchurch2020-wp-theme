@@ -182,8 +182,6 @@ get_header();
                                         'compare'   => 'LIKE'
                                     )
                                     )
-
-            // 'category_name' => '講道錄音'`
         ));
 
         while ( $recordingQuery->have_posts() ) :

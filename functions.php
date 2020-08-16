@@ -164,6 +164,33 @@ function recording() {
 
 add_action('init', 'recording');
 
+
+// Custom Post Type Files
+function files() {
+	$labels = array (
+		'name'				=> '檔案',
+		'singular_name' 	=> '檔案',
+		'menu_name'			=> '檔案',
+		'add_new_item' 		=> '添加檔案',
+		'add_new' 			=> '添加新的檔案',
+		);
+	$args = array (
+		'label'				=> __('files'),
+		'labels'			=> $labels,
+		'supports'			=> array('title', 'editor', 'thumbnail'),
+		'show_in_rest' 		=> true,
+		'public'			=> true,
+		'show_ui'			=> true,
+		'capability_type'	=> 'post',
+		'menu_icon'			=> 'dashicons-format-aside',
+		'taxonomies'          => array( 'category' )
+		);
+	register_post_type('files',$args);
+	
+}
+
+add_action('init', 'files');
+
 function recording_add_meta_box() {
 	add_meta_box( 'recording_meta', '資料', 'recording_meta_callback', 'recording','side');
 }
@@ -337,6 +364,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/** 
+ * Require key.php 
+ * */
+require get_template_directory() . '/key.php';
+
 /**
  * Filter the except length to 20 words.
  *
@@ -359,6 +391,3 @@ function wpdocs_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
-/** Require key.php */
-
-require get_template_directory() . '/key.php';

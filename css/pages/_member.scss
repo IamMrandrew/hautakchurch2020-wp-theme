@@ -1,0 +1,141 @@
+.member {
+
+    .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .filter-title {
+            font-size: 25px;
+            margin-bottom: 0px;
+        }
+
+        .filter-form {
+            padding: 10px 15px;
+            text-align: right;
+
+            .selectBox {
+                padding: 10px 5px;
+                color: $primary;
+                border: 0px;
+                cursor: pointer;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                font-size: 16px;
+
+                &:focus, &:hover {
+                    outline: none;
+                }
+
+            }
+
+            .selectBox-wrapper {
+                cursor: pointer;
+                margin-right: 15px;
+
+                &::after {
+                    content: "\f0d7";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: $minor;
+                    pointer-events: none;
+                }
+            }
+            button {
+                font-size: 16px;
+                color: $white;
+                background-color: $secondary;
+            }
+
+
+
+        }
+    }
+
+    .file-rows {
+        display: flex;
+        align-items: center;
+        padding: 20px 45px;
+        background-color: #F8F8F8;
+        border-radius: 27px;
+
+        img {
+            width: 100%;
+            max-width: 48px;
+        }
+
+        .col-2 {
+            text-align: center;
+        }
+
+        .text-wrapper {
+            h3 {
+                font-size: 20px;
+                margin-bottom: 0px;
+            }
+
+            span {
+                font-size: 14px;
+                color: $minor;
+            }
+
+            .file-type {
+                font-size: 14px;
+                color: $minor;
+
+                &::before {
+                    content: "・";
+                }
+            }
+        }
+
+        .btn {
+            background-color: #9A948E;
+            border-radius: 50%;
+            color: $white;
+        }
+
+        @media screen and (max-width: 760px) {
+            padding: 15px 30px;
+
+            .text-wrapper {
+                h3 {
+                    font-size: 15px;
+                    margin-bottom: 0px;
+                    padding-bottom: 5px;
+                }
+    
+                span {
+                    font-size: 12px;
+                    color: $minor;
+                }
+    
+                .file-type {
+                    font-size: 12px;
+                    color: $minor;
+    
+                    &::before {
+                        content: "・";
+                    }
+                }
+            }
+            
+            .col-8 {
+                flex: 0 0 83.33333%;
+                max-width: 83.33333%;
+            }
+
+            .col-2 {
+                flex: 0 0 8.3333333333%;
+                max-width: 8.3333333333%;
+            }
+
+            .btn {
+                margin: 0px;
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+        }
+    }
+}
