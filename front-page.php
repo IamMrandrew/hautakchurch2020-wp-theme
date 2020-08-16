@@ -44,9 +44,7 @@ get_header();
 
             <div class="col-lg-8">
             <div class="glider-contain">
-
                 <div class="glider glider1">
-
                 <?php 
                     query_posts( array(
                         'category_name'  => '最新消息',
@@ -60,31 +58,6 @@ get_header();
                         endwhile;
                     endif;
                 ?>
-
-                <!-- <div class="glider-item">
-                    <div class="card">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>更新崇拜直播安排通告</h3>
-                        <p class="card-time">七月 26, 2020</p>
-                        <p class="card-content">鑒於香港近日疫情反覆，社區不明源頭的感染個案持續增加，教會由即日起至 7 月 31日，暫停所有實體崇拜及聚會..</p>
-                    </div>
-                </div>
-                <div class="glider-item">
-                    <div class="card">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>崇拜聚會及防疫指引安排</h3>
-                        <p class="card-time">七月 10, 2020</p>
-                        <p class="card-content">由於本港多區出現疫情個案增加，為減少感染風險，由即日至７月 24 日教會將實施以下聚會安排，各人需..</p>
-                    </div>
-                </div>
-                <div class="glider-item">
-                    <div class="card">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>抗疫同行分享</h3>
-                        <p class="card-time">五月 29, 2020</p>
-                        <p class="card-content">門外是誰？（創 4:7）「你若行得好，豈不蒙悅納？你若行得不好，罪就伏在門前。它必戀慕你，你郤要制伏它...</p>
-                    </div>
-                </div> -->
                 </div>
             <div class="glider-arrow-container">
                 <button aria-label="Previous" class="glider-prev glider-prev-1"><i class="fas fa-chevron-circle-left"></i></button>
@@ -118,7 +91,6 @@ get_header();
             <div class="col-lg-8">
             <div class="glider-contain">
                 <div class="glider glider2">
-
                 <?php 
                     query_posts( array(
                         'category_name'  => '其他資訊',
@@ -132,31 +104,6 @@ get_header();
                         endwhile;
                     endif;
                 ?>
-<!-- 
-                <div class="glider-item">
-                    <div class="card">
-                        <i class="fas fa-sticky-note"></i>
-                        <h3>2020年行事曆</h3>
-                        <p class="card-time">七月 26, 2020</p>
-                        <p class="card-content">2020行事曆已經上載到教會網站... </p>
-                    </div>
-                </div>
-                <div class="glider-item">
-                    <div class="card">
-                        <i class="fas fa-sticky-note"></i>
-                        <h3>暴雨天氣及風暴措施指引</h3>
-                        <p class="card-time">七月 10, 2020</p>
-                        <p class="card-content">黃色暴雨 週六及主日崇拜 (照常) 青少年團契 (照常) 親崇、兒童及長者主日學及長者團契 (照常) 成人團契/小組 (照常) ...</p>
-                    </div>
-                </div>
-                <div class="glider-item">
-                    <div class="card">
-                        <i class="fas fa-sticky-note"></i>
-                        <h3>抗疫同行分享</h3>
-                        <p class="card-time">五月 29, 2020</p>
-                        <p class="card-content">門外是誰？（創 4:7）「你若行得好，豈不蒙悅納？你若行得不好，罪就伏在門前。它必戀慕你，你郤要制伏它...</p>
-                    </div>
-                </div> -->
                 </div>
             <div class="glider-arrow-container">
                 <button aria-label="Previous" class="glider-prev glider-prev-2"><i class="fas fa-chevron-circle-left"></i></button>
@@ -226,26 +173,42 @@ get_header();
     });
     </script>
 
+    <?php 
+        query_posts( array(
+            'category_name'  => '最新活動',
+            'posts_per_page' => 1
+        ) );
+
+        if (have_posts()) :
+            while (have_posts()):
+                the_post();
+    ?>
+
     <div id="jumbotron-event"></div>
     <section class="jumbotron-event">
         <div class="container">
            <div class="col-lg-7">
                 <div class="img-wrapper">
-                    <img src="<?php echo get_template_directory_uri()?>/img/leafletDES2.png" alt="leaflet">
+                    <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="leaflet">
                 </div>
            </div>
             <div class="col-lg-5">
                 <div class="text-wrapper">
                     <h3>最新活動</h3>
-                    <p>褔音主日</p>
-                    <p>時間：10月27日 11:00</p>
-                    <p>地點：仁濟醫院陳耀星小學禮堂</p>
+                    <h4><?php the_title(); ?></h4>
+                    <?php the_content() ?>
+                    <!-- <p>時間：10月27日 11:00</p>
+                    <p>地點：仁濟醫院陳耀星小學禮堂</p> -->
                     <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新活動')); ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <?php 
+        endwhile;
+        endif;
+    ?>
     <div class="map" id="map"></div>
 
     <script>
@@ -322,56 +285,6 @@ get_header();
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=<?php echo $apikey ?>&callback=initMap">
     </script>
-
-
-        <?php 
-        // custom loop
-        $sliderQuery = new WP_Query(array(
-            'post_type'     => 'slider',
-            'post_status'   => 'publish',
-            'orderby'       => 'title',
-            'order'         => 'ASC',
-            // 'category_name' => '電腦版'
-        ));
-
-        ?>
-
-
-        <?php 
-        $active = 'active';
-        $postThumbnailUrl = array();
-        $postThumbnailUrlM = array();
-        $index = 0;
-        $indexM = 0;
-
-        while ($sliderQuery->have_posts()):
-            $sliderQuery->the_post();
-
-            if (in_category('電腦版')){
-                $postThumbnailUrl[$index++] = get_the_post_thumbnail_url();
-            }
-            if (in_category('手機版')){
-                $postThumbnailUrlM[$indexM++] = get_the_post_thumbnail_url();
-            }
-
-        endwhile;
-
-        $index = 0;
-        $indexM = 0;
-        while ($sliderQuery->have_posts()):
-            $sliderQuery->the_post();
-            if (in_category('電腦版')):
-        ?>
-
-<!-- 
-            <picture>
-                <source media="(min-width: 669px)" srcset="<?php echo $postThumbnailUrl[$index++] ?>">
-                <source media="(min-width: 319px)" srcset="<?php echo $postThumbnailUrlM[$indexM++] ?>">
-                <img src="<?php echo get_the_post_thumbnail_url() ?>" class="d-block w-100" style="width: 100%"alt="carousel-img">
-            </picture> -->
-        <?php endif ?>
-        <?php $active = "" ?>
-        <?php endwhile; ?>
 
 <?php
 get_footer();

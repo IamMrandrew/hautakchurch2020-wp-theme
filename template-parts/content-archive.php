@@ -16,5 +16,5 @@
         <span class="news-date"><?php echo get_the_date('M d, Y'); ?></span>
         <p><?php the_excerpt(); ?></p>
     </div>
-    </a>
-    <hr>
+</a>
+<hr>

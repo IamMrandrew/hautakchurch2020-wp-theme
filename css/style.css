@@ -3117,6 +3117,8 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .jumbotron-event .container .img-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 
@@ -3137,6 +3139,11 @@ a.plyr__control::after, a.plyr__control::before {
 
 .jumbotron-event .container .col-lg-5 .text-wrapper h3 {
   font-size: 25px;
+}
+
+.jumbotron-event .container .col-lg-5 .text-wrapper h4 {
+  font-size: 20px;
+  color: #343A40;
 }
 
 .jumbotron-event .container .col-lg-5 .text-wrapper p {
@@ -3356,10 +3363,16 @@ a.plyr__control::after, a.plyr__control::before {
   text-decoration: none;
 }
 
+.news-item-link img {
+  width: 100%;
+  padding: 15px;
+}
+
 .news-item-link .news-title {
   font-size: 23px;
   color: #343A40;
   font-weight: 600;
+  margin-bottom: 0px;
 }
 
 .news-item-link .news-date {
@@ -3367,6 +3380,8 @@ a.plyr__control::after, a.plyr__control::before {
   color: #676767;
   font-weight: 500;
   padding: 0px 15px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .news-item-link p {

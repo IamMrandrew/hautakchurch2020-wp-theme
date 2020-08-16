@@ -46,7 +46,6 @@ get_header();
 					echo '<i class="fas fa-chevron-circle-right disable"></i>';
 				} else {
 					next_posts_link('<i class="fas fa-chevron-circle-right"></i>', $wp_query->max_num_pages);
-					// next_posts_link('<i class="fas fa-chevron-circle-right"></i>', ceil(($recordingQuery->found_posts - $desireOffset) / $per_page));
 				}
 			?>
 			</div>

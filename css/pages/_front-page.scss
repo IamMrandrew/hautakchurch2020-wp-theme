@@ -298,6 +298,7 @@
             }
 
             img {
+                object-fit: cover;
                 width: 100%;
             }
         }
@@ -312,6 +313,11 @@
 
                 h3 {
                     font-size: 25px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    color: $primary;
                 }
             
                 p {
