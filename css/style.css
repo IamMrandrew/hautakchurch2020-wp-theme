@@ -3610,6 +3610,10 @@ a.plyr__control::after, a.plyr__control::before {
   outline: none;
 }
 
+.recording .filter-bar .filter-form .selectBox:focus {
+  font-size: 16px;
+}
+
 .recording .filter-bar .filter-form .selectBox-wrapper {
   cursor: pointer;
   margin-right: 15px;

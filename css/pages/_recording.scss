@@ -164,6 +164,9 @@
                     outline: none;
                 }
 
+                &:focus {
+                    font-size: 16px;
+                }
             }
 
             .selectBox-wrapper {

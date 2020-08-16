@@ -22,10 +22,10 @@ get_header();
     <h1 class="entry-title"><?php the_title() ?></h1>
 
     <section class="filter-bar">
-        <div class="col-6">
+        <div class="col-5">
             <h2 class="filter-title">最新檔案</h2>
         </div>
-        <div class="col-6">
+        <div class="col-7">
             <?php
                 if($_GET['types'] && !empty($_GET['types'])) {
                     $selectedType = $_GET['types'];
