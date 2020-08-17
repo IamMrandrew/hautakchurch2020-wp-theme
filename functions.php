@@ -136,7 +136,7 @@ function slider() {
 	register_post_type('slider',$args);
 }
 
-add_action('init', 'slider');
+// add_action('init', 'slider');
 
 // Custom Post Type Recording
 function recording() {
