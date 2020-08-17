@@ -286,9 +286,9 @@ function groups() {
 		'show_in_rest' 		=> true,
 		'public'			=> true,
 		'show_ui'			=> true,
-		'capability_type'	=> 'page',
+		'capability_type'	=> 'post',
 		'menu_icon'			=> 'dashicons-image-filter',
-		'taxonomies'          => array( 'category' )
+		'taxonomies'          => array( 'category' ),
 		);
 	register_post_type('groups',$args);
 	
