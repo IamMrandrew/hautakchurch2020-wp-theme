@@ -165,32 +165,6 @@ function recording() {
 add_action('init', 'recording');
 
 
-// Custom Post Type Files
-function files() {
-	$labels = array (
-		'name'				=> '檔案',
-		'singular_name' 	=> '檔案',
-		'menu_name'			=> '檔案',
-		'add_new_item' 		=> '添加檔案',
-		'add_new' 			=> '添加新的檔案',
-		);
-	$args = array (
-		'label'				=> __('files'),
-		'labels'			=> $labels,
-		'supports'			=> array('title', 'editor', 'thumbnail'),
-		'show_in_rest' 		=> true,
-		'public'			=> true,
-		'show_ui'			=> true,
-		'capability_type'	=> 'post',
-		'menu_icon'			=> 'dashicons-format-aside',
-		'taxonomies'          => array( 'category' )
-		);
-	register_post_type('files',$args);
-	
-}
-
-add_action('init', 'files');
-
 function recording_add_meta_box() {
 	add_meta_box( 'recording_meta', '資料', 'recording_meta_callback', 'recording','side');
 }
@@ -200,11 +174,11 @@ function recording_meta_callback($post) {
 
 	$value = get_post_meta($post->ID, '_preacher_name_value_key', true);
 	echo '<label for="preacher_name_field" style="padding: 5px 3px; display: block">講員</label>';
-	echo '<input type="email" id="preacher_name_field" name="preacher_name_field" style="margin-bottom: 10px" value="' .esc_attr($value).'" />';
+	echo '<input type="text" id="preacher_name_field" name="preacher_name_field" style="margin-bottom: 10px" value="' .esc_attr($value).'" />';
 
 	$value2 = get_post_meta($post->ID, '_bible_verse_value_key', true);
 	echo '<label for="bible_verse_field" style="padding: 5px 3px; display: block">經文</label>';
-	echo '<input type="email" id="bible_verse_field" name="bible_verse_field" value="' .esc_attr($value2).'" />';
+	echo '<input type="text" id="bible_verse_field" name="bible_verse_field" value="' .esc_attr($value2).'" />';
 
 }
 
@@ -254,8 +228,8 @@ function set_custom_edit_recording_columns($columns) {
     return $columns;
 }
 
-// Add the data to the custom columns for the book post type:
 add_action( 'manage_recording_posts_custom_column' , 'custom_recording_column', 10, 2 );
+
 function custom_recording_column( $column, $post_id ) {
     switch ( $column ) {
 
@@ -269,6 +243,149 @@ function custom_recording_column( $column, $post_id ) {
 
     }
 }
+
+// Custom Post Type Files
+function files() {
+	$labels = array (
+		'name'				=> '檔案',
+		'singular_name' 	=> '檔案',
+		'menu_name'			=> '檔案',
+		'add_new_item' 		=> '添加檔案',
+		'add_new' 			=> '添加新的檔案',
+		);
+	$args = array (
+		'label'				=> __('files'),
+		'labels'			=> $labels,
+		'supports'			=> array('title', 'editor', 'thumbnail'),
+		'show_in_rest' 		=> true,
+		'public'			=> true,
+		'show_ui'			=> true,
+		'capability_type'	=> 'post',
+		'menu_icon'			=> 'dashicons-format-aside',
+		'taxonomies'          => array( 'category' )
+		);
+	register_post_type('files',$args);
+	
+}
+
+add_action('init', 'files');
+
+// Custom Post Type Files
+function groups() {
+	$labels = array (
+		'name'				=> '聚會',
+		'singular_name' 	=> '聚會',
+		'menu_name'			=> '聚會',
+		'add_new_item' 		=> '添加聚會',
+		'add_new' 			=> '添加新的聚會',
+		);
+	$args = array (
+		'label'				=> __('groups'),
+		'labels'			=> $labels,
+		'supports'			=> array('title', 'editor', 'thumbnail'),
+		'show_in_rest' 		=> true,
+		'public'			=> true,
+		'show_ui'			=> true,
+		'capability_type'	=> 'page',
+		'menu_icon'			=> 'dashicons-image-filter',
+		'taxonomies'          => array( 'category' )
+		);
+	register_post_type('groups',$args);
+	
+}
+
+add_action('init', 'groups');
+
+
+function groups_add_meta_box() {
+	add_meta_box( 'groups_meta', '資料', 'groups_meta_callback', 'groups','side');
+}
+
+function groups_meta_callback($post) {
+	wp_nonce_field('save_groups_meta_data', 'groups_meta_metabox_nounce');
+
+	$value = get_post_meta($post->ID, '_time_value_key', true);
+	echo '<label for="time_field" style="padding: 5px 3px; display: block">聚會時間</label>';
+	echo '<input type="text" id="time_field" name="time_field" style="margin-bottom: 10px" value="' .esc_attr($value).'" />';
+
+	$value2 = get_post_meta($post->ID, '_location_value_key', true);
+	echo '<label for="location_field" style="padding: 5px 3px; display: block">聚會地點</label>';
+	echo '<input type="text" id="location_field" name="location_field" value="' .esc_attr($value2).'" />';
+
+	$value3 = get_post_meta($post->ID, '_target_value_key', true);
+	echo '<label for="target_field" style="padding: 5px 3px; display: block">聚會對象</label>';
+	echo '<input type="text" id="target_field" name="target_field" value="' .esc_attr($value3).'" />';
+
+
+}
+
+add_action('add_meta_boxes', 'groups_add_meta_box');
+
+function save_groups_meta_data($post_id) {
+	if( !isset($_POST['groups_meta_metabox_nounce']) ){
+		return;
+	}
+
+	if( !wp_verify_nonce( $_POST['groups_meta_metabox_nounce'], 'save_groups_meta_data')) {
+		return;
+	}
+
+	if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	if( !current_user_can( 'edit_post', $post_id) ) {
+		return;
+	}
+
+	if( !isset( $_POST['time_field']) ) {
+		return;
+	} 
+
+	if( !isset( $_POST['location_field']) ) {
+		return;
+	} 
+
+	if( !isset( $_POST['target_field']) ) {
+		return;
+	} 
+
+	$data = sanitize_text_field( $_POST['time_field'] );
+	$data2 = sanitize_text_field( $_POST['location_field'] );
+	$data3 = sanitize_text_field( $_POST['target_field'] );
+
+	update_post_meta( $post_id, '_time_value_key', $data);
+	update_post_meta( $post_id, '_location_value_key', $data2);
+	update_post_meta( $post_id, '_target_value_key', $data3);
+}
+
+add_action('save_post', 'save_groups_meta_data');
+
+// // Add the custom columns to the recording post type:
+// add_filter( 'manage_recording_posts_columns', 'set_custom_edit_recording_columns' );
+// function set_custom_edit_groups_columns($columns) {
+//     unset( $columns['author'] );
+//     $columns['preacher'] = __( '講員', 'hautakchurch');
+//     $columns['verse'] = __( '經文', 'hautakchurch' );
+
+//     return $columns;
+// }
+
+// add_action( 'manage_recording_posts_custom_column' , 'custom_recording_column', 10, 2 );
+
+// function custom_groups_column( $column, $post_id ) {
+//     switch ( $column ) {
+
+//         case 'preacher' :
+// 			echo get_post_meta( $post_id , '_preacher_name_value_key' , true ); 
+// 			break;
+
+//         case 'verse' :
+//             echo get_post_meta( $post_id , '_bible_verse_value_key' , true ); 
+//             break;
+
+//     }
+// }
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
