@@ -2061,6 +2061,7 @@ header .nav-scrolled .container .burger-active .line {
 .contact {
   margin-top: 35px;
   margin-bottom: 70px;
+  min-height: 0;
 }
 
 .contact .flex-container {
@@ -2256,6 +2257,7 @@ header .nav-scrolled .container .burger-active .line {
 .contact {
   margin-top: 35px;
   margin-bottom: 70px;
+  min-height: 0;
 }
 
 .contact .flex-container {
