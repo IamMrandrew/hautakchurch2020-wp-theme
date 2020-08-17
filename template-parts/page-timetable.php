@@ -110,7 +110,7 @@ get_header();
             </div> 
             <div class="col-lg-6">
                 <h3>新Teen地</h3>
-                <p>週六 下午 3:00</p>
+                <p>週六 下午 6:00</p>
                 <p><span class="location">宣道幼稚園</span> <span class="person">高中至大學</span></p>
             </div> 
         </div>

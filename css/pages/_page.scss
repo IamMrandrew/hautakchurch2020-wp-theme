@@ -115,6 +115,22 @@
         li > ol {
             margin: 1rem 0 0 2rem;
         }
+
+        .wp-block-file {
+            display: flex;
+            align-items: center;
+            a {
+                color: $secondary;
+                padding: 0px 15px;
+            }
+
+            .wp-block-file__button {
+                background-color: $secondary;
+                color: $white;
+                padding: 10px 13px;
+                margin-left: 0px;
+            }
+        }
     }
 
     .entry-footer {

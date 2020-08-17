@@ -1750,6 +1750,27 @@ header .nav-scrolled .container .burger-active .line {
   margin: 1rem 0 0 2rem;
 }
 
+.text-container .entry-content .wp-block-file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.text-container .entry-content .wp-block-file a {
+  color: #625C55;
+  padding: 0px 15px;
+}
+
+.text-container .entry-content .wp-block-file .wp-block-file__button {
+  background-color: #625C55;
+  color: #FFFFFF;
+  padding: 10px 13px;
+  margin-left: 0px;
+}
+
 .text-container .entry-footer {
   padding: 0px 15px;
   margin-bottom: 30px;
