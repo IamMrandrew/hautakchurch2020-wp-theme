@@ -123,3 +123,11 @@
         }
     }
 }
+
+.admin-bar .text-container{
+    padding-top: calc(108px + 15px + 32px);
+
+    @media screen and (max-width: 768px) {
+        padding-top: calc(108px + 15px + 46px);
+    }
+}

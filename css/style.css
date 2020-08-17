@@ -1756,6 +1756,16 @@ header .nav-scrolled .container .burger-active .line {
   text-decoration: none;
 }
 
+.admin-bar .text-container {
+  padding-top: calc(108px + 15px + 32px);
+}
+
+@media screen and (max-width: 768px) {
+  .admin-bar .text-container {
+    padding-top: calc(108px + 15px + 46px);
+  }
+}
+
 .news-item-link {
   text-decoration: none;
 }
