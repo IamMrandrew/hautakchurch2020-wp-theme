@@ -322,8 +322,12 @@ function hautakchurch_scripts() {
 		wp_enqueue_script('mainjs', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
 	} else {
 		wp_enqueue_script('navScrolledjs', get_template_directory_uri() . '/js/nav-scrolled.js', array(), _S_VERSION, true);
-	
 	}
+
+	if (is_admin_bar_showing()) {
+		wp_enqueue_script('admin-barjs', get_template_directory_uri() . '/js/admin-bar.js', array(), _S_VERSION, true);
+	}
+
 	wp_enqueue_script('navjs', get_template_directory_uri() . '/js/nav.js', array(), _S_VERSION, true);
 
 	// wp_enqueue_style( 'hautakchurch-style', get_stylesheet_uri(), array(), _S_VERSION );
@@ -392,3 +396,7 @@ function wpdocs_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
+function my_filter_head() {
+  remove_action('wp_head', '_admin_bar_bump_cb');
+}
+add_action('get_header', 'my_filter_head');

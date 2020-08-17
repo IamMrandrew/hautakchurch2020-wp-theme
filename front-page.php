@@ -27,7 +27,6 @@ get_header();
                 <a class="btn" href="#jumbotron-event">最新活動 <i class="fas fa-arrow-circle-right"></i></a>
                 <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            </div>
         </div>
     </section>
 

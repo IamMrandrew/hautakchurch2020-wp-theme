@@ -691,6 +691,20 @@ html {
   flex-wrap: wrap !important;
 }
 
+.admin-bar header nav {
+  top: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .admin-bar header nav {
+    top: 46px;
+  }
+}
+
+.admin-bar header .nav-to-top {
+  top: 0px;
+}
+
 header nav {
   padding-top: 10px;
   padding-bottom: 10px;
