@@ -2520,9 +2520,14 @@ header .nav-scrolled .container .burger-active .line {
   text-align: center;
 }
 
+.member .file-rows .file-link {
+  text-decoration: none;
+}
+
 .member .file-rows .text-wrapper h3 {
   font-size: 20px;
   margin-bottom: 0px;
+  color: #343A40;
 }
 
 .member .file-rows .text-wrapper span {

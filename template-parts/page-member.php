@@ -46,8 +46,6 @@ get_header();
     </section>
 
     <?php 
-    $cat = '';
-    
     $filesQuery= new WP_Query(array(
                 'post_type'         => 'files',
                 'post_status'       => 'publish',

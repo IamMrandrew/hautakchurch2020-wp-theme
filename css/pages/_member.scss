@@ -1,5 +1,4 @@
 .member {
-
     .filter-bar {
         display: flex;
         flex-wrap: wrap;
@@ -71,10 +70,15 @@
             text-align: center;
         }
 
+        .file-link {
+            text-decoration: none;
+        }
+
         .text-wrapper {
             h3 {
                 font-size: 20px;
                 margin-bottom: 0px;
+                color: $primary;
             }
 
             span {
