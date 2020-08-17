@@ -1678,6 +1678,10 @@ header .nav-scrolled .container .burger-active .line {
   font-size: 25px;
 }
 
+.text-container .entry-content h3 {
+  font-size: 21px;
+}
+
 .text-container .entry-content p {
   font-size: 17px;
   line-height: 28px;
