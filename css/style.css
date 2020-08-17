@@ -705,6 +705,10 @@ html {
   top: 0px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header nav {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -1383,7 +1387,7 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .jumbotron .glider-contain .glider-next {
-  right: -50px;
+  right: -40px;
 }
 
 @media screen and (max-width: 768px) {

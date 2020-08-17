@@ -12,7 +12,9 @@
     top: 0px;
 }
 
-
+body { 
+    overflow-x: hidden;
+}
 header {
     nav {
         padding-top: 10px;
@@ -22,7 +24,7 @@ header {
         z-index: 100;
         width: 100%;
         transition: all 0.3s;
-        
+
         .container {
             display: flex;
             justify-content: space-between;
