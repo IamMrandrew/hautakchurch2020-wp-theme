@@ -133,7 +133,7 @@ get_header();
                 'orderby'           => 'date',
                 'order'             => 'ASC',
                 'posts_per_page'    => -1,
-                'category_name'  => '每週團契/小組'
+                'category_name'  => '每週團契-小組'
             ));
 
             $count = 0;
@@ -168,7 +168,7 @@ get_header();
                 'orderby'           => 'date',
                 'order'             => 'ASC',
                 'posts_per_page'    => -1,
-                'category_name'  => '每月團契/小組'
+                'category_name'  => '每月團契-小組'
             ));
 
             $count = 0;
