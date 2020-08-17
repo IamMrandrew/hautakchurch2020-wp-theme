@@ -15,17 +15,15 @@
 
 get_header();
 ?>
-
-    <section class="hero" style="background-image: url('<?php echo get_template_directory_uri()?>/img/hero-image.png');">
+    <section class="hero" style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('hero-image')) ?>');">
 		<div class="container">
             <div class="text-wrapper">
-                <!-- <h1>25周年堂慶 <br> 同頌神恩</h1>
-                <h2>建人建殿 愛神愛人</h2> -->
-                <h1>非我唯主齊誇勝</h1>
-                <h1>內聖外王顯基督</h1>
-                <h2>疫情下的聚會</h2>
+                <?php $h1Heading = get_theme_mod('h1-heading'); if ($h1Heading != '') echo '<h1>'.$h1Heading.'</h1>' ?>
+                <?php $h1Heading2 = get_theme_mod('h1-heading-2'); if ($h1Heading2 != '') echo '<h1>'.$h1Heading2.'</h1>' ?>
+                <?php $h1Heading3 = get_theme_mod('h1-heading-3'); if ($h1Heading3 != '') echo '<h1>'.$h1Heading3.'</h1>' ?>
+                <?php $h2Heading = get_theme_mod('h2-heading'); if ($h2Heading != '') echo '<h2>'.$h2Heading.'</h2>' ?>
                 <a class="btn" href="#jumbotron-event">最新活動 <i class="fas fa-arrow-circle-right"></i></a>
-                <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="<?php echo get_theme_mod('stream-link') ?>">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </section>
