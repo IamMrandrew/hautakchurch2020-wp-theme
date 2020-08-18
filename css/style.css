@@ -1237,7 +1237,7 @@ header .nav-scrolled .container .burger-active .line {
 
 @media screen and (max-width: 765px) {
   .hero .container .text-wrapper h1 {
-    font-size: 45px;
+    font-size: 42px;
   }
   .hero .container .text-wrapper h1 br {
     display: block;
@@ -1245,7 +1245,7 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .hero .container .text-wrapper h2 {
-  font-size: 45px;
+  font-size: 42px;
   font-weight: 600;
 }
 
