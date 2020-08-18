@@ -1202,9 +1202,17 @@ header .nav-scrolled .container .burger-active .line {
 
 .hero {
   width: 100%;
-  height: 700px;
+  height: 90vh;
+  min-height: 700px;
   background-size: cover;
   position: relative;
+}
+
+@media screen and (max-width: 425px) {
+  .hero {
+    height: 100vh;
+    min-height: auto;
+  }
 }
 
 .hero::before {

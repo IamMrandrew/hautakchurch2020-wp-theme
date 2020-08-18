@@ -1,9 +1,15 @@
 .hero {
     width: 100%;
-    height: 700px;
+    // height: 700px;
+    height: 90vh;
+    min-height: 700px;
     background-size: cover;
     position: relative;
 
+    @media screen and (max-width: 425px) {
+        height: 100vh;
+        min-height: auto;
+    }
     &::before {
         content: "";
         position: absolute;
