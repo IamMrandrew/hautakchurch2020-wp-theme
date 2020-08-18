@@ -997,6 +997,13 @@ header .nav-scrolled .container .burger-active .line {
 .footer p {
   padding: 35px;
   color: #FFFFFF;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer p {
+    font-size: 14px;
+  }
 }
 
 .btn {
@@ -1576,14 +1583,14 @@ header .nav-scrolled .container .burger-active .line {
   font-family: Helvetica, Arial, "PingFangHK",  "Microsoft JhengHei", sans-serif;
 }
 
-.map .gm-style .title {
-  font-size: 17px;
-  margin-bottom: 0px;
-}
-
 .map .gm-style h3 {
   font-size: 16px;
   font-weight: 600;
+}
+
+.map .gm-style .title {
+  font-size: 17px;
+  margin-bottom: 0px;
 }
 
 .map .gm-style p {

@@ -218,28 +218,29 @@ get_header();
                 // zoomControl: false
             });
 
-            let marker1 = addMarker({ lat: 22.3154014, lng: 114.2672707 });
-            let marker2 = addMarker({ lat: 22.3183149, lng: 114.2660506 });
-            let marker3 = addMarker({ lat: 22.3211118, lng: 114.2665366 });
+            let marker1 = addMarker({ lat: <?php echo get_theme_mod('marker-1-lat', get_theme_default( 'marker-1-lat' )) ?>, lng: <?php echo get_theme_mod('marker-1-lng', get_theme_default( 'marker-1-lng' )) ?> });
+            let marker2 = addMarker({ lat: <?php echo get_theme_mod('marker-2-lat', get_theme_default( 'marker-2-lat' )) ?>, lng: <?php echo get_theme_mod('marker-2-lng', get_theme_default( 'marker-2-lng' )) ?> });
+            let marker3 = addMarker({ lat: <?php echo get_theme_mod('marker-3-lat', get_theme_default( 'marker-3-lat' )) ?>, lng: <?php echo get_theme_mod('marker-3-lng', get_theme_default( 'marker-3-lng' )) ?> });
 
             let infoWindow1 = addInfoWindow(
-                '<h3 class="title">主日崇拜及親子崇拜</h3>' + 
-                '<h3>陳耀星小學</h3>' + 
-                '<p>九龍將軍澳第二期第三十四區仁濟醫院陳耀星小學(坑口和明苑內) </p>' + 
-                '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
+                '<h3 class="title"><?php echo get_theme_mod('marker-1-title', get_theme_default( 'marker-1-title' )) ?></h3>' +
+                '<h3><?php echo get_theme_mod('marker-1-name', get_theme_default( 'marker-1-name' )) ?></h3>' +
+                '<p><?php echo get_theme_mod('marker-1-address', get_theme_default( 'marker-1-address' )) ?></p>' + 
+                '<p> <i class="fas fa-phone fa-flip-horizontal"></i><?php echo get_theme_mod('marker-1-phone', get_theme_default( 'marker-1-phone' )) ?></p>'
             )
             
             let infoWindow2 = addInfoWindow(
-                '<h3 class="title">週六崇拜及其他聚會</h3>' + 
-                '<h3>教會幼稚園</h3>' + 
-                '<p>九龍將軍澳厚德村裕明苑裕榮閣地下</p>' + 
-                '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
+                '<h3 class="title"><?php echo get_theme_mod('marker-2-title', get_theme_default( 'marker-2-title' )) ?></h3>' +
+                '<h3><?php echo get_theme_mod('marker-2-name', get_theme_default( 'marker-2-name' )) ?></h3>' +
+                '<p><?php echo get_theme_mod('marker-2-address', get_theme_default( 'marker-2-address' )) ?></p>' + 
+                '<p> <i class="fas fa-phone fa-flip-horizontal"></i><?php echo get_theme_mod('marker-2-phone', get_theme_default( 'marker-1-phone' )) ?></p>'
             )
 
             let infoWindow3 = addInfoWindow(
-                '<h3 class="title">辦公室</h3>' + 
-                '<p>九龍將軍澳坑口村11號B地下</p>' + 
-                '<p> <i class="fas fa-phone fa-flip-horizontal"></i>2623 6316 </p>'
+                '<h3 class="title"><?php echo get_theme_mod('marker-3-title', get_theme_default( 'marker-3-title' )) ?></h3>' + 
+                "<?php if (get_theme_mod('marker-2-name', get_theme_default( 'marker-3-name' )) != '')echo '<h3>'.get_theme_mod('marker-3-name', get_theme_default( 'marker-3-name' )).'</h3>'?>" +
+                '<p><?php echo get_theme_mod('marker-3-address', get_theme_default( 'marker-3-address' )) ?></p>' + 
+                '<p> <i class="fas fa-phone fa-flip-horizontal"></i><?php echo get_theme_mod('marker-3-phone', get_theme_default( 'marker-3-phone' )) ?></p>'
             )
 
             infoWindow1.open(map, marker1);

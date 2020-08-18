@@ -361,32 +361,6 @@ function save_groups_meta_data($post_id) {
 
 add_action('save_post', 'save_groups_meta_data');
 
-// // Add the custom columns to the recording post type:
-// add_filter( 'manage_recording_posts_columns', 'set_custom_edit_recording_columns' );
-// function set_custom_edit_groups_columns($columns) {
-//     unset( $columns['author'] );
-//     $columns['preacher'] = __( '講員', 'hautakchurch');
-//     $columns['verse'] = __( '經文', 'hautakchurch' );
-
-//     return $columns;
-// }
-
-// add_action( 'manage_recording_posts_custom_column' , 'custom_recording_column', 10, 2 );
-
-// function custom_groups_column( $column, $post_id ) {
-//     switch ( $column ) {
-
-//         case 'preacher' :
-// 			echo get_post_meta( $post_id , '_preacher_name_value_key' , true ); 
-// 			break;
-
-//         case 'verse' :
-//             echo get_post_meta( $post_id , '_bible_verse_value_key' , true ); 
-//             break;
-
-//     }
-// }
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
