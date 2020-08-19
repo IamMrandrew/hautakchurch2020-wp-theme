@@ -54,7 +54,7 @@ get_header();
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
 
-    <section class="rows row-2">
+    <section class="rows row-2" id="prayer">
         <div class="row-title">
             <h2>祈禱會<h2>
         </div>
@@ -88,7 +88,7 @@ get_header();
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
 
-    <section class="rows row-3">
+    <section class="rows row-3" id="school">
         <div class="row-title">
             <h2>主日學<h2>
         </div>
@@ -122,7 +122,7 @@ get_header();
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
 
-    <section class="rows row-4">
+    <section class="rows row-4" id="groups">
         <div class="row-title">
             <h2>每週團契/小組<h2>
         </div>
