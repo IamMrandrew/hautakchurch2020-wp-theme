@@ -2263,6 +2263,17 @@ header .nav-scrolled .container .burger-active .line {
   margin-right: auto;
 }
 
+.timetable #sermon, .timetable #school, .timetable #groups, .timetable #ministry {
+  position: relative;
+  top: -151px;
+}
+
+@media screen and (max-width: 768px) {
+  .timetable #sermon, .timetable #school, .timetable #groups, .timetable #ministry {
+    top: -165px;
+  }
+}
+
 .timetable .rows {
   margin-top: 35px;
   margin-bottom: 70px;

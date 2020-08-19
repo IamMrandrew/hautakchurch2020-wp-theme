@@ -20,7 +20,8 @@ get_header();
 <div class="container text-container timetable">
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     
-    <section class="rows row-1" id="sermon">
+    <div id="sermon"></div>
+    <section class="rows row-1">
         <div class="row-title">
             <h2>崇拜<h2>
         </div>
@@ -53,8 +54,9 @@ get_header();
 
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
-
-    <section class="rows row-2" id="prayer">
+    
+    <div id="prayer"></div>
+    <section class="rows row-2">
         <div class="row-title">
             <h2>祈禱會<h2>
         </div>
@@ -87,8 +89,9 @@ get_header();
 
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
-
-    <section class="rows row-3" id="school">
+    
+    <div id="school"></div>
+    <section class="rows row-3">
         <div class="row-title">
             <h2>主日學<h2>
         </div>
@@ -122,7 +125,8 @@ get_header();
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
 
-    <section class="rows row-4" id="groups">
+    <div id="groups"></div>
+    <section class="rows row-4">
         <div class="row-title">
             <h2>每週團契/小組<h2>
         </div>
@@ -191,7 +195,8 @@ get_header();
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
 
-    <section class="rows row-6" id="ministry">
+    <div id="ministry"></div>
+    <section class="rows row-6">
         <div class="row-title">
             <h2>事工小組<h2>
         </div>
