@@ -714,7 +714,7 @@ header nav {
   padding-bottom: 10px;
   background-color: rgba(255, 255, 255, 0);
   position: fixed;
-  z-index: 100;
+  z-index: 1000000;
   width: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -2703,5 +2703,84 @@ header .nav-scrolled .container .burger-active .line {
     padding: 8px 10px;
     font-size: 14px;
   }
+}
+
+.aigpl-gallery-album-wrp .aigpl-img-wrp,
+.aigpl-gallery-wrp .aigpl-img-wrp {
+  border: none;
+  border-radius: 25px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.aigpl-gallery-album-wrp .aigpl-img-wrp .aigpl-img-link,
+.aigpl-gallery-wrp .aigpl-img-wrp .aigpl-img-link {
+  position: relative;
+}
+
+.aigpl-gallery-album-wrp .aigpl-img-wrp .aigpl-img,
+.aigpl-gallery-wrp .aigpl-img-wrp .aigpl-img {
+  padding: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.aigpl-gallery-album-wrp .aigpl-img-wrp::before,
+.aigpl-gallery-wrp .aigpl-img-wrp::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.aigpl-gallery-album-wrp .aigpl-img-wrp::after,
+.aigpl-gallery-wrp .aigpl-img-wrp::after {
+  border: none;
+  border-style: none !important;
+}
+
+.aigpl-gallery-album-wrp .aigpl-img-wrp:hover::before, .aigpl-gallery-album-wrp .aigpl-img-wrp:focus::before,
+.aigpl-gallery-wrp .aigpl-img-wrp:hover::before,
+.aigpl-gallery-wrp .aigpl-img-wrp:focus::before {
+  opacity: 15%;
+}
+
+.aigpl-inr-wrp .aigpl-img-title {
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 15px;
+  color: #343A40;
+}
+
+.aigpl-inr-wrp .aigpl-img-count.aigpl-center {
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 5px;
+  font-size: 15px;
+  color: #454545;
+}
+
+.aigpl-breadcrumb-wrp {
+  padding: 15px;
+  font-weight: 500;
+  color: #625C55;
+}
+
+.aigpl-breadcrumb-wrp .aigpl-breadcrumb {
+  text-decoration: none;
+  color: #625C55;
+}
+
+.aigpl-breadcrumb-wrp .aigpl-breadcrumb:hover, .aigpl-breadcrumb-wrp .aigpl-breadcrumb:focus {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
