@@ -12,8 +12,11 @@
 <div class="col-lg-6">
 <div class="card">
 <a class="card-link" href="<?php the_permalink()?>">
-    <div class="img-wrapper">
-        <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="thumbnail"></div>
+    <?php if (get_the_post_thumbnail()) : ?>
+        <div class="img-wrapper">
+            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="thumbnail">
+        </div>
+    <?php endif ?>
     <div class="info-wrapper">
         <div class="text-wrapper">
             <h3 class="title"><?php the_title() ?></h3>       
