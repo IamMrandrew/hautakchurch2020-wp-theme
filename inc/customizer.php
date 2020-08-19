@@ -19,6 +19,11 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'text',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'h1-heading', array(
+        'selector' => '#h1Heading',
+        'render_callback' => 'h1-heading-partial'
+    ) );
+
     $wp_customize->add_setting( 'h1-heading-2' , array(
         'default'   => '',
         'transport' => 'refresh',
@@ -30,6 +35,11 @@ function custom_customize_register( $wp_customize ) {
         'settings'   => 'h1-heading-2',
         'type'      =>  'text',
     ) ) );
+
+    $wp_customize->selective_refresh->add_partial( 'h1-heading-2', array(
+        'selector' => '#h1Heading-2',
+        'render_callback' => 'h1-heading-2-partial'
+    ) );
 
     $wp_customize->add_setting( 'h1-heading-3' , array(
         'default'   => '',
@@ -43,6 +53,11 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'text',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'h1-heading-3', array(
+        'selector' => '#h1Heading-3',
+        'render_callback' => 'h1-heading-3-partial'
+    ) );
+
     $wp_customize->add_setting( 'h2-heading' , array(
         'default'   => '',
         'transport' => 'refresh',
@@ -54,6 +69,11 @@ function custom_customize_register( $wp_customize ) {
         'settings'   => 'h2-heading',
         'type'      =>  'text',
     ) ) );
+
+    $wp_customize->selective_refresh->add_partial( 'h2-heading', array(
+        'selector' => '#h2Heading',
+        'render_callback' => 'h2-heading-partial'
+    ) );
 
     $wp_customize->add_setting( 'hero-image' , array(
         'default'   => get_theme_default('hero-filter-color'),
@@ -104,6 +124,10 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'text',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'stream-link', array(
+        'selector' => '#stream-link',
+        'render_callback' => 'stream-link-partial'
+    ) );
 
     $wp_customize->add_panel( 'contact-panel', array(
         'title'       => '聯絡資料' ,
@@ -131,6 +155,11 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'textarea',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'staffs-1', array(
+        'selector' => '#staffs-1',
+        'render_callback' => 'staffs-1-partial'
+    ) );
+
     $wp_customize->add_setting( 'staffs-2' , array(
         'default'   => get_theme_default( 'staffs-2' ),
         'transport' => 'refresh',
@@ -143,6 +172,11 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'textarea',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'staffs-2', array(
+        'selector' => '#staffs-2',
+        'render_callback' => 'staffs-2-partial'
+    ) );
+
     $wp_customize->add_setting( 'staffs-3' , array(
         'default'   => get_theme_default( 'staffs-3' ),
         'transport' => 'refresh',
@@ -154,6 +188,11 @@ function custom_customize_register( $wp_customize ) {
         'settings'   => 'staffs-3',
         'type'      =>  'textarea',
     ) ) );
+
+    $wp_customize->selective_refresh->add_partial( 'staffs-3', array(
+        'selector' => '#staffs-3',
+        'render_callback' => 'staffs-3-partial'
+    ) );
 
     $wp_customize->add_section( 'contact-2-section' , array(
         'title'      =>  '聯絡方法',
@@ -173,6 +212,11 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'text',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'phone', array(
+        'selector' => '#contact-phone',
+        'render_callback' => 'phone-partial'
+    ) );
+
     $wp_customize->add_setting( 'fax' , array(
         'default'   => get_theme_default( 'fax' ),
         'transport' => 'refresh',
@@ -185,6 +229,11 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'text',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'fax', array(
+        'selector' => '#contact-fax',
+        'render_callback' => 'fax-partial'
+    ) );
+
     $wp_customize->add_setting( 'email' , array(
         'default'   => get_theme_default( 'email' ),
         'transport' => 'refresh',
@@ -196,6 +245,11 @@ function custom_customize_register( $wp_customize ) {
         'settings'   => 'email',
         'type'      =>  'text',
     ) ) );
+
+    $wp_customize->selective_refresh->add_partial( 'email', array(
+        'selector' => '#contact-email',
+        'render_callback' => 'email-partial'
+    ) );
 
     $wp_customize->add_section( 'contact-3-section' , array(
         'title'      =>  '奉獻方法',
@@ -216,6 +270,11 @@ function custom_customize_register( $wp_customize ) {
         'type'      =>  'textarea',
     ) ) );
 
+    $wp_customize->selective_refresh->add_partial( 'mail', array(
+        'selector' => '#dedicate-mail',
+        'render_callback' => 'dedicate-mail-partial'
+    ) );
+
     $wp_customize->add_setting('transfer', array(
         'default'   => get_theme_default( 'transfer'),
         'transport' => 'refresh',
@@ -227,6 +286,11 @@ function custom_customize_register( $wp_customize ) {
         'settings'   => 'transfer',
         'type'      =>  'textarea',
     ) ) );
+
+    $wp_customize->selective_refresh->add_partial( 'transfer', array(
+        'selector' => '#dedicate-transfer',
+        'render_callback' => 'dedicate-transfer-partial'
+    ) );
 
     $wp_customize->add_section( 'map-section' , array(
         'title'      =>  '地圖設定',

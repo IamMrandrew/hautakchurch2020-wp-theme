@@ -20,19 +20,19 @@ get_header();
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
     <section class="contact-section flex-container">
-        <div class="col-lg-6">
+        <div class="col-lg-6" id="staffs-1">
             <h2>同工簡介</h2>
             <div class="text-wrapper">
                 <h3>堂主任</h3>
                 <?php echo get_theme_mod('staffs-1', get_theme_default( 'staffs-1' )) ?>
             </div>
-            <div class="text-wrapper">
+            <div class="text-wrapper" id="staffs-2">
                 <h3>傳道同工</h3>
                 <div class="text-group">
                     <?php echo get_theme_mod('staffs-2', get_theme_default( 'staffs-2' )) ?>
                 </div>
             </div>
-            <div class="text-wrapper">
+            <div class="text-wrapper" id="staffs-3">
                 <h3>幹事</h3>
                 <?php echo get_theme_mod('staffs-3', get_theme_default( 'staffs-3' )) ?>
             </div>
@@ -40,15 +40,15 @@ get_header();
         <div class="col-lg-6">
             <h2>聯絡方法</h2>
             <div class="text-group right">
-                <p>
+                <p id="contact-phone">
                     <i class="fas fa-phone fa-flip-horizontal"></i>
                     <?php echo get_theme_mod('phone', get_theme_default( 'phone' )) ?>
                 </p>
-                <p>
+                <p id="contact-fax">
                     <i class="fas fa-fax"></i>
                     <?php echo get_theme_mod('fax', get_theme_default( 'fax' )) ?>
                 </p>
-                <p>
+                <p id="contact-email">
                     <i class="fas fa-envelope"></i>
                     <?php echo get_theme_mod('email', get_theme_default( 'email' )) ?>
                 </p>
@@ -61,11 +61,11 @@ get_header();
         <div class="col-12">
             <h2>奉獻方法</h2>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" id="dedicate-mail">
             <?php echo get_theme_mod('mail', get_theme_default( 'mail' )) ?>
         </div> 
 
-        <div class="col-lg-6">
+        <div class="col-lg-6" id="dedicate-transfer">
             <?php echo get_theme_mod('transfer', get_theme_default( 'transfer' )) ?>
         </div> 
     </section>
