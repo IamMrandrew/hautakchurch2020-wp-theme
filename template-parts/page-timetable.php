@@ -20,7 +20,7 @@ get_header();
 <div class="container text-container timetable">
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     
-    <section class="rows row-1">
+    <section class="rows row-1" id="sermon">
         <div class="row-title">
             <h2>崇拜<h2>
         </div>
