@@ -1211,7 +1211,7 @@ header .nav-scrolled .container .burger-active .line {
 
 @media screen and (max-width: 425px) {
   .hero {
-    height: 100vh;
+    height: 80vh;
     min-height: auto;
   }
 }
