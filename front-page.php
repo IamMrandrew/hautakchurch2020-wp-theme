@@ -71,7 +71,7 @@ get_header();
                 <h3>了解我們</h3>
                 <h4>「你們要嘗嘗主恩的滋味，便知道祂是美善；投靠祂的人有福了！」<br>( 詩 三十四 8 )</h4>
                 <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聚會時間" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
-                <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聯絡我們" )->ID ); ?>">聯絡我們 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </section>
         
