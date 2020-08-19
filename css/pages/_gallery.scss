@@ -22,7 +22,7 @@
         height: 100%;
         background-color: #000000;
         position: absolute;
-        z-index: 1000;
+        z-index: 500;
         top: 0;
         left: 0;
         opacity: 0;
@@ -71,4 +71,68 @@
         }
     }
 
+}
+
+.gallery {
+    margin-bottom: 30px;
+
+    .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .filter-title {
+            font-size: 25px;
+            margin-bottom: 0px;
+        }
+
+        .filter-form {
+            padding: 10px 15px;
+            text-align: right;
+
+            .selectBox {
+                padding: 10px 5px;
+                color: $primary;
+                border: 0px;
+                cursor: pointer;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                font-size: 16px;
+                font-family: inherit;
+
+
+                &:focus, &:hover {
+                    outline: none;
+                }
+
+            }
+
+            .selectBox-wrapper {
+                cursor: pointer;
+                margin-right: 15px;
+
+                &::after {
+                    content: "\f0d7";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: $minor;
+                    pointer-events: none;
+                }
+            }
+
+            @media screen and (max-width: 500px) {
+
+                .selectBox {
+                    font-size: 14px;
+                    padding-right: 0px;
+                }
+
+                .selectBox-wrapper {
+                    margin-right: 0px;
+                }
+            }
+
+        }
+    }
 }
