@@ -74,7 +74,7 @@ header {
                         left: -10px;
                         background-color: #fff;
                         min-width: 150px;
-                        box-shadow: 5px 5px 20px rgba(0, 0, 0, .2);
+                        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
 
                         @media screen and (max-width: $nav-breakpoint) {
                             box-shadow: none;

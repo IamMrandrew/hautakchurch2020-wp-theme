@@ -15,199 +15,200 @@
 
 get_header();
 ?>
-    <section class="hero" style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('hero-image')) ?>');">
-		<div class="container">
-            <div class="text-wrapper">
-                <?php $h1Heading = get_theme_mod('h1-heading'); if ($h1Heading != '') echo '<h1 id="h1Heading">'.$h1Heading.'</h1>' ?>
-                <?php $h1Heading2 = get_theme_mod('h1-heading-2'); if ($h1Heading2 != '') echo '<h1 id="h1Heading-2">'.$h1Heading2.'</h1>' ?>
-                <?php $h1Heading3 = get_theme_mod('h1-heading-3'); if ($h1Heading3 != '') echo '<h1 id="h1Heading-3">'.$h1Heading3.'</h1>' ?>
-                <?php $h2Heading = get_theme_mod('h2-heading'); if ($h2Heading != '') echo '<h2 id="h2Heading">'.$h2Heading.'</h2>' ?>
-                <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聚會時間" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
-                <a class="btn" id="stream-link" href="<?php echo get_theme_mod('stream-link') ?>">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="jumbotron-news jumbotron">
-        <div class="container">
-            
-            <div class="col-lg-4">
-            <div class="card card-intro">
-                <h3>最新消息</h3>
-                <p>在此關注教會的最新消息，教會將在此發放最新消息，請時常留意網頁更新</p>
-                <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新消息')); ?>">閱讀更多最新消息 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-            </div>
-
-            <div class="col-lg-8">
-            <div class="glider-contain">
-                <div class="glider glider1">
-                <?php 
-                    query_posts( array(
-                        'category_name'  => '最新消息',
-                        'posts_per_page' => 4
-                    ) );
-
-                    if (have_posts()) :
-                        while (have_posts()):
-                            the_post();
-                            get_template_part('template-parts/content', 'news');
-                        endwhile;
-                    endif;
-                ?>
-                </div>
-            <div class="glider-arrow-container">
-                <button aria-label="Previous" class="glider-prev glider-prev-1"><i class="fas fa-chevron-circle-left"></i></button>
-                <button aria-label="Next" class="glider-next glider-next-1"><i class="fas fa-chevron-circle-right"></i></button>
-            </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="jumbotron-verse">
-        <div class="text-wrapper">
-            <h3>了解我們</h3>
-            <h4>「你們要嘗嘗主恩的滋味，便知道祂是美善；投靠祂的人有福了！」<br>( 詩 三十四 8 )</h4>
-            <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聚會時間" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
-            <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </section>
-    
-    <section class="jumbotron-notice jumbotron">
-        <div class="container">
-            
-            <div class="col-lg-4">
-            <div class="card card-intro">
-            <h3>其他資訊</h3>
-                <p>在此關注教會的其他資訊，教會將在此發放其他資訊 ，請時常留意網頁更新</p>
-                <a class="btn" href="<?php echo get_category_link( get_cat_ID('其他資訊')); ?>">閱讀更多其他資訊 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-            </div>
-
-            <div class="col-lg-8">
-            <div class="glider-contain">
-                <div class="glider glider2">
-                <?php 
-                    query_posts( array(
-                        'category_name'  => '其他資訊',
-                        'posts_per_page' => 4
-                    ) );
-
-                    if (have_posts()) :
-                        while (have_posts()):
-                            the_post();
-                            get_template_part('template-parts/content', 'notice');
-                        endwhile;
-                    endif;
-                ?>
-                </div>
-            <div class="glider-arrow-container">
-                <button aria-label="Previous" class="glider-prev glider-prev-2"><i class="fas fa-chevron-circle-left"></i></button>
-                <button aria-label="Next" class="glider-next glider-next-2"><i class="fas fa-chevron-circle-right"></i></button>
-            </div>
-            </div>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-
-    new Glider(document.querySelector('.glider1'), {
-        slidesToShow: 1,
-        draggable: true,
-        dragVelocity: 1,
-        arrows: {
-            prev: '.glider-prev-1',
-            next: '.glider-next-1'
-        },
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2.2,
-                }
-            }, {
-                breakpoint: 1440,
-                settings: {
-                    slidesToShow: 2.5,
-                }
-            }, {
-                breakpoint: 1700,
-                settings: {
-                    slidesToShow: 2.8,
-                }
-            }
-        ]
-    });
-
-    new Glider(document.querySelector('.glider2'), {
-        slidesToShow: 1,
-        draggable: true,
-        dragVelocity: 1,
-        arrows: {
-            prev: '.glider-prev-2',
-            next: '.glider-next-2'
-        },
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2.2,
-                }
-            }, {
-                breakpoint: 1440,
-                settings: {
-                    slidesToShow: 2.5,
-                }
-            }, {
-                breakpoint: 1700,
-                settings: {
-                    slidesToShow: 2.8,
-                }
-            }
-        ]
-    });
-    </script>
-
-    <?php 
-        query_posts( array(
-            'category_name'  => '最新活動',
-            'posts_per_page' => 1
-        ) );
-
-        if (have_posts()) :
-            while (have_posts()):
-                the_post();
-    ?>
-
-    <div id="jumbotron-event"></div>
-    <section class="jumbotron-event">
-        <div class="container">
-           <div class="col-lg-7">
-                <div class="img-wrapper">
-                    <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="leaflet">
-                </div>
-           </div>
-            <div class="col-lg-5">
+    <div class="front-page">
+        <section class="hero" style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('hero-image')) ?>');">
+            <div class="container">
                 <div class="text-wrapper">
-                    <h3>最新活動</h3>
-                    <h4><?php the_title(); ?></h4>
-                    <?php the_content() ?>
-                    <!-- <p>時間：10月27日 11:00</p>
-                    <p>地點：仁濟醫院陳耀星小學禮堂</p> -->
-                    <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新活動')); ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
+                    <?php $h1Heading = get_theme_mod('h1-heading'); if ($h1Heading != '') echo '<h1 id="h1Heading">'.$h1Heading.'</h1>' ?>
+                    <?php $h1Heading2 = get_theme_mod('h1-heading-2'); if ($h1Heading2 != '') echo '<h1 id="h1Heading-2">'.$h1Heading2.'</h1>' ?>
+                    <?php $h1Heading3 = get_theme_mod('h1-heading-3'); if ($h1Heading3 != '') echo '<h1 id="h1Heading-3">'.$h1Heading3.'</h1>' ?>
+                    <?php $h2Heading = get_theme_mod('h2-heading'); if ($h2Heading != '') echo '<h2 id="h2Heading">'.$h2Heading.'</h2>' ?>
+                    <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聚會時間" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
+                    <a class="btn" id="stream-link" href="<?php echo get_theme_mod('stream-link') ?>">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <?php 
-        endwhile;
-        endif;
-    ?>
-    <div class="map" id="map"></div>
+        <section class="jumbotron-news jumbotron">
+            <div class="container">
+                
+                <div class="col-lg-4">
+                <div class="card card-intro">
+                    <h3>最新消息</h3>
+                    <p>在此關注教會的最新消息，教會將在此發放最新消息，請時常留意網頁更新</p>
+                    <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新消息')); ?>">閱讀更多最新消息 <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                </div>
 
+                <div class="col-lg-8">
+                <div class="glider-contain">
+                    <div class="glider glider1">
+                    <?php 
+                        query_posts( array(
+                            'category_name'  => '最新消息',
+                            'posts_per_page' => 4
+                        ) );
+
+                        if (have_posts()) :
+                            while (have_posts()):
+                                the_post();
+                                get_template_part('template-parts/content', 'news');
+                            endwhile;
+                        endif;
+                    ?>
+                    </div>
+                <div class="glider-arrow-container">
+                    <button aria-label="Previous" class="glider-prev glider-prev-1"><i class="fas fa-chevron-circle-left"></i></button>
+                    <button aria-label="Next" class="glider-next glider-next-1"><i class="fas fa-chevron-circle-right"></i></button>
+                </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jumbotron-verse">
+            <div class="text-wrapper">
+                <h3>了解我們</h3>
+                <h4>「你們要嘗嘗主恩的滋味，便知道祂是美善；投靠祂的人有福了！」<br>( 詩 三十四 8 )</h4>
+                <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聚會時間" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="https://m.youtube.com/watch?feature=youtu.be&v=aYcyF7MYcsw">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </section>
+        
+        <section class="jumbotron-notice jumbotron">
+            <div class="container">
+                
+                <div class="col-lg-4">
+                <div class="card card-intro">
+                <h3>其他資訊</h3>
+                    <p>在此關注教會的其他資訊，教會將在此發放其他資訊 ，請時常留意網頁更新</p>
+                    <a class="btn" href="<?php echo get_category_link( get_cat_ID('其他資訊')); ?>">閱讀更多其他資訊 <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                </div>
+
+                <div class="col-lg-8">
+                <div class="glider-contain">
+                    <div class="glider glider2">
+                    <?php 
+                        query_posts( array(
+                            'category_name'  => '其他資訊',
+                            'posts_per_page' => 4
+                        ) );
+
+                        if (have_posts()) :
+                            while (have_posts()):
+                                the_post();
+                                get_template_part('template-parts/content', 'notice');
+                            endwhile;
+                        endif;
+                    ?>
+                    </div>
+                <div class="glider-arrow-container">
+                    <button aria-label="Previous" class="glider-prev glider-prev-2"><i class="fas fa-chevron-circle-left"></i></button>
+                    <button aria-label="Next" class="glider-next glider-next-2"><i class="fas fa-chevron-circle-right"></i></button>
+                </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+
+        new Glider(document.querySelector('.glider1'), {
+            slidesToShow: 1,
+            draggable: true,
+            dragVelocity: 1,
+            arrows: {
+                prev: '.glider-prev-1',
+                next: '.glider-next-1'
+            },
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2.2,
+                    }
+                }, {
+                    breakpoint: 1440,
+                    settings: {
+                        slidesToShow: 2.5,
+                    }
+                }, {
+                    breakpoint: 1700,
+                    settings: {
+                        slidesToShow: 2.8,
+                    }
+                }
+            ]
+        });
+
+        new Glider(document.querySelector('.glider2'), {
+            slidesToShow: 1,
+            draggable: true,
+            dragVelocity: 1,
+            arrows: {
+                prev: '.glider-prev-2',
+                next: '.glider-next-2'
+            },
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2.2,
+                    }
+                }, {
+                    breakpoint: 1440,
+                    settings: {
+                        slidesToShow: 2.5,
+                    }
+                }, {
+                    breakpoint: 1700,
+                    settings: {
+                        slidesToShow: 2.8,
+                    }
+                }
+            ]
+        });
+        </script>
+
+        <?php 
+            query_posts( array(
+                'category_name'  => '最新活動',
+                'posts_per_page' => 1
+            ) );
+
+            if (have_posts()) :
+                while (have_posts()):
+                    the_post();
+        ?>
+
+        <div id="jumbotron-event"></div>
+        <section class="jumbotron-event">
+            <div class="container">
+            <div class="col-lg-7">
+                    <div class="img-wrapper">
+                        <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="leaflet">
+                    </div>
+            </div>
+                <div class="col-lg-5">
+                    <div class="text-wrapper">
+                        <h3>最新活動</h3>
+                        <h4><?php the_title(); ?></h4>
+                        <?php the_content() ?>
+                        <!-- <p>時間：10月27日 11:00</p>
+                        <p>地點：仁濟醫院陳耀星小學禮堂</p> -->
+                        <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新活動')); ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <?php 
+            endwhile;
+            endif;
+        ?>
+        <div class="map" id="map"></div>
+    </div>
     <script>
         function initMap() { 
             let map = new google.maps.Map(document.getElementById('map'), {
