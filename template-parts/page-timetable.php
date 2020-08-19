@@ -191,7 +191,7 @@ get_header();
             <?php echo ($count % 2 != 0) ?'</div>': ''?>
     </section>
 
-    <section class="rows row-6">
+    <section class="rows row-6" id="ministry">
         <div class="row-title">
             <h2>事工小組<h2>
         </div>
