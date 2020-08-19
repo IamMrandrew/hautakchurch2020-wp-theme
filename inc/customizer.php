@@ -422,7 +422,7 @@ add_action( 'customize_register', 'custom_customize_register' );
 function theme_customize_css() {
     ?>
         <style type="text/css">
-            .hero::before {
+            .front-page .hero::before {
                 background-color: <?php echo get_theme_mod('hero-filter-color', get_theme_default('hero-filter-color')) ?>;
                 opacity: <?php echo get_theme_mod('hero-filter-opacity', get_theme_default('hero-filter-opacity')) ?>;
             }
