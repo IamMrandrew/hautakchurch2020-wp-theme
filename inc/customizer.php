@@ -56,7 +56,7 @@ function custom_customize_register( $wp_customize ) {
     ) ) );
 
     $wp_customize->add_setting( 'hero-image' , array(
-        'default'   => '',
+        'default'   => get_theme_default('hero-filter-color'),
         'transport' => 'refresh',
     ) );
 
@@ -66,6 +66,30 @@ function custom_customize_register( $wp_customize ) {
         'settings'      => 'hero-image',
         'width'         => 1440,
         'height'        => 700,
+    ) ) );
+
+    $wp_customize->add_setting('hero-filter-color', array(
+        'default'   => '#3C2F26',
+        'transport' => 'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hero-filter-color-control', array(
+        'label'      => '封面圖片濾鏡',
+        'section'   => 'front-page-section',
+        'settings'  => 'hero-filter-color',
+    )));
+
+    $wp_customize->add_setting( 'hero-filter-opacity' , array(
+        'default'   => get_theme_default('hero-filter-opacity'),
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'hero-filter-opacity-control', array(
+        'label'      => '封面圖片濾鏡不透明度',
+        'description'   => '預設不透明度66%',
+        'section'    => 'front-page-section',
+        'settings'   => 'hero-filter-opacity',
+        'type'      =>  'text',
     ) ) );
 
     $wp_customize->add_setting( 'stream-link' , array(
@@ -287,6 +311,8 @@ function custom_customize_register( $wp_customize ) {
 
 function get_theme_default( $setting ) {
     $defaults = array(
+        'hero-filter-color' => '#3C2F26',
+        'hero-filter-opacity'   => '66%',
         'staffs-1'  => '<p>黃錦雲牧師</p>',
         'staffs-2'  => '<p>鄭惠意姑娘</p>
 <p>黎亦芬姑娘</p>
@@ -327,4 +353,16 @@ function get_theme_default( $setting ) {
 
     return $defaults[$setting];
 }
- add_action( 'customize_register', 'custom_customize_register' );
+add_action( 'customize_register', 'custom_customize_register' );
+
+function theme_customize_css() {
+    ?>
+        <style type="text/css">
+            .hero::before {
+                background-color: <?php echo get_theme_mod('hero-filter-color', get_theme_default('hero-filter-color')) ?>;
+                opacity: <?php echo get_theme_mod('hero-filter-opacity', get_theme_default('hero-filter-opacity')) ?>;
+            }
+        </style>
+    <?php
+}
+add_action('wp_head', 'theme_customize_css');
