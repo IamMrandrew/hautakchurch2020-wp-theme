@@ -4,7 +4,7 @@ const jumboVerse = document.querySelector('.jumbotron-verse');
 
 const textWrapperObserverOptions = {
     // rootMargin: "-382px 0px 0px 0px"
-    rootMargin: "-420px 0px 0px 0px"
+    rootMargin: "-460px 0px 0px 0px"
 };
 
 const textWrapperObserver = new IntersectionObserver(function(entries) {
