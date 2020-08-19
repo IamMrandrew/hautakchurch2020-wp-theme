@@ -995,13 +995,14 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .footer p {
-  padding: 35px;
+  padding: 35px 15px;
   color: #FFFFFF;
   font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {
   .footer p {
+    padding: 25px 15px;
     font-size: 14px;
   }
 }
