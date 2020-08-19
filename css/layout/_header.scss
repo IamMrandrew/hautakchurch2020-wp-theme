@@ -93,10 +93,12 @@ header {
                     .display-submenu {
                         display: flex;
                     }
-        
-                &:hover > ul, &:focus > ul {
-                    display: flex;
-                }
+
+                    @media screen and (min-width: $nav-breakpoint) {
+                        &:hover > ul, &:focus > ul {
+                            display: flex;
+                        }
+                    }
         
                 }
 

@@ -808,10 +808,12 @@ header nav .container .nav-list li .display-submenu {
   display: flex;
 }
 
-header nav .container .nav-list li:hover > ul, header nav .container .nav-list li:focus > ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (min-width: 1199px) {
+  header nav .container .nav-list li:hover > ul, header nav .container .nav-list li:focus > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 header nav .container .nav-list .menu-item-has-children {
