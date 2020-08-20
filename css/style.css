@@ -1522,7 +1522,7 @@ header .nav-scrolled .container .burger-active .line {
 
 .front-page .jumbotron-event .container .img-wrapper {
   padding: 50px;
-  background-color: #EBEBEB;
+  background-color: #F6F6F6;
 }
 
 @media screen and (max-width: 768px) {
