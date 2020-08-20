@@ -30,6 +30,62 @@
     }
 }
 
+.events-item-link {
+    text-decoration: none;
+
+    .events-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        img {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .events-title {
+            font-size: 24px;
+            color: $primary;
+            font-weight: 600; 
+        }
+
+        i {
+            margin-right: 10px;
+        }
+
+        p {
+            color: $primary;
+            font-weight: 500;
+
+        }
+
+        .events-date {
+            font-size: 14px;
+            color: $minor;
+            font-weight: 500;
+            margin-bottom: 0px;   
+        }
+
+        .events-location {
+            font-size: 14px;
+            color: $minor;
+            font-weight: 500;
+            margin-bottom: 0px;   
+        }
+
+    }
+
+    .events-detail {
+        border-bottom: 1px solid $minor;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        // margin-left: 30px;
+    }
+}
+
+
 .pagination {
     display: flex;
     justify-content: center;

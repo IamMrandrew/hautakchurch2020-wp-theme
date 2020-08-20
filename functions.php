@@ -270,7 +270,7 @@ function files() {
 
 add_action('init', 'files');
 
-// Custom Post Type Files
+// Custom Post Type Groups
 function groups() {
 	$labels = array (
 		'name'				=> '聚會',
@@ -316,7 +316,6 @@ function groups_meta_callback($post) {
 	echo '<label for="target_field" style="padding: 5px 3px; display: block">聚會對象</label>';
 	echo '<input type="text" id="target_field" name="target_field" value="' .esc_attr($value3).'" />';
 
-
 }
 
 add_action('add_meta_boxes', 'groups_add_meta_box');
@@ -360,6 +359,87 @@ function save_groups_meta_data($post_id) {
 }
 
 add_action('save_post', 'save_groups_meta_data');
+
+// Custom Post Type Events
+function events() {
+	$labels = array (
+		'name'				=> '活動',
+		'singular_name' 	=> '活動',
+		'menu_name'			=> '活動',
+		'add_new_item' 		=> '添加活動',
+		'add_new' 			=> '添加新的活動',
+		);
+	$args = array (
+		'label'				=> __('events'),
+		'labels'			=> $labels,
+		'supports'			=> array('title', 'editor', 'thumbnail'),
+		'show_in_rest' 		=> true,
+		'public'			=> true,
+		'show_ui'			=> true,
+		'has_archive'       => true,
+		'capability_type'	=> 'post',
+		'menu_icon'			=> 'dashicons-calendar-alt',
+		'taxonomies'          => array( 'category' ),
+		);
+	register_post_type('events',$args);
+	
+}
+
+add_action('init', 'events');
+
+
+function events_add_meta_box() {
+	add_meta_box( 'events_meta', '資料', 'events_meta_callback', 'events','side');
+}
+
+function events_meta_callback($post) {
+	wp_nonce_field('save_events_meta_data', 'events_meta_metabox_nounce');
+
+	$value = get_post_meta($post->ID, '_time_value_key', true);
+	echo '<label for="time_field" style="padding: 5px 3px; display: block">活動時間</label>';
+	echo '<input type="text" id="time_field" name="time_field" style="margin-bottom: 10px" value="' .esc_attr($value).'" />';
+
+	$value2 = get_post_meta($post->ID, '_location_value_key', true);
+	echo '<label for="location_field" style="padding: 5px 3px; display: block">活動地點</label>';
+	echo '<input type="text" id="location_field" name="location_field" value="' .esc_attr($value2).'" />';
+
+}
+
+add_action('add_meta_boxes', 'events_add_meta_box');
+
+function save_events_meta_data($post_id) {
+	if( !isset($_POST['events_meta_metabox_nounce']) ){
+		return;
+	}
+
+	if( !wp_verify_nonce( $_POST['events_meta_metabox_nounce'], 'save_events_meta_data')) {
+		return;
+	}
+
+	if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	if( !current_user_can( 'edit_post', $post_id) ) {
+		return;
+	}
+
+	if( !isset( $_POST['time_field']) ) {
+		return;
+	} 
+
+	if( !isset( $_POST['location_field']) ) {
+		return;
+	} 
+
+	$data = sanitize_text_field( $_POST['time_field'] );
+	$data2 = sanitize_text_field( $_POST['location_field'] );
+
+	update_post_meta( $post_id, '_time_value_key', $data);
+	update_post_meta( $post_id, '_location_value_key', $data2);
+}
+
+add_action('save_post', 'save_events_meta_data');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

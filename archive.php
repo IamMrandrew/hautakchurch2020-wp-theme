@@ -14,11 +14,11 @@ get_header();
 		<h1 class="my-4"></h1>
 		<article>
 
-			<h1 class="entry-title"><?php single_term_title(); ?></h1>
+			<h1 class="entry-title"><?php if (single_term_title()) single_term_title(); else echo "最新活動" ?></h1>
 			<?php
 				while (have_posts()) :
 					the_post();
-					if (is_category(get_cat_ID('最新活動')))
+					if (get_post_type() == 'events')
 						get_template_part('template-parts/content', 'event-archive');
 					else
 						get_template_part('template-parts/content', 'archive');

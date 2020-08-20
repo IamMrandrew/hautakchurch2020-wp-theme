@@ -172,14 +172,17 @@ get_header();
         </script>
 
         <?php 
-            query_posts( array(
-                'category_name'  => '最新活動',
+            $eventsQuery = new WP_Query( array(
+                'post_type'  => 'events',
+                'post_status'       => 'publish',
+                'orderby'           => 'date',
+                'order'             => 'DESC',
                 'posts_per_page' => 1
             ) );
 
-            if (have_posts()) :
-                while (have_posts()):
-                    the_post();
+            if ($eventsQuery->have_posts()) :
+                while ($eventsQuery->have_posts()):
+                    $eventsQuery->the_post();
         ?>
 
         <div id="jumbotron-event"></div>
@@ -193,11 +196,18 @@ get_header();
                 <div class="col-lg-5">
                     <div class="text-wrapper">
                         <h3>最新活動</h3>
-                        <h4><?php the_title(); ?></h4>
-                        <?php the_content() ?>
-                        <!-- <p>時間：10月27日 11:00</p>
-                        <p>地點：仁濟醫院陳耀星小學禮堂</p> -->
-                        <a class="btn" href="<?php echo get_category_link( get_cat_ID('最新活動')); ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?php echo the_permalink()?>">
+                            <h4><?php the_title(); ?></h4>
+                            <p class="time">
+                                <i class="far fa-calendar-alt"></i>
+                                <?php echo get_post_meta(get_the_ID(), '_time_value_key', true) ?>
+                            </p>
+                            <p class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <?php echo get_post_meta(get_the_ID(), '_location_value_key', true) ?>
+                            </p>
+                        </a>
+                        <a class="btn" href="<?php echo get_post_type_archive_link( 'events') ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
