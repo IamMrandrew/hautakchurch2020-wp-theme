@@ -1214,7 +1214,6 @@ header .nav-scrolled .container .burger-active .line {
 @media screen and (max-width: 425px) {
   .front-page .hero {
     height: 80vh;
-    min-height: auto;
   }
 }
 
