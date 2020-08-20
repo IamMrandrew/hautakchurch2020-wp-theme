@@ -1886,11 +1886,6 @@ header .nav-scrolled .container .burger-active .line {
   margin-right: 10px;
 }
 
-.events-item-link .events-item p {
-  color: #343A40;
-  font-weight: 500;
-}
-
 .events-item-link .events-item .events-date {
   font-size: 14px;
   color: #676767;
@@ -1903,6 +1898,12 @@ header .nav-scrolled .container .burger-active .line {
   color: #676767;
   font-weight: 500;
   margin-bottom: 0px;
+}
+
+.events-item-link .events-item .events-excerpt {
+  color: #343A40;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .events-item-link .events-detail {

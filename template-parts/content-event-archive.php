@@ -25,7 +25,9 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <?php echo get_post_meta(get_the_ID(), '_location_value_key', true) ?>
                 </p>
-                    <?php the_excerpt(); ?>
+                    <p class="events-excerpt">
+                        <?php  echo wp_trim_words(get_the_excerpt(), 40); ?>
+                    </p>
             </div>
         </div>
 

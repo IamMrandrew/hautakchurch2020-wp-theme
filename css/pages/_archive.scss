@@ -54,12 +54,6 @@
             margin-right: 10px;
         }
 
-        p {
-            color: $primary;
-            font-weight: 500;
-
-        }
-
         .events-date {
             font-size: 14px;
             color: $minor;
@@ -72,6 +66,13 @@
             color: $minor;
             font-weight: 500;
             margin-bottom: 0px;   
+        }
+
+        .events-excerpt {
+            color: $primary;
+            font-size: 15px;
+            font-weight: 500;
+
         }
 
     }
