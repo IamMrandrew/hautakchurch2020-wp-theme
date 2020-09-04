@@ -1224,7 +1224,7 @@ header .nav-scrolled .container .burger-active .line {
   width: 100%;
   height: 100%;
   background-color: #3C2F26;
-  opacity: 66%;
+  opacity: 0.66;
 }
 
 .front-page .hero .container {

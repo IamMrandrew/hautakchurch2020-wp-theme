@@ -106,7 +106,7 @@ function custom_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'hero-filter-opacity-control', array(
         'label'      => '封面圖片濾鏡不透明度',
-        'description'   => '預設不透明度66%',
+        'description'   => '預設不透明度0.66',
         'section'    => 'front-page-section',
         'settings'   => 'hero-filter-opacity',
         'type'      =>  'text',
@@ -376,7 +376,7 @@ function custom_customize_register( $wp_customize ) {
 function get_theme_default( $setting ) {
     $defaults = array(
         'hero-filter-color' => '#3C2F26',
-        'hero-filter-opacity'   => '66%',
+        'hero-filter-opacity'   => '0.66',
         'staffs-1'  => '<p>黃錦雲牧師</p>',
         'staffs-2'  => '<p>鄭惠意姑娘</p>
 <p>黎亦芬姑娘</p>
