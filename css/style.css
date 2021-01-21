@@ -761,7 +761,7 @@ header nav .container .nav-list li {
 
 header nav .container .nav-list li a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 600;
 }
@@ -809,7 +809,8 @@ header nav .container .nav-list li .display-submenu {
 }
 
 @media screen and (min-width: 1199px) {
-  header nav .container .nav-list li:hover > ul, header nav .container .nav-list li:focus > ul {
+  header nav .container .nav-list li:hover > ul,
+  header nav .container .nav-list li:focus > ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -827,7 +828,7 @@ header nav .container .nav-list .menu-item-has-children {
     top: 0px;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     color: #343A40;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -871,11 +872,12 @@ header nav .container .burger {
   padding: 20px 10px;
   display: none;
   width: 48px;
+  cursor: pointer;
 }
 
 header nav .container .burger .line {
   height: 3px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin-bottom: 7px;
   margin-left: auto;
   position: relative;
@@ -923,8 +925,8 @@ header nav .container .burger-active .line1 {
   width: 0%;
   height: 0;
   margin-bottom: 0;
-  -webkit-transition: width 0.3s ease-in-out , height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
-  transition: width 0.3s ease-in-out , height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  -webkit-transition: width 0.3s ease-in-out, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
+  transition: width 0.3s ease-in-out, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
 header nav .container .burger-active .line2 {
@@ -943,7 +945,8 @@ header nav .container .burger-active .line3 {
   transition: width 0.3s ease-in-out 0.2s, height 0s ease 0.5s, margin-bottom 0s ease 0.5s;
 }
 
-header nav .container .burger-active .line4, header nav .container .burger-active .line5 {
+header nav .container .burger-active .line4,
+header nav .container .burger-active .line5 {
   width: 28px;
   height: 3px;
 }
