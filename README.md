@@ -1,6 +1,6 @@
 # Hau Tak Church 2020 Wordpress Theme
 
-Hau Tak Church website was built with Bootstrap CSS framework, with PHP, MySQL database as backend. This is a theme for hautakchurch.org as you may curious about, and is developed by using `underscores` as starter theme.
+Hau Tak Church website was built with Wordpress as CMS. This is a custom theme for hautakchurch.org as you may curious about, and is developed by using underscores as starter theme.
 
 ## Features
 
