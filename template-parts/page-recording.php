@@ -93,6 +93,7 @@ get_header();
             <span class="selectBox-wrapper">
                 <select class="selectBox selectBox-1" name="date-year" id="date-year" onchange="this.form.submit()">
                     <option value="">全部年份</option>
+                    <option value="2021" <?php echo selected($_GET['date-year'], '2021') ?>>2021年</option>
                     <option value="2020" <?php echo selected($_GET['date-year'], '2020') ?>>2020年</option>
                     <option value="2019" <?php echo selected($_GET['date-year'], '2019') ?>>2019年</option>
                     <option value="2018" <?php echo selected($_GET['date-year'], '2018') ?>>2018年</option>
