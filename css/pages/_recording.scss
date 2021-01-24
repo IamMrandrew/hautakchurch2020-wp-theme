@@ -1,218 +1,222 @@
 .content-wrapper {
-    min-height: calc(95vh);
-    padding-top: calc(108px + 15px);
+  min-height: calc(95vh);
+  padding-top: calc(108px + 15px);
 }
 .recording.text-container {
-    max-width: 890px;
+  max-width: 890px;
 }
 
 .recording {
-    h1 {
-        font-size: 28px;
+  h1 {
+    font-size: 28px;
+  }
+
+  .card-latest {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0px;
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 49px;
+
+    .col-md-5 {
+      padding-right: 15px;
+
+      @media screen and (max-width: 768px) {
+        margin: 0px 0px 30px 0px;
+        padding: 0px;
+      }
     }
 
-    .card-latest {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+    .col-md-7 {
+      padding-left: 15px;
+    }
+
+    .img-wrapper {
+      border-radius: 49px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
         width: 100%;
-        margin: 30px 0px;
-        background-color: #F8F8F8;
-        padding: 30px;
-        border-radius: 49px;
+        height: 100%;
+      }
+    }
+  }
 
-        .col-md-5 {
-            padding-right: 15px;
+  .archive-recording {
+    & > div:nth-child(odd) {
+      padding-right: 35px;
 
-            @media screen and (max-width: 768px) {
-                margin: 0px 0px 30px 0px;
-                padding: 0px;
-            }
-        }
+      @media screen and (max-width: 768px) {
+        padding-right: 0px;
+      }
+    }
+  }
 
-        .col-md-7 {
-            padding-left: 15px;
-        }
+  .card-wrapper {
+    margin: 17.5px 0px;
+  }
 
-        .img-wrapper {
-            border-radius: 49px;
-            overflow: hidden;
+  .card {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 49px;
+    width: 100%;
 
-            img {
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-            }
+    .preacher {
+      font-size: 15px;
+      font-weight: 500;
+      color: $primary;
 
-        }
-
+      i {
+        margin-right: 10px;
+      }
     }
 
-    .archive-recording {
-        &>div:nth-child(odd) {
-            padding-right: 35px;
-
-            @media screen and (max-width: 768px) {
-                padding-right: 0px;
-            }
-        }
+    .time {
+      font-size: 13px;
+      font-weight: 500;
+      color: $minor;
+      float: right;
     }
 
-    .card-wrapper {
-        margin: 17.5px 0px;
+    .card-title {
+      font-size: 25px;
     }
 
-    .card {
-        background-color: #F8F8F8;
-        padding: 30px;
-        border-radius: 49px;
-        width: 100%;
+    .quote {
+      font-size: 16px;
+      color: $minor;
 
-        .preacher {
-            font-size: 15px;
-            font-weight: 500;
-            color: $primary;
-
-            i {
-                margin-right: 10px;
-            }
-        }
-
-        .time {
-            font-size: 13px;
-            font-weight: 500;
-            color: $minor;
-            float: right;
-        }
-
-        .card-title {
-            font-size: 25px;
-        }
-
-        .quote {
-            font-size: 16px;
-            color: $minor;
-
-            &::before {
-                content: "- ";
-            }
-        }
-
-        .wp-block-audio {
-            // min-width: 200px ;
-            margin-top: 15px;
-            @media screen and (max-width: 768px) {
-                display: none;
-            }
-        }
-            
-        .plyr-sm {
-            display: none;
-
-            @media screen and (max-width: 768px) {
-                display: block;
-            }
-        }
-
-
-        .plyr {
-            --plyr-color-main: $primary;
-            --plyr-audio-control-color-hover: #7f7f7f;
-            --plyr-audio-controls-background: rgba(0,0,0,0);
-
-            .plyr__controls {
-                padding-bottom: 0px;
-            }
-            
-            .plyr__volume {
-                @media screen and (max-width: 768px) {    
-                    min-width: inherit;
-                    width: inherit;
-                }
-            }
-
-        }
+      &::before {
+        content: "- ";
+      }
     }
 
-    .filter-bar {
+    .wp-block-audio {
+      // min-width: 200px ;
+      margin-top: 15px;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .plyr-sm {
+      display: none;
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+
+    .plyr {
+      --plyr-color-main: $primary;
+      --plyr-audio-control-color-hover: #7f7f7f;
+      --plyr-audio-controls-background: rgba(0, 0, 0, 0);
+
+      .plyr__controls {
+        padding-bottom: 0px;
+      }
+
+      .plyr__volume {
+        @media screen and (max-width: 768px) {
+          min-width: inherit;
+          width: inherit;
+        }
+      }
+    }
+  }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .filter-title {
+      font-size: 25px;
+      margin-bottom: 0px;
+    }
+
+    .filter-form {
+      padding: 10px 15px;
+      text-align: right;
+
+      .selectBox {
+        padding: 0px 5px;
+        padding-right: 15px;
+        color: $primary;
+        border: 0px;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 16px;
+        font-family: inherit;
+
+        &:focus,
+        &:hover {
+          outline: none;
+        }
+      }
+
+      .selectBox-wrapper {
+        position: relative;
+        cursor: pointer;
+        margin-right: 10px;
+
+        &::after {
+          content: "\f0d7";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          color: $minor;
+          pointer-events: none;
+          position: absolute;
+          top: 0px;
+          right: 5px;
+
+          @media screen and (max-width: 768px) {
+            right: 0px;
+          }
+        }
+      }
+      button {
+        font-size: 16px;
+        color: $white;
+        background-color: $secondary;
+      }
+
+      @media screen and (max-width: 768px) {
+        text-align: left;
+      }
+      @media screen and (max-width: 500px) {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: center;
 
-        .filter-title {
-            font-size: 25px;
-            margin-bottom: 0px;
+        .selectBox {
+          font-size: 14px;
+          padding-right: 15px;
         }
 
-        .filter-form {
-            padding: 10px 15px;
-            text-align: right;
-
-            .selectBox {
-                padding: 10px 5px;
-                color: $primary;
-                border: 0px;
-                cursor: pointer;
-                appearance: none;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                font-size: 16px;
-                font-family: inherit;
-
-
-                &:focus, &:hover {
-                    outline: none;
-                }
-
-            }
-
-            .selectBox-wrapper {
-                cursor: pointer;
-                margin-right: 15px;
-
-                &::after {
-                    content: "\f0d7";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
-                    color: $minor;
-                    pointer-events: none;
-                }
-            }
-            button {
-                font-size: 16px;
-                color: $white;
-                background-color: $secondary;
-            }
-
-            @media screen and (max-width: 768px) {
-                text-align: left;      
-            }
-            @media screen and (max-width: 500px) {
-                display: flex;
-                justify-content: space-between;
-                .selectBox {
-                    font-size: 14px;
-                    padding-right: 0px;
-                }
-
-                .selectBox-wrapper {
-                    margin-right: 0px;
-                }
-
-                button {
-                    font-size: 14px;
-                    margin: 0px;
-                    padding: 9px 11px;
-                }
-            }
-
+        .selectBox-wrapper {
+          max-height: 18px;
+          margin-right: 0px;
         }
-    }
 
-    .archive-recording {
-        display: flex;
-        flex-wrap: wrap;
+        button {
+          font-size: 14px;
+          margin: 0px;
+          padding: 9px 11px;
+        }
+      }
     }
+  }
 
+  .archive-recording {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
-

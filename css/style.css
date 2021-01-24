@@ -1985,7 +1985,7 @@ header .nav-scrolled .container .burger-active .line {
           align-items: center;
   width: 100%;
   margin: 30px 0px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   padding: 30px;
   border-radius: 49px;
 }
@@ -2032,7 +2032,7 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .recording .card {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   padding: 30px;
   border-radius: 49px;
   width: 100%;
@@ -2091,7 +2091,7 @@ header .nav-scrolled .container .burger-active .line {
 .recording .card .plyr {
   --plyr-color-main: $primary;
   --plyr-audio-control-color-hover: #7f7f7f;
-  --plyr-audio-controls-background: rgba(0,0,0,0);
+  --plyr-audio-controls-background: rgba(0, 0, 0, 0);
 }
 
 .recording .card .plyr .plyr__controls {
@@ -2127,7 +2127,8 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .recording .filter-bar .filter-form .selectBox {
-  padding: 10px 5px;
+  padding: 0px 5px;
+  padding-right: 15px;
   color: #343A40;
   border: 0px;
   cursor: pointer;
@@ -2143,8 +2144,9 @@ header .nav-scrolled .container .burger-active .line {
 }
 
 .recording .filter-bar .filter-form .selectBox-wrapper {
+  position: relative;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .recording .filter-bar .filter-form .selectBox-wrapper::after {
@@ -2153,6 +2155,15 @@ header .nav-scrolled .container .burger-active .line {
   font-weight: 900;
   color: #676767;
   pointer-events: none;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .recording .filter-bar .filter-form .selectBox-wrapper::after {
+    right: 0px;
+  }
 }
 
 .recording .filter-bar .filter-form button {
@@ -2175,12 +2186,16 @@ header .nav-scrolled .container .burger-active .line {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .recording .filter-bar .filter-form .selectBox {
     font-size: 14px;
-    padding-right: 0px;
+    padding-right: 15px;
   }
   .recording .filter-bar .filter-form .selectBox-wrapper {
+    max-height: 18px;
     margin-right: 0px;
   }
   .recording .filter-bar .filter-form button {
