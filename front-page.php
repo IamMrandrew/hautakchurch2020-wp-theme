@@ -65,12 +65,57 @@ get_header();
                 </div>
             </div>
         </section>
+        <?php 
+            $eventsQuery = new WP_Query( array(
+                'post_type'  => 'events',
+                'post_status'       => 'publish',
+                'orderby'           => 'date',
+                'order'             => 'DESC',
+                'posts_per_page' => 1
+            ) );
 
+            if ($eventsQuery->have_posts()) :
+                while ($eventsQuery->have_posts()):
+                    $eventsQuery->the_post();
+        ?>
+
+        <div id="jumbotron-event"></div>
+        <section class="jumbotron-event">
+            <div class="container">
+            <div class="col-lg-7">
+                    <div class="img-wrapper">
+                        <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="leaflet">
+                    </div>
+            </div>
+                <div class="col-lg-5">
+                    <div class="text-wrapper">
+                        <h3>最新活動</h3>
+                        <a href="<?php echo the_permalink()?>">
+                            <h4><?php the_title(); ?></h4>
+                            <p class="time">
+                                <i class="far fa-calendar-alt"></i>
+                                <?php echo get_post_meta(get_the_ID(), '_time_value_key', true) ?>
+                            </p>
+                            <p class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <?php echo get_post_meta(get_the_ID(), '_location_value_key', true) ?>
+                            </p>
+                        </a>
+                        <a class="btn" href="<?php echo get_post_type_archive_link( 'events') ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <?php 
+            endwhile;
+            endif;
+        ?>
         <section class="jumbotron-verse">
             <div class="text-wrapper">
                 <h3>了解我們</h3>
                 <h4>「你們要嘗嘗主恩的滋味，便知道祂是美善；投靠祂的人有福了！」<br>( 詩 三十四 8 )</h4>
-                <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聚會時間" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
+                <a class="btn" href="<?php echo get_page_link( get_page_by_title( "加入我們" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
                 <a class="btn" href="<?php echo get_page_link( get_page_by_title( "聯絡我們" )->ID ); ?>">聯絡我們 <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </section>
@@ -171,52 +216,7 @@ get_header();
         });
         </script>
 
-        <?php 
-            $eventsQuery = new WP_Query( array(
-                'post_type'  => 'events',
-                'post_status'       => 'publish',
-                'orderby'           => 'date',
-                'order'             => 'DESC',
-                'posts_per_page' => 1
-            ) );
-
-            if ($eventsQuery->have_posts()) :
-                while ($eventsQuery->have_posts()):
-                    $eventsQuery->the_post();
-        ?>
-
-        <div id="jumbotron-event"></div>
-        <section class="jumbotron-event">
-            <div class="container">
-            <div class="col-lg-7">
-                    <div class="img-wrapper">
-                        <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="leaflet">
-                    </div>
-            </div>
-                <div class="col-lg-5">
-                    <div class="text-wrapper">
-                        <h3>最新活動</h3>
-                        <a href="<?php echo the_permalink()?>">
-                            <h4><?php the_title(); ?></h4>
-                            <p class="time">
-                                <i class="far fa-calendar-alt"></i>
-                                <?php echo get_post_meta(get_the_ID(), '_time_value_key', true) ?>
-                            </p>
-                            <p class="location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <?php echo get_post_meta(get_the_ID(), '_location_value_key', true) ?>
-                            </p>
-                        </a>
-                        <a class="btn" href="<?php echo get_post_type_archive_link( 'events') ?>">瀏覽更多活動 <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <?php 
-            endwhile;
-            endif;
-        ?>
+        
         <div class="map" id="map"></div>
     </div>
     <script>
