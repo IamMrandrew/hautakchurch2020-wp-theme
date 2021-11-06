@@ -24,7 +24,7 @@ get_header();
                     <?php $h1Heading3 = get_theme_mod('h1-heading-3'); if ($h1Heading3 != '') echo '<h1 id="h1Heading-3">'.$h1Heading3.'</h1>' ?>
                     <?php $h2Heading = get_theme_mod('h2-heading'); if ($h2Heading != '') echo '<h2 id="h2Heading">'.$h2Heading.'</h2>' ?>
                     <a class="btn" href="<?php echo get_page_link( get_page_by_title( "加入我們" )->ID ); ?>">加入我們 <i class="fas fa-arrow-circle-right"></i></a>
-                    <a class="btn" id="stream-link" href="<?php echo get_theme_mod('stream-link') ?>">觀看直播 <i class="fas fa-arrow-circle-right"></i></a>
+                    <!-- <a class="btn" id="stream-link" href="<?php //echo get_theme_mod('stream-link') ?>">觀看直播 <i class="fas fa-arrow-circle-right"></i></a> -->
                 </div>
             </div>
         </section>
