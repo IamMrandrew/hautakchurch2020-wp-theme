@@ -13,7 +13,7 @@
 
 	<footer class="footer">
 		<div class="container">
-			<p>©2020 Hau Tak Church 保留一切權利</p>
+      <p>©2023基督教宣道會厚德堂有限公司版權所有</p>
 		</div>
 	</footer>
 
