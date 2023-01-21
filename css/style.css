@@ -564,14 +564,14 @@ header nav .container {
   margin-top: 10px;
 }
 header nav .container .nav-brand img {
-  height: 78px;
+  height: 70px;
   padding: 15px 10px 15px 10px;
   margin-right: auto;
 }
 @media screen and (max-width: 1199px) {
   header nav .container .nav-brand img {
     box-sizing: content-box;
-    height: 46px;
+    height: 40px;
   }
 }
 header nav .container .nav-brand-dark {
