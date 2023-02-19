@@ -579,3 +579,6 @@ function my_filter_head() {
 }
 add_action('get_header', 'my_filter_head');
 
+// WordPress 5.3 introduced big image downscaling feature that basically resizes the images above certain threshold during the upload.
+// To disable this feature you can simply add this code in your functions.php file
+add_filter( 'big_image_size_threshold', '__return_false' );
