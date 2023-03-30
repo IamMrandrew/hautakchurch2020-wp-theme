@@ -585,6 +585,6 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Remove the "Protected:" prefix
 function change_protected_title_prefix() {
-	return '';
+	return '%s';
 }
 add_filter('protected_title_format', 'change_protected_title_prefix');
