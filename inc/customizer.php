@@ -86,6 +86,8 @@ function custom_customize_register( $wp_customize ) {
         'settings'      => 'hero-image',
         'width'         => 1440,
         'height'        => 700,
+        'flex_width'    => true,
+        'flex_height'   => true,
     ) ) );
 
     $wp_customize->add_setting('hero-filter-color', array(
